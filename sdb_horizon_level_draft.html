@@ -1,0 +1,374 @@
+<!--Current as of 10-DEC-2025-->
+    
+<!--This section is for webpage styling-->
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>RUSI Entry</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F7F2EE;
+  color: #312417;
+}
+
+/*collapsible section styling*/
+.collapsible-section {
+  border: 2px solid #d8cbb5;
+  border-radius: 6px;
+  margin: 15px 0;
+  padding: 0;
+  background-color: #fff;
+}
+.collapsible-header {
+  background-color: #f0e3cc;
+  padding: 12px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  border-radius: 4px 4px 0 0;
+}
+.collapsible-header:hover {
+  background-color: #d8cbb5;
+}
+.collapsible-arrow {
+  font-size: 14px;
+  transition: transform 0.3s;
+}
+.collapsible-arrow.collapsed {
+  transform: rotate(-90deg);
+}
+.collapsible-content {
+  padding: 15px;
+  display: grid;
+  gap: 10px;
+}
+.collapsible-content.hidden {
+  display: none;
+}
+
+/*static/box section styling*/
+.static-section {
+  border: 2px solid #d8cbb5;
+  border-radius: 6px;
+  margin: 15px 0;
+  padding: 0;
+  background-color: #fff;
+}
+.static-header {
+  background-color: #f0e3cc;
+  padding: 12px 15px;
+  font-weight: bold;
+  border-radius: 4px 4px 0 0;
+}
+.static-content {
+  padding: 15px;
+  display: grid;
+  gap: 10px;
+}
+</style>
+</head>
+<body>
+
+<form id="f" style="max-width:650px;margin:24px auto;display:grid;gap:10px">
+  <h1 style="text-align: center; font-size: 32px; margin-bottom: 15px;">SDB Horizon Entry Form</h1>
+
+  <div id="statusMessage"></div>
+
+<!--references for creating boxes- good to copy/paste-->
+
+<!--STATIC BOX
+<div class="static-section">
+    <div class="static-header">
+        <span>NAME</span>
+    </div>
+    <div class="static-content">
+        FIELDS
+    </div>
+</div>
+-->
+
+<!-- COLLAPSABLE BOX
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>NAME</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        FIELDS
+    </div>
+</div>
+-->
+
+<!--this is where the form actually begins-->
+
+
+<!--catagory: Vegetation entry identifiers-->
+
+<div class="static-section">
+    <div class="static-header">
+        <span>Catagory: Horizon Entry Identifiers</span>
+    </div>
+    <div class="static-content"> 
+
+                <label>SDB pedon ID
+                <input name="sdb_peiid_ref" required>
+                </label>
+
+                <label>Lab horizon ID
+                <input name="lab_hziid" required>
+                </label>
+
+                <label>SDB horizon ID
+                <input name="sdb_hziid_ref" required>
+                </label>
+
+                <label>Horizon top depth
+                <input name="hzdept" type="number">
+                </label>
+
+                <label>Horizon bottom depth
+                <input name="hzdepb" type="number">
+                </label>
+
+                <label>Horizon bottom depth is incomplete, or ends in +
+                <input name="hz_plus_depb" type="checkbox">
+                </label>
+
+                <label>Horizon name
+                <input name="hzname" required>
+                </label>
+
+                <label>SDB Horizon ID
+                <input name="sdb_hziid" required>
+                </label>
+
+                <!-- <label>Entry date -to be collected on backend- automatic hidden field
+                <input name="rusi_entry_dts" required>
+                </label> -->
+    </div>
+</div>
+
+<!--catagory: horizon description-->
+
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: Horizon Description</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>Horizon sequence
+            <input name="hzseq" type="number">
+        </label>
+
+        <label>Horizon boundary distinctness
+            <input name="hzbound_dist" type="text">
+        </label>
+
+        <label>Horizon boundary topography
+            <inpit name="hzbound_topo" type="text"></inpit>
+        </label>
+    </div>
+</div>
+
+
+<!--catagory: matrix color-->
+
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: Matrix Color</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>Horizon matrix color 1
+            <input name="hz_col_1"> <!--controlled vocab for all colors-->
+        </label>
+
+        <label>Horizon matrix color 1 (%)
+            <input name="hz_col_pct_1" type="number">
+        
+                <label>Horizon matrix color 2
+            <input name="hz_col_2"> <!--controlled vocab for all colors-->
+        </label>
+
+        <label>Horizon matrix color 2 (%)
+            <input name="hz_col_pct_2" type="number">
+        </label>
+    </div>
+</div>
+
+<!--catagory: texture and von post-->
+
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: Von Post and Texture</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+        <div class="collapsible-content">
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header" onclick="toggleSection(this)">
+                    <span>Von post</span>
+                    <span class="collapsible-arrow">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <label>Von post estimate
+                            <input name="field_vpost"> <!--controlled vocabulary-->
+                    </label>
+                    <label>Fiber estimate (%)
+                        <input name="field_fibr_pct" type="number">
+                    </label>
+                </div>
+            </div>
+        
+    <div class="collapsible-section">
+        <div class="collapsible-header" onclick="toggleSection(this)">
+            <span>Texture</span>
+            <span class="collapsible-arrow">▼</span>
+        </div>
+        <div class="collapsible-content">
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header" onclick="toggleSection(this)">
+                    <span>Texture 1</span>
+                    <span class="collapsible-arrow">▼</span>
+                </div>
+                <div class="collapsible-content">
+
+                    <label>Texture 1 class
+                        <input name="fieldtx_type_1" type="text"> <!--controlled vocabulary-->
+                    </label>
+
+                    <label>Texture 1 modifier
+                        <input name="fieldtx_mod_1" type="text"> <!--controlled vocabulary-->
+                    </label>
+
+                    <label>Texture 1 clay estimate (%)
+                        <input name="fieldtx_c_1" type="number"> <!--controlled vocabulary-->
+                    </label>
+
+                    <label>Texture 1 sand estimate (%)
+                        <input name="fieldtx_s_1" type="text"> <!--controlled vocabulary-->
+                    </label>            
+
+                    <label>Texture 1 silt estimate (%)
+                        <input name="fieldtx_si_1" type="number"> <!--calculated value (100-(s%+c%)-->
+                    </label>  
+
+                </div>
+            </div>
+
+ 
+
+            <label>Texture 2 class
+                <input name="fieldtx_type_2" type="text"> <!--controlled vocabulary-->
+            </label>
+            
+            <label>Texture 2 modifier
+                <input name="fieldtx_mod_2" type="text"> <!--controlled vocabulary-->
+            </label>
+
+            <label>Texture 2 clay estimate (%)
+                <input name="fieldtx_c_2" type="number"> <!--controlled vocabulary-->
+            </label>
+
+            <label>Texture 2 sand estimate (%)
+                <input name="fieldtx_s_2" type="text"> <!--controlled vocabulary-->
+            </label>            
+
+            <label>Texture 2 silt estimate (%)
+                <input name="fieldtx_si_2" type="number"> <!--calculated value (100-(s%+c%)-->
+            </label> 
+
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: Coarse Fragments</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+
+
+
+    </div>
+</div>
+
+
+
+<!--This is the save button at the end of the form, needs work-->
+ 
+  <button>Save</button>
+  <pre id="out"></pre>
+</form>
+<script>
+
+/* need to update this for project-specific information
+const API = "https://673mmzj2a6.execute-api.us-east-2.amazonaws.com/prod";
+document.getElementById('f').addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const outEl = document.getElementById('out');
+  outEl.textContent = "Submitting...";
+  
+  const fd = new FormData(e.target), body={}; 
+  fd.forEach((v,k)=> body[k]=v||null);
+  
+  try {
+    const r = await fetch(API + "/pedons", { 
+      method:'POST', 
+      headers:{'content-type':'application/json'}, 
+      body: JSON.stringify(body) 
+    });
+    
+    const responseText = await r.text();
+    outEl.textContent = responseText;
+    
+    // Try to parse and show prettier message
+    try {
+      const json = JSON.parse(responseText);
+      if (json.ok) {
+        outEl.textContent = "✓ SUCCESS: Pedon saved! ID: " + json.sdb_peiid;
+        outEl.style.color = "green";
+      } else {
+        outEl.textContent = "✗ ERROR: " + json.error;
+        outEl.style.color = "red";
+      }
+    } catch (e) {
+      // If not JSON, just show the text
+      outEl.style.color = "black";
+    }
+  } catch (err) {
+    outEl.textContent = "✗ NETWORK ERROR: " + err.message;
+    outEl.style.color = "red";
+  }
+});
+
+*/
+
+// Function to toggle collapsible sections
+function toggleSection(header) {
+  const content = header.nextElementSibling;
+  const arrow = header.querySelector('.collapsible-arrow');
+  
+  content.classList.toggle('hidden');
+  arrow.classList.toggle('collapsed');
+}
+
+// Start all collapsible sections closed
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.collapsible-content').forEach(content => {
+    content.classList.add('hidden');
+    content.previousElementSibling.querySelector('.collapsible-arrow').classList.add('collapsed');
+  });
+});
+
+</script>
+</body>
+</html>
