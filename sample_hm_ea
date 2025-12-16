@@ -1,0 +1,114 @@
+<!--Current as of 16-DEC-2025-->
+    
+<!--This section is for webpage styling-->
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sample Heavy Metal Elemetal Analysis (HM EA) Data Entry
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F7F2EE;
+  color: #312417;
+}
+
+/*collapsible section styling*/
+.collapsible-section {
+  border: 2px solid #d8cbb5;
+  border-radius: 6px;
+  margin: 15px 0;
+  padding: 0;
+  background-color: #fff;
+}
+.collapsible-header {
+  background-color: #f0e3cc;
+  padding: 12px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  border-radius: 4px 4px 0 0;
+}
+.collapsible-header:hover {
+  background-color: #d8cbb5;
+}
+.collapsible-arrow {
+  font-size: 14px;
+  transition: transform 0.3s;
+}
+.collapsible-arrow.collapsed {
+  transform: rotate(-90deg);
+}
+.collapsible-content {
+  padding: 15px;
+  display: grid;
+  gap: 10px;
+}
+.collapsible-content.hidden {
+  display: none;
+}
+
+/*static/box section styling*/
+.static-section {
+  border: 2px solid #d8cbb5;
+  border-radius: 6px;
+  margin: 15px 0;
+  padding: 0;
+  background-color: #fff;
+}
+.static-header {
+  background-color: #f0e3cc;
+  padding: 12px 15px;
+  font-weight: bold;
+  border-radius: 4px 4px 0 0;
+}
+.static-content {
+  padding: 15px;
+  display: grid;
+  gap: 10px;
+}
+</style>
+</head>
+<body>
+
+<form id="f" style="max-width:650px;margin:24px auto;display:grid;gap:10px">
+  <h1 style="text-align: center; font-size: 32px; margin-bottom: 15px;">SDB Horizon Entry Form</h1>
+
+  <div id="statusMessage"></div>
+
+<!--references for creating boxes- good to copy/paste-->
+
+<!--STATIC BOX
+<div class="static-section">
+    <div class="static-header">
+        <span>NAME</span>
+    </div>
+    <div class="static-content">
+        FIELDS
+    </div>
+</div>
+-->
+
+<!-- COLLAPSABLE BOX
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>NAME</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        FIELDS
+    </div>
+</div>
+-->
+
+<!--this is where the form actually begins-->
+
+<!--Catagory: Sample Heavy Metal Elemental Analysis Identifying Informatiom-->
+
+
+
+<!--Catagory: HM EA Elements and Quantities-->
+
