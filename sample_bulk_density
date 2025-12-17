@@ -108,15 +108,131 @@ body {
 
 <!--Catagory: Sample Bulk Density Identifying Informatiom-->
 
+<div class="static-section">
+    <div class="static-header">
+        <span>Catagory: Sample Bulk Density Identifying Information</span>
+    </div>
+    <div class="static-content">
+        <label>SDB sample ID
+            <input name="sdb_smiid_ref" type="text" required>
+        </label>
 
+        <label>SDB Sample Bulk Measurement Method
+            <input name="db_method" type="text" required>
+        </label>
+
+        <label>Bulk density measurement rep
+            <input name="db_rep" type="number" required>
+        </label>
+
+        <label>SDB sample bulk density measurement ID
+            <input name="sdb_dbiid" type="text" required>
+        </label>
+
+        <label>Entry date
+            <input name="db_entry_dts" type="dts" required>
+        </label>
+    </div>
+</div>
 
 <!--Catagory: Ring Method-->
 
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: Ring Method</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>Volume (cm3)
+            <input name="db_ring_vol" type="number">
+        </label>
 
+        <label>Sample wet weight (g)
+            <input name="db_ring_wet_wt" type="number">
+        </label>
+
+        <label>Sample dry weight (g)
+            <input name="db_ring_dry_wt" type="number">
+        </label>
+
+        <label>Water weight (same as volume) (g)
+            <input name="db_ring_water_wt" type="number">
+        </label>
+
+        <label>Bulk density (g/cm3)
+            <input name="db_ring" type="number">
+        </label>
+
+        <label>Ring method notes
+            <input name="db_ring_note" type="number">
+        </label>
+    </div>
+</div>
 
 <!--Catagory: Compliant Cavity Method-->
 
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: Compliant Cavity Method</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>Volume (cm3)
+            <input name="db_compcav_vol" type="number">
+        </label>
 
+        <label>Sample wet weight (g)
+            <input name="db_compcav_wet_wt" type="number">
+        </label>
+
+        <label>Sample dry weight (g)
+            <input name="db_compcav_dry_wt" type="number">
+        </label>
+
+        <label>Water weight (same as volume) (g)
+            <input name="db_compcav_water_wt" type="number">
+        </label>
+
+        <label>Bulk density (g/cm3)
+            <input name="db_compcav" type="number">
+        </label>
+
+        <label>Compliant cavity method notes
+            <input name="db_compcav_note" type="number">
+        </label>
+    </div>
+</div>
 
 <!--Catagory: Soil Core Method-->
 
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: Ring Method</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>Volume (cm3)
+            <input name="db_ring_vol" type="number">
+        </label>
+
+        <label>Sample wet weight (g)
+            <input name="db_ring_wet_wt" type="number">
+        </label>
+
+        <label>Sample dry weight (g)
+            <input name="db_ring_dry_wt" type="number">
+        </label>
+
+        <label>Water weight (same as volume) (g)
+            <input name="db_ring_water_wt" type="number">
+        </label>
+
+        <label>Bulk density (g/cm3)
+            <input name="db_ring" type="number">
+        </label>
+
+        <label>Ring method notes
+            <input name="db_ring_note" type="number">
+        </label>
+    </div>
+</div>

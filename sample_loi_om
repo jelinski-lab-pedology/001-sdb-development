@@ -106,13 +106,80 @@ body {
 
 <!--this is where the form actually begins-->
 
-<!--Catagory: Sample LOI OM Identifying Informatiom-->
+<!--Catagory: Sample LOI OM Identifying Information-->
 
+<div class="static-section">
+    <div class="static-header">
+        <span>Catagory: Sample LOI OM Identifying Information</span>
+    </div>
+    <div class="static-content">
+        <label>SDB sample ID
+            <input name="sdb_smiid_ref" type="text" required>
+        </label>
+
+        <label>SDB Sample LOI OM ID
+            <input name="sdb_loiomiid" type="text" required>
+        </label>
+
+        <label>Entry date
+            <input name="loiom_entry_dts" type="dts" required>
+        </label>
+    </div>
+</div>
 
 
 <!--Catagory: LOI Measurements-->
 
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: LOI Measurements</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>Oven-dry crucible weight (g)
+            <input name="loi_premuff_cruic_wt" type="number">
+        </label>
 
+        <label>Air-dried soil and crucible weight (g)
+            <input name="loi_premuff_cruic_wt" type="number">
+        </label>
+
+        <label>Air-dried soil weight (g)
+            <input name="loi_premuff_cruic_wt" type="number">
+        </label>
+
+        <label>Muffled soil and crucible weight (g)
+            <input name="loi_muff_cruicsoil_wt" type="number">
+        </label>
+
+        <label>Muffled soil weight (g)
+            <input name="loi_muff_soil_wt" type="number">
+        </label>
+
+        <label>Moisture correction ID
+            <input name="sdb_loiommciid_ref" type="text">
+        </label>
+
+        <label>Moisture correction
+            <input name="loimc_ref" type="number">
+        </label>
+
+        <label>Soil organic matter percentage
+            <input name="loi_som" type="number">
+        </label>
+    </div>
+</div>
 
 <!--Catagory: Notes-->
 
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: Notes</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>LOI Notes
+            <input name="loiom_note" type="text">
+        </label>
+    </div>
+</div>

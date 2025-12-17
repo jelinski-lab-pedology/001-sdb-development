@@ -108,7 +108,185 @@ body {
 
 <!--Catagory: Sample Heavy Metal Elemental Analysis Identifying Informatiom-->
 
+<div class="static-section">
+    <div class="static-header">
+        <span>Heavy Metal Elemental Analysis Sample Identifying Information</span>
+    </div>
+    <div class="static-content">
+        <label>SDB Sample ID
+            <input name="sdb_smiid_ref" type="text" required>
+        </label>
 
+        <label>SDB HM EA ID
+            <input name="sdb_hmeaiid" type="text" required>
+        </label>
+
+        <label>Entry date
+            <input name="hmea_entry_dts" type="dts" required>
+        </label>
+    </div>
+</div>
 
 <!--Catagory: HM EA Elements and Quantities-->
 
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: HM EA Elements and Quantites</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content"> 
+
+        <label>Lead ppm
+            <input name="hm_ea_pb" type="number">
+        </label>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Other elements</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+
+                <label>Aluminum ppm
+                    <input name="hm_ea_al" type="number">
+                </label>
+
+                <label>Silicon ppm
+                    <input name="hm_ea_si" type="number">
+                </label>
+
+                <label>Phosphorous ppm
+                    <input name="hm_ea_p" type="number">
+                </label>
+
+                <label>Sulfur ppm
+                    <input name="hm_ea_s" type="number">
+                </label>
+
+                <label>Chlorine ppm
+                    <input name="hm_ea_cl" type="number">
+                </label>
+
+                <label>Potassium ppm
+                    <input name="hm_ea_k" type="number">
+                </label>
+
+                <label>Calcium ppm
+                    <input name="hm_ea_ca" type="number">
+                </label>
+
+                <label>Titanium ppm
+                    <input name="hm_ea_ti" type="number">
+                </label>
+
+                <label>Vanadium ppm
+                    <input name="hm_ea_v" type="number">
+                </label>
+
+                <label>Chromium ppm
+                    <input name="hm_ea_cr" type="number">
+                </label>
+
+                <label>Manganese ppm
+                    <input name="hm_ea_mn" type="number">
+                </label>
+
+                <label>Iron ppm
+                    <input name="hm_ea_fe" type="number">
+                </label>
+
+                <label>Cobalt ppm
+                    <input name="hm_ea_co" type="number">
+                </label>
+
+                <label>Nitrogen ppm
+                    <input name="hm_ea_n" type="number">
+                </label>
+
+                <label>Nickle ppm
+                    <input name="hm_ea_ni" type="number">
+                </label>
+
+                <label>Copper ppm
+                    <input name="hm_ea_cu" type="number">
+                </label>
+
+                <label>Zinc ppm
+                    <input name="hm_ea_zn" type="number">
+                </label>
+
+                <label>Arsenic ppm
+                    <input name="hm_ea_as" type="number">
+                </label>
+
+                <label>Selenium ppm
+                    <input name="hm_ea_se" type="number">
+                </label>
+
+                <label>Rubidium ppm
+                    <input name="hm_ea_rb" type="number">
+                </label>
+
+                <label>Strontium ppm
+                    <input name="hm_ea_sr" type="number">
+                </label>
+
+                <label>Yttrium ppm
+                    <input name="hm_ea_y" type="number">
+                </label>
+
+                <label>Zicronium ppm
+                    <input name="hm_ea_zr" type="number">
+                </label>
+
+                <label>Molybdenum ppm
+                    <input name="hm_ea_mo" type="number">
+                </label>
+
+                <label>Siver ppm
+                    <input name="hm_ea_ag" type="number">
+                </label>
+
+                <label>Cadmium ppm
+                    <input name="hm_ea_cd" type="number">
+                </label>
+
+                <label>Tin ppm
+                    <input name="hm_ea_sn" type="number">
+                </label>
+
+                <label>Antimony ppm
+                    <input name="hm_ea_sb" type="number">
+                </label>
+
+                <label>Hafnium ppm
+                    <input name="hm_ea_hf" type="number">
+                </label>
+
+                <label>Tungsten ppm
+                    <input name="hm_ea_w" type="number">
+                </label>
+
+                <label>Mercury ppm
+                    <input name="hm_ea_hg" type="number">
+                </label>
+
+                <label>Bismuth ppm
+                    <input name="hm_ea_bi" type="number">
+                </label>
+
+                <label>Thorium ppm
+                    <input name="hm_ea_th" type="number">
+                </label>
+
+                <label>Uranium ppm
+                    <input name="hm_ea_u" type="number">
+                </label>
+
+                <label>Lanthanum ppm
+                    <input name="hm_ea_le" type="number">
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

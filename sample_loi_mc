@@ -108,11 +108,69 @@ body {
 
 <!--Catagory: Sample LOI Moisture Correction Identifying Informatiom-->
 
+<div class="static-section">
+    <div class="static-header">
+        <span>Loss on Ignition Moisture Correction Sample Identifying Information</span>
+    </div>
+    <div class="static-content">
+        <label>SDB LOI OM ID
+            <input name="sdb_loiomiid_ref" type="text" required>
+        </label>
 
+        <label>SDB Sample LOI OM Moisture Correction ID
+            <input name="sdb_loiommciid" type="text" required>
+        </label>
+
+        <label>Entry date
+            <input name="loiommc_entry_dts" type="dts" required>
+        </label>
+    </div>
+</div>
 
 <!--Catagory: Moisture Correction Measurements-->
 
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: Moisture Correction Measurements</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>Oven-dry crucible weight (g)
+            <input name="loimc_od_cruic_wt" type="number">
+        </label>
 
+        <label>Air-dried soil and crucible weight (g)
+            <input name="loimc_cruicsoil_wt" type="number">
+        </label>
+
+        <label>Air-dried soil weight (g)
+            <input name="loimc_soil_wt" type="number">
+        </label>
+
+        <label>24-hour oven-dried soil and crucible weight (g)
+            <input name="loimc_od_cruicsoil_wt" type="number">
+        </label>
+
+        <label>24-hour oven dried soil weight (g)
+            <input name="loimc_od_soil_wt" type="number">
+        </label>
+
+        <label>Moisture correction (decimal)
+            <input name="loimc" type="number">
+        </label>
+    </div>
+</div>
 
 <!--Catagory: Notes-->
 
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: Notes</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>LOI MC Notes
+            <input name="loimc_note" type="text">
+        </label>
+    </div>
+</div>

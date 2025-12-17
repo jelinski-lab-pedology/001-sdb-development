@@ -108,22 +108,279 @@ body {
 
 <!--Catagory: Sample Textural Analysis Identifying Informatiom-->
 
+<div class="static-section">
+    <div class="static-header">
+        <span>Catagory: Sample Textural Analysis Identifying Information</span>
+    </div>
+    <div class="static-content">
+        <label>SDB sample ID
+            <input name="sdb_smiid_ref" type="text" required>
+        </label>
 
+        <label>Texture Analysis Method
+            <input name="tx_method" type="text" required>
+        </label>
+
+        <label>Texture measurement rep
+            <input name="tx_rep" type="number" required>
+        </label>
+
+        <label>SDB Texture Analysis ID
+            <input name="sdb_txiid" type="text" required>
+        </label>
+
+        <label>Entry date
+            <input name="tx_entry_dts" type="dts" required>
+        </label>
+    </div>
+</div>
 
 <!--Catagory: Laser Particle Size Analysis (LPSA)-->
 
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Laser Particle Size Analysis</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+       <label>LPSA File
+        <input name="labtx_lpsa_file" type="checkbox">
+       </label>
 
+       <label>VCOS%
+        <input name="labtx_lpsa_vcos" type="number">
+       </label>
+    
+       <label>COS%
+        <input name="labtx_lpsa_cos" type="number">
+       </label>    
+    
+        <label>S%
+        <input name="labtx_lpsa_s" type="number">
+       </label>   
+    
+        <label>FS%
+        <input name="labtx_lpsa_fs" type="number">
+       </label>   
+    
+       <label>VFS%
+        <input name="labtx_lpsa_vfs" type="number">
+       </label>    
+    
+        <label>COSi%
+        <input name="labtx_lpsa_cosi" type="number">
+       </label>   
+    
+       <label>FSi%
+        <input name="labtx_lpsa_fsi" type="number">
+       </label>    
+    
+       <label>C%
+        <input name="labtx_lpsa_c" type="number">
+       </label>    
+    
+       <label>LPSA notes
+        <input name="labtx_lpsa_note" type="text">
+       </label>    
+    </div>
+</div>
 
 <!--Catagory: General Sample Information Needed for Calculations-->
 
+<div class="static-section">
+    <div class="static-header">
+        <span>Catagory: General Sample Information Needed for Calculations</span>
+    </div>
+    <div class="static-content">
+        <label>Temperature at time of measurement
+            <input name="tx_temp" type="number">
+        </label>
 
+        <label>Whole sample weight (g)
+            <input name="tx_sm_wt" type="number"> 
+        </label>
+    </div>
+</div>
 
 <!--Catagory: Hydrometer-->
 
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: Hydrometer</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>Hydrometer temperature correction
+            <input name="labtx_hydm_tempcorr" type="number">
+        </label>
 
+        <label>S%
+            <input name="labtx_hydm_s" type="number">
+        </label>
+
+        <label>Si%
+            <input name="labtx_hydm_si" type="number">
+        </label>
+
+        <label>C%
+            <input name="labtx_hydm_c" type="number">
+        </label>
+
+        <label>Hydrometer notes
+            <input name="labtx_hydm_note" type="text">
+        </label>   
+    </div>
+</div>
 
 <!--Catagory: Wet Sieving-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>NAME</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+ 
+        <label>VCOS tin weight (g)
+            <input name="labtx_wetsiv_tin_1" type="number">
+        </label>
 
+        <label>Oven-dry VCOS and tin weight (g)
+            <input name="labtx_wetsiv_vcos_tin" type="number">
+        </label>
+       
+        <label>VCOS weight (g)
+            <input name="labtx_wetsiv_vcos_wt" type="number">
+        </label>
+ 
+        <label>VCOS%
+            <input name="labtx_wetsiv_vcos" type="number">
+        </label>
+    
+        <label>COS tin weight (g)
+            <input name="labtx_wetsiv_tin_2" type="number">
+        </label>
 
+        <label>Oven-dry COS and tin weight (g)
+            <input name="labtx_wetsiv_cos_tin" type="number">
+        </label>
+       
+        <label>COS weight (g)
+            <input name="labtx_wetsiv_cos_wt" type="number">
+        </label>
+ 
+        <label>COS%
+            <input name="labtx_wetsiv_cos" type="number">
+        </label>
+
+        <label>S tin weight (g)
+            <input name="labtx_wetsiv_tin_3" type="number">
+        </label>
+
+        <label>Oven-dry S and tin weight (g)
+         <input name="labtx_wetsiv_s_tin" type="number">
+        </label>
+       
+        <label>S weight (g)
+            <input name="labtx_wetsiv_s_wt" type="number">
+        </label>
+ 
+        <label>S%
+            <input name="labtx_wetsiv_s" type="number">
+        </label>
+
+        <label>FS tin weight (g)
+            <input name="labtx_wetsiv_tin_4" type="number">
+        </label>
+
+        <label>Oven-dry VCOS and tin weight (g)
+            <input name="labtx_wetsiv_fs_tin" type="number">
+        </label>
+       
+        <label>FS weight (g)
+            <input name="labtx_wetsiv_fs_wt" type="number">
+        </label>
+ 
+        <label>FS%
+            <input name="labtx_wetsiv_fs" type="number">
+        </label>
+
+        <label>VFS tin weight (g)
+            <input name="labtx_wetsiv_tin_5" type="number">
+        </label>
+
+        <label>Oven-dry VFS and tin weight (g)
+            <input name="labtx_wetsiv_vfs_tin" type="number">
+        </label>
+       
+        <label>VFS weight (g)
+            <input name="labtx_wetsiv_vfs_wt" type="number">
+        </label>
+ 
+        <label>VFS%
+            <input name="labtx_wetsiv_vfs" type="number">
+        </label>
+    </div>
+</div>
 
 <!--Catagory: Pipette-->
+
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: Pipette</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>Pipette coarse silt/first reading oven-dry tin weight (g)
+            <input name="labtx_pip_tinod_1" type="number">
+        </label>
+
+        <label>Tin and coarse silt oven-dry weight (g)
+            <input name="labtx_pip_cosi_tinod" type="number">
+        </label>
+
+        <label>Coarse silt weight (g)
+            <input name="labtx_pip_cosi_wt" type="number">
+        </label>
+
+        <label>Coarse silt %
+            <input name="labtx_pip_cosi_pct" type="number">
+        </label>
+
+        <label>Pipette fine silt/second reading oven-dry tin weight (g)
+            <input name="labtx_pip_tinod_2" type="number">
+        </label>
+
+        <label>Tin and fine silt oven-dry weight (g)
+            <input name="labtx_pip_fsi_tinod" type="number">
+        </label>
+
+        <label>Fine silt weight (g)
+            <input name="labtx_pip_fsi_wt" type="number">
+        </label>
+
+        <label>Fine silt %
+            <input name="labtx_pip_fsi_pct" type="number">
+        </label>
+
+        <label>Pipette clay/third reading oven-dry tin weight (g)
+            <input name="labtx_pip_tinod_3" type="number">
+        </label>
+
+        <label>Tin and clay oven-dry weight (g)
+            <input name="labtx_pip_c_tinod" type="number">
+        </label>
+
+        <label>Clay weight (g)
+            <input name="labtx_pip_c_wt" type="number">
+        </label>
+
+        <label>Clay %
+            <input name="labtx_pip_c_pct" type="number">
+        </label>
+
+
+        <label>Pipette notes
+            <input name="labtx_pip_note" type="text">
+        </label>   
+    </div>
+</div>

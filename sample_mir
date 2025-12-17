@@ -106,9 +106,65 @@ body {
 
 <!--this is where the form actually begins-->
 
-<!--Catagory: Sample MIR Identifying Informatiom-->
+<!--Catagory: MIR Sample Identifying Information-->
 
+<div class="static-section">
+    <div class="static-header">
+        <span>MIR Sample Identifying Information</span>
+    </div>
+    <div class="static-content">
+        <label>SDB Sample ID
+            <input name="sdb_smiid_ref" type="text" required>
+        </label>
 
+        <label>SDB Sample ID
+            <input name="sdb_miriid" type="text" required>
+        </label>
+
+        <label>Entry date
+            <input name="mir_entry_dts" type="dts" required>
+        </label>
+    </div>
+</div>
 
 <!--Catagory: MIR Spectra Documentation-->
 
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: MIR Spectra Documentation</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content"> 
+        <label>MIR Spectral File 1
+            <input name="mir_spectra_1" type="checkbox">
+        </label>
+
+        <label>MIR Scan 1 Notes
+            <input name="mir_note_1" type="text">
+        </label>
+
+        <label>MIR Spectral File 2
+            <input name="mir_spectra_2" type="checkbox">
+        </label>
+
+        <label>MIR Scan 2 Notes
+            <input name="mir_note_2" type="text">
+        </label>
+
+        <label>MIR Spectral File 3
+            <input name="mir_spectra_3" type="checkbox">
+        </label>
+
+        <label>MIR Scan 3 Notes
+            <input name="mir_note_3" type="text">
+        </label>
+
+        <label>MIR Spectral File 4
+            <input name="mir_spectra_4" type="checkbox">
+        </label>
+
+        <label>MIR Scan 4 Notes
+            <input name="mir_note_4" type="text">
+        </label>
+    </div>
+</div>
