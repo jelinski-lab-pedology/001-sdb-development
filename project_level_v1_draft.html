@@ -198,7 +198,7 @@ document.getElementById('f').addEventListener('submit', async (e)=>{
   fd.forEach((v,k)=> body[k]=v||null);
   
   try {
-    const r = await fetch(API + "/pedons", { 
+    const r = await fetch(API + "/projects", { 
       method:'POST', 
       headers:{'content-type':'application/json'}, 
       body: JSON.stringify(body) 
@@ -211,7 +211,7 @@ document.getElementById('f').addEventListener('submit', async (e)=>{
     try {
       const json = JSON.parse(responseText);
       if (json.ok) {
-        outEl.textContent = "✓ SUCCESS: Pedon saved! ID: " + json.sdb_peiid;
+        outEl.textContent = "✓ SUCCESS: Project saved! ID: " + json.sdb_projiid;
         outEl.style.color = "green";
       } else {
         outEl.textContent = "✗ ERROR: " + json.error;
