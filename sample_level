@@ -281,182 +281,182 @@ body {
 
   <!--Ring Method-->
 
-<label>
-  <input name="" type="number">
+<label>Ring method bulk density (g/cm3)
+  <input name="db_ring" type="number">
 </label>
 
-<label>
-  <input name="" type="text">
+<label>Ring method bulk density notes
+  <input name="db_ring_note" type="text">
 </label>
 
   <!--Compliant Cavity Method-->
 
-<label>
-  <input name="" type="number">
+<label>Compliant cavity bulk density (g/cm3)
+  <input name="db_compcav" type="number">
 </label>
 
-<label>
-  <input name="" type="text">
+<label>Compliant cavity bulk density notes
+  <input name="db_compcav_note" type="text">
 </label>
 
   <!--Soil Core Method-->
 
-<label>
-  <input name="" type="number">
+<label>Soil core bulk density (g/cm3)
+  <input name="db_core" type="number">
 </label>
 
-<label>
-  <input name="" type="text">
+<label>Soil core bulk density notes
+  <input name="db_core_note" type="text">
 </label>
 
 <!--Catagory: pH, EC, LOI-->
 
   <!--pH-->
 
-<label>
-  <input name="" type="number">
+<label>Lab pH
+  <input name="lab_ph" type="number">
 </label>
 
-<label>
-  <input name="" type="text">
+<label>Lab pH notes
+  <input name="lab_ph_note" type="text">
 </label>
 
   <!--Electrical Conductivity-->
 
-<label>
-  <input name="" type="number">
+<label>Electrical Conductivity (us, microsiemens)
+  <input name="lab_ec" type="number">
 </label>
 
-<label>
-  <input name="" type="text">
+<label>Electrical Conductivity notes
+  <input name="lab_ec_note" type="text">
 </label>
 
   <!--LOI-->
 
-<label>
-  <input name="" type="number">
+<label>LOI organic matter (%)
+  <input name="loi_om_pct" type="number">
 </label>
 
-<label>
-  <input name="" type="text">
+<label>LOI notes
+  <input name="loi_note" type="text">
 </label>
 
 <!--Catagory: MIR-->
 
-<label>
-  <input name="" type="">
+<label>MIR spectral file 1
+  <input name="mir_spectra_1" type="checkbox">
 </label>
 
-<label>
-  <input name="" type="">
+<label>MIR 1 notes
+  <input name="mir_note_1" type="text">
 </label>
 
-<label>
-  <input name="" type="">
+<label>MIR spectral file 2
+  <input name="mir_spectra_2" type="checkbox">
 </label>
 
-<label>
-  <input name="" type="">
+<label>MIR 2 notes
+  <input name="mir_note_2" type="text">
 </label>
 
-<label>
-  <input name="" type="">
+<label>MIR spectral file 3
+  <input name="mir_spectra_3" type="checkbox">
 </label>
 
-<label>
-  <input name="" type="">
+<label>MIR 3 notes
+  <input name="mir_note_3" type="text">
 </label>
 
-<label>
-  <input name="" type="">
+<label>MIR spectral file 4
+  <input name="mir_spectra_4" type="checkbox">
 </label>
 
-<label>
-  <input name="" type="">
+<label>MIR 4 notes
+  <input name="mir_note_4" type="text">
 </label>
 
 <!--Catagory: Internal Elemental Analyses (PXRF, XRF, etc.)-->
 
   <!--PXRF-->
 
-<label>
-  <input name="" type="">
+<label>PXRF scan file
+  <input name="pxrf_scan" type="checkbox">
 </label>
 
-<label>
-  <input name="" type="">
+<label>PXRF notes
+  <input name="pxrf_note" type="text">
 </label>
 
   <!--XRF-->
 
-<label>
-  <input name="" type="">
+<label>XRF scan file
+  <input name="xrf_scan" type="checkbox">
 </label>
 
-<label>
-  <input name="" type="">
+<label>XRF notes
+  <input name="xrf_note" type="text">
 </label>
 
 <!--Catagory: External Analyses-->
 
   <!--MVTL-->
 
-<label>
-  <input name="" type="">
+<label>MVTL measured total C (%)
+  <input name="mvtl_totc" type="number">
 </label>
 
-<label>
-  <input name="" type="">
+<label>MVTL measured inorganic C (%)
+  <input name="mvtl_inorgc" type="number">
 </label>
 
-<label>
-  <input name="" type="">
+<label>MVTL measured organic C (%)
+  <input name="mvtl_orgc" type="number">    <!--calculated-->
 </label>
 
-<label>
-  <input name="" type="">
+<label>MVTL measured P (Bray)
+  <input name="mvtl_pbray" type="number">
 </label>
 
-<label>
-  <input name="" type="">
+<label>MVTL measured P (Olsen)
+  <input name="mvtl_polsen" type="number">
 </label>
 
-<label>
-  <input name="" type="">
+<label>MVTL measured K
+  <input name="mvtl_k" type="number">
 </label>
 
   <!--Agvise-->
 
-<label>
-  <input name="" type="">
+<label>Agvise measured pH
+  <input name="agvise_ph" type="number">
 </label>
 
-<label>
-  <input name="" type="">
+<label>Agvise measured EC (us, microsiemens)
+  <input name="agvise_ec" type="number">
 </label>
 
-<label>
-  <input name="" type="">
+<label>Agvise measured total C (%)
+  <input name="agvise_totc" type="number">
 </label>
 
-<label>
-  <input name="" type="">
+<label>Agvise measured inorganic C (%)
+  <input name="agvise_inorgc" type="number">
 </label>
 
-<label>
-  <input name="" type="">
+<label>Agvise measured organic C (%)
+  <input name="agvise_orgc" type="number">  <!--calculated-->
 </label>
 
 <!--Catagory: Lowland Conifer Specific-->
 
-<label>
-  <input name="" type="">
+<label>Fiber percent
+  <input name="fiber_pct" type="number">
 </label>
 
-<label>
-  <input name="" type="">
+<label>Pryophosphate extraction color     <!--controlled vocabulary-->
+  <input name="pyro_col" type="text">
 </label>
 
-<label>
-  <input name="" type="">
+<label>Pryophosphate extraction notes
+  <input name="pyro_col_note" type="text">
 </label>

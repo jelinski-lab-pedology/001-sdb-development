@@ -118,11 +118,11 @@ body {
         </label>
 
         <label>SDB Sample LOI OM ID
-            <input name="sdb_loiomiid" type="text" required>
+            <input name="sdb_loiiid" type="text" required>
         </label>
 
         <label>Entry date
-            <input name="loiom_entry_dts" type="dts" required>
+            <input name="loi_entry_dts" type="dts" required>
         </label>
     </div>
 </div>
