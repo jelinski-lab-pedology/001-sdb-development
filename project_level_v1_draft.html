@@ -188,7 +188,6 @@ body {
   <pre id="out"></pre>
 </form>
 <script>
-
 const API = "https://673mmzj2a6.execute-api.us-east-2.amazonaws.com/prod";
 document.getElementById('f').addEventListener('submit', async (e)=>{
   e.preventDefault();
@@ -208,7 +207,7 @@ document.getElementById('f').addEventListener('submit', async (e)=>{
     const responseText = await r.text();
     outEl.textContent = responseText;
     
-    // Try to parse and show prettier message
+    // Try to parse and show more communactive messages
     try {
       const json = JSON.parse(responseText);
       if (json.ok) {
@@ -227,8 +226,6 @@ document.getElementById('f').addEventListener('submit', async (e)=>{
     outEl.style.color = "red";
   }
 });
-
-
 
 // Function to toggle collapsible sections
 function toggleSection(header) {
