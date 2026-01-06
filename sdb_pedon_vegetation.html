@@ -187,7 +187,7 @@ document.getElementById('f').addEventListener('submit', async (e)=>{
     try {
       const json = JSON.parse(responseText);
       if (json.ok) {
-        outEl.textContent = "✓ SUCCESS: Pedon saved! ID: " + json.sdb_peiid;
+        outEl.textContent = "✓ SUCCESS: Vegetation entry saved! ID: " + json.sdb_vegiid;
         outEl.style.color = "green";
       } else {
         outEl.textContent = "✗ ERROR: " + json.error;
@@ -202,8 +202,6 @@ document.getElementById('f').addEventListener('submit', async (e)=>{
     outEl.style.color = "red";
   }
 });
-
-*/
 
 // Function to toggle collapsible sections
 function toggleSection(header) {
