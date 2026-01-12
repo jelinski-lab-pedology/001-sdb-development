@@ -1,0 +1,63 @@
+# SDB metadata ideas draft
+
+last modified: 12JAN2026, ALM
+
+## potential changes to how metadata works for this project:
+
+### bird's-eye/whole SDB level:
+
+I'm considering changing the structure of metadata for SDB, with a metadata document describing the overall architecture of the database. this would focus on the database a large, and wouldn't include translations of sdb field names and other terms. Covered information within this metadata should include:
+- authors, modification dates
+- intended audience for database use
+- overall database architecture
+- how tables within the database connect to eachother/flow together
+- data flow, from html, through lamda and gateway, to aws
+    + rationale behind this setup
+
+#### html specific guidance
+
+- basic guide to data entry
+    + rationale behind html creation
+- some statement along the lines of "this is how the html forms are generally organized", with further elaboration within sub-metadata documents
+- best practices for modification/creation
+    + when additions to existing tables vs. entirely new tables and html entry forms are appropriate
+- process for linking csv controlled vocabs to html
+    + when csv controlled vocab vs html controlled vocab was used
+- process for making controlled vocab from previous entries (ex: limiting options for projiid in pedon form based on entries in project form for projiid)
+- relevant code that's commonly used in form creation (annotate code?)
+    + dropdowns
+    + section boxes
+    + field creation
+    + controlled vocab
+    + form formatting
+    + form submission button
+
+#### lamda specific guidance
+
+- lamda structure
+- gateway guidance
+- naming schema
+- example code
+    + with annotation
+
+#### sql/aws specific guidance
+
+- table creation example code
+    + guidance on what specific sections mean
+    + examples(?)
+
+### table-level metadata:
+
+To better organize metadata information, and make the volume of information provided more managable/human-readable, threre should be additional sub-metadata documents diving deeper into each level/table's structure. These sub-metadata documents should include:
+- authors, modification dates
+- information on field codes in aws, their full names/discriptor, as well as their correlating html human-readable/displayed field name. (link to .csv file with informatuion from sdb_development doc?)
+- references to protocols for specific lab data elements (link to protocol ebook?)
+    + this provides more information on specific datapoints (describing **how** data, especially lab data, was collected). This could be beneficial for publishing purposes, and makes data more reproducable.
+- relevant calculations, where they're located (html vs aws/sql)
+- more deatail describing how html code is organized
+    + specific sub-sections, sub-sub-sections, etc. 
+    + rationale for splits
+    + guides for additions in the future
+
+### **Additionally, but its own page in the ebook:**
+- a standardized metadata formatting template so metadata for tables within sdb can be unified
