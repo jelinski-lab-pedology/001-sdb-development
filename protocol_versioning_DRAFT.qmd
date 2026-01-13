@@ -1,0 +1,75 @@
+# Protocol versioning ideas draft
+
+Last modified: 13JAN2026
+
+## Protocol versioning system: semantic versioning
+
+Semantic versioning is a 3-part version number:
+- major.minor.patch (ex: 2.1.3)
+
+It context of protocol creation and updates:
+
+#### Major
+
+The creation of a protocol, or anything that significantly changes how a procedure is executed
+- creating a protocol
+- translating a protocol from one format to another (print to markdown/ebook)
+- adding steps
+- reworking step order
+
+#### Minor
+
+Adding (or replacing) information to aid in protocol clarity
+- adding or replacing photos/videos
+- adding notes to already existent steps
+
+#### Patch
+
+Very minor edits that do not change the information provided within the protocol at large
+- fixing typos
+- editing spacing
+- resizing photos
+- reqording small sections to improve readability
+
+## Protocol Standardization
+
+### Protocols generally serve to:
+
+- Provide enough information to get started executing a protocol accurately when training is not available
+    + photos, videos showing/explaining specific steps help a lot with this
+- Be an aid/supplemental information for those getting trained on a specific procedure
+- explain (and cite):
+    + what the procedure does (how it works, to some extent)
+    + why it's performed/useful
+    + where the procedure comes from (external or within the lab)
+- describe potential errors (human or machine), and how to troubleshoot them
+- be clear, concise, and easily understandable
+- generally: help create solid, repeatable science
+
+### Each protocol within our lab needs:
+
+1. standardized name and version number
+2. photos and/or screenshots and/or videos
+3. citations/credit for:
+    + protocol's origin
+    + authos, contributors, editors
+    + information describing how the procedure works
+    + information on why the procedure is useful/performed
+4. A standardized order of information
+
+## Standardized order of information within each protocol:
+
+### Introduction
+
+### Timeline (if multi-day)
+
+### Procedure
+
+#### Descriptive/in-depth procedure
+
+#### Abbreviated procedure (do not worry about yet)
+
+### Calculations/exporting process
+
+### Equipment maintanance/troubleshooting
+
