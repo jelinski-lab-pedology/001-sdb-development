@@ -198,7 +198,7 @@ document.getElementById('f').addEventListener('submit', async (e)=>{
   fd.forEach((v,k)=> body[k]=v||null);
   
   try {
-    const r = await fetch(API + "/projects", { 
+    const r = await fetch(API + "/project_gateway", { 
       method:'POST', 
       headers:{'content-type':'application/json'}, 
       body: JSON.stringify(body) 
