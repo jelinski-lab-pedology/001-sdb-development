@@ -1,0 +1,1 @@
+Information on the project as a whole, it's structure (data flow, table connections, and general data model), purpose, and general explainations will be included here. This information will be stored in a .qmd format, and included in the ebook.

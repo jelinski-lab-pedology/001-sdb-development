@@ -1,0 +1,8 @@
+This folder will hold entities/csv files, and table level metadata. In further deatail, this will hold:
+
+- data dictionaries including:
+    + field/column level data
+        - each level gets its own .csv file
+    + overall information to be included will be sent by Nic
+
+Information stored here must be in a machine-readable format.

@@ -1,0 +1,3 @@
+This folder will include every controlled vocabulary csv file.
+
+Information stored here must be in a machine-readable format.

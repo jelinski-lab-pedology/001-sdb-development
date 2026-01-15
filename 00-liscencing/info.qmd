@@ -1,0 +1,3 @@
+This folder will hold liscences to code, documents, and project-level data within our Github repository.
+
+Information stored here must be in a machine-readable format.
