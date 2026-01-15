@@ -50,6 +50,7 @@ Very minor edits that do not change the information provided within the protocol
 
 1. standardized name and version number
 2. photos and/or screenshots and/or videos
+    + videos stored on Nic's youtube page
 3. citations/credit for:
     + protocol's origin
     + authos, contributors, editors
