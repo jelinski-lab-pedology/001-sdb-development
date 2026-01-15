@@ -61,15 +61,62 @@ Very minor edits that do not change the information provided within the protocol
 
 ### Introduction
 
+- what the protocol measures (citations)
+- why that information is important (cite)
+This is a breif section, just meant to give people a breif background on what they're doing and why they're doing it. Citations are helpful here, as they can assist in writing the methods section when publishing manuscripts. 
+
 ### Timeline (if multi-day)
+
+- quick overview of the time commitment of the procedure (if multi-day)
+
+This is another breif section, and quickly communicates the time commitment this procedure requires. This section should be included for multi-day procedures. Time estimates do not have to be exact, but should be fairly accurate.
+
+#### Ex. Ball Milling:
+
+- Day 1: Prepping samples to dry, and placing them in the oven (1 hr)
+- Day 2: (24 hours later), removing samples from the oven, then ball milling them (~15-20 minutes/pair, ~6-8 pairs/hr).
+
+### Equipment and Materials
+
+This is akin to the ingredients section of a recipe.
+- Link to standard data sheet used to record data
+- List all equipment used, in order of use (seperated by day)
+    + if using ovens, specify teperature the oven should be at. If using the shaker, specify the speed it should be at.
+    + denote where unique/uncommon equipment is located
+    + include photos, as needed.
+- list all materials needed to run the procedure, in order of use (seperated by day)
+    + include location of specific materials, if needed
+    + add photos of specialized materials
+    + include weights of materials as needed
 
 ### Procedure
 
+There should be two verions of this section for more complex procedures. The primary version to focus on is an in-depth protocol, with a seconday abbriviated protocol. When writing protocols, just focus on the in-depth version.
+
 #### Descriptive/in-depth procedure
+
+Lab personell come and go- and often take valuable information on how to perform specific analyses with them. To reduce knowledge loss, we must create a protocol that can provide enough information to allow someone to accurately perform the procedure **without training**. 
+
+Steps should be deatailed, descriptive, and clear, without being overwhelming. Photos, videos, and screenshots are highly encouraged. Our goal is to communicate effectively- without overloading the reader with information. Troubleshooting notes should be included as well- we're looking to create guardrails to prevent missteps in the future.
+
+Lastly- avoid creating long, dense (paragraph-length) steps. Include callouts, lists, photos, and videos. We want to be engaging- long blocks of text can lead people to miss important bits of information. Always opt to split steps instead of lumping them together.
 
 #### Abbreviated procedure (do not worry about yet)
 
+Abbreviated procedures will be used as supplemental material to those being trained on the protocol, and a quick reference guide to those familiar with its steps. They will be created by parring down the in-depth procedure to its most essential steps. 
+
 ### Calculations/exporting process
 
+Any steps needed to finish analysis, move data to be processed, or used to actually get results should be put here, including:
+- calculations, with clear labeling of variables (ex: LOI, Db, etc.)
+- exporting process, with screenshots and deatailed description of what areas to click/what different export options mean (LPSA, MIR, etc.)
+
 ### Equipment maintanance/troubleshooting
+
+Information on what needs to be replaced or exchanged, and how frequently that needs to happen. Additionally, who to contact if a machine stops working, and how to respond to errors in a way that doesn't damage the equipment further.
+
+Examples:
+- changing dessicant on MIR
+- replacing pH calibration fluids
+- how to respond to spilling sample in the MIR
 
