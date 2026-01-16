@@ -1,0 +1,26 @@
+-- Drop and recreate the LOI tables with correct foreign keys
+
+DROP TABLE IF EXISTS sample_loi_om CASCADE;
+DROP TABLE IF EXISTS sample_loi_mc CASCADE;
+
+-- SAMPLE_LOI_OM TABLE (corrected)
+CREATE TABLE sample_loi_om (
+    sdb_smiid_ref VARCHAR(255) NOT NULL,
+    sdb_loiomiid VARCHAR(255),
+    loiom_entry_dts TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (sdb_loiomiid),
+    FOREIGN KEY (sdb_smiid_ref) REFERENCES sample(sdb_smiid) ON DELETE CASCADE
+);
+
+-- SAMPLE_LOI_MC TABLE (corrected)
+CREATE TABLE sample_loi_mc (
+    sdb_smiid_ref VARCHAR(255) NOT NULL,
+    sdb_loimciid VARCHAR(255),
+    loimc_entry_dts TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (sdb_loimciid),
+    FOREIGN KEY (sdb_smiid_ref) REFERENCES sample(sdb_smiid) ON DELETE CASCADE
+);
+
+-- Add indexes
+CREATE INDEX idx_sample_loi_om_smiid ON sample_loi_om(sdb_smiid_ref);
+CREATE INDEX idx_sample_loi_mc_smiid ON sample_loi_mc(sdb_smiid_ref);
