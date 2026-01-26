@@ -77,15 +77,13 @@ body {
 <form id="f" style="max-width:650px;margin:24px auto;display:grid;gap:10px">
   <h1 style="text-align: center; font-size: 32px; margin-bottom: 15px;">Pedon Entry Form</h1>
 
-<!--STATIC
+<!--STATIC- use for required sections
 <div class="static-section">
     <div class="static-header">
-        <span>Pedon depth</span>
+        <span>NAME</span>
     </div>
     <div class="static-content">
-
-        </label>
-        </label>
+FIELDS
     </div>
 </div>
 -->
@@ -98,14 +96,12 @@ body {
     </div>
     <div class="collapsible-content">
         FIELDS
-        </label>
     </div>
 </div>
 -->
 
 
 <!--catagory: pedon identifiers-->
-
 <div class="static-section"> 
     <div class="static-header">
         <span>Catagory: Pedon Identifiers</span>
@@ -138,7 +134,6 @@ body {
 </div> 
 
 <!--catagory: pedon location-->
-
 <div class="static-section">
     <div class="static-header">
         <span>Catagory: Pedon Location</span>
@@ -155,7 +150,7 @@ body {
         <label> Geospatial data quality     <!--only 1-5-->
         <input name="geosp_dataq" type="number">
         </label>
-
+<!--subsection: us-specific location information-->
     <div class="collapsible-section">
         <div class="collapsible-header" onclick="toggleSection(this)">
             <span>US-specific location information</span>
@@ -192,7 +187,7 @@ body {
             </label>
         </div>
     </div>
-
+<!--subsection: transect-specific information-->
     <div class="collapsible-section">
         <div class="collapsible-header" onclick="toggleSection(this)">
             <span>Transect-specific information</span>
@@ -219,9 +214,7 @@ body {
     </div>
 </div>
 
-
 <!--catagory: depth information-->
-
 <div class="static-section">
     <div class="static-header">
         <span>Catagory: Pedon Depth</span>
@@ -246,9 +239,7 @@ body {
     </div>
 </div>
 
-
 <!--catagory: photos/videos-->
-
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
         <span>Catagory: Photos and Videos</span>
@@ -275,7 +266,6 @@ body {
 </div>
 
 <!--catagory: landscape/landform-->
-
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
         <span>Catagory: Landscape and Landform</span>
@@ -338,7 +328,6 @@ body {
 </div>
 
 <!--catagory: soil water-->
-
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
         <span>Catagory: Soil Water</span>
@@ -357,6 +346,7 @@ body {
             <input name="hydstat" type="checkbox" value="true">
         </label>
     </div>
+<!--subsection: moisture status-->
         <div class="collapsible-section">
             <div class="collapsible-header" onclick="toggleSection(this)">
                 <span>Moisture status</span>
@@ -382,6 +372,7 @@ body {
                         </label>
                     </div>
                 </div>
+    <!--secondary subsection: moisture status 2-->
             <div class="collapsible-section">
                 <div class="collapsible-header" onclick="toggleSection(this)">
                     <span>Moisture status 2</span>
@@ -401,8 +392,9 @@ body {
                     </label>
                 </div>
             </div>
-            </div>
         </div>
+    </div>
+<!--subsection: surface water-->
     <div class="collapsible-section">
         <div class="collapsible-header" onclick="toggleSection(this)">
             <span>Surface water</span>
@@ -421,183 +413,195 @@ body {
 </div>
 
 <!--catagory: parent material-->
-div class="collapsible-section">
+<div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: Parent Material</span>
+        <span>Catagory: Parent Material(s)</span>
         <span class="collapsible-arrow">▼</span>
     </div>
-    <div class="collapsible-content">
+        <div class="collapsible-content">
+            <label>Parent material 1 kind
+                <input name="pm_kind_1" type="text">
+            </label>
 
-        <div class="collapsible-section">
-            <div class="collapsible-header" onclick="toggleSection(this)">
-                <span>Parent material 1</span>
-                <span class="collapsible-arrow">▼</span>
-            </div>
-            <div class="collapsible-content">
-                <label>Parent material 1 kind
-                    <input name="pm_kind_1" type="text">
-                </label>
+            <label>Parent material 1 top depth
+                <input name="pm_dept_1" type="number">
+            </label>
 
-                <label>Parent material 1 top depth
-                    <input name="pm_dept_1" type="number">
-                </label>
+            <label>Parent material 1 bottom depth
+                <input name="pm_depb_1" type="number">
+            </label>
 
-                <label>Parent material 1 bottom depth
-                    <input name="pm_depb_1" type="number">
-                </label>
+            <label>Parent material 1 texture modifier
+                <input name="pm_mod_1" type="text">
+            </label>
+        </div>
+    <!--subsection: additional parent materials-->
+    <div class="collapsible-section">
+        <div class="collapsible-header" onclick="toggleSection(this)">
+            <span>Additional Parent Materials</span>
+            <span class="collapsible-arrow">▼</span>
+        </div>
+    <!--secondary subsection: parent material 2-->
+        <div class="collapsible-content">
+            <div class="static-section">
+                <div class="static-header">
+                    <span>Parent Material 2</span>
+                </div>
+                <div class="static-content">
+                    <label>Parent material 2 kind
+                        <input name="pm_kind_2" type="text">
+                    </label>
 
-                <label>Parent material 1 texture modifier
-                    <input name="pm_mod_1" type="text">
-                </label>
-            
-                <div class="collapsible-section">
-                    <div class="collapsible-header" onclick="toggleSection(this)">
-                        <span>Additional Parent Materials</span>
-                        <span class="collapsible-arrow">▼</span>
-                    </div>
-                    <div class="collapsible-content">
-                        <div class="static-section">
-                            <div class="static-header">
-                                <span>Parent Material 2</span>
-                            </div>
-                            <div class="static-content">
-                                <label>Parent material 2 kind
-                                    <input name="pm_kind_2" type="text">
-                                </label>
+                    <label>Parent material 2 top depth
+                        <input name="pm_dept_2" type="number">
+                    </label>
 
-                                <label>Parent material 2 top depth
-                                    <input name="pm_dept_2" type="number">
-                                </label>
+                    <label>Parent material 2 bottom depth
+                        <input name="pm_depb_2" type="number">
+                    </label>
 
-                                <label>Parent material 2 bottom depth
-                                    <input name="pm_depb_2" type="number">
-                                </label>
-
-                                <label>Parent material 2 texture modifier
-                                    <input name="pm_mod_2" type="text">
-                                </label>
-                            </div>
-                        </div>
-                        <div class="static-section">
-                            <div class="static-header">
-                                <span>Parent Material 3</span>
-                            </div>
-                            <div class="static-content">
-                                <label>Parent material 3 kind
-                                    <input name="pm_kind_3" type="text">
-                                </label>
-
-                                <label>Parent material 3 top depth
-                                    <input name="pm_dept_3" type="number">
-                                </label>
-
-                                <label>Parent material 3 bottom depth
-                                    <input name="pm_depb_3" type="number">
-                                </label>
-
-                                <label>Parent material 3 texture modifier
-                                    <input name="pm_mod_3" type="text">
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="static-section">
-                            <div class="static-header">
-                                <span>Parent material 4</span>
-                            </div>
-                            <div class="static-content">
-                                <label>Parent material 4 kind
-                                    <input name="pm_kind_4" type="text">
-                                </label>
-
-                                <label>Parent material 4 top depth
-                                    <input name="pm_dept_4" type="number">
-                                </label>
-
-                                <label>Parent material 4 bottom depth
-                                    <input name="pm_depb_4" type="number">
-                                </label>
-
-                                <label>Parent material 4 texture modifier
-                                    <input name="pm_mod_4" type="text">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+                    <label>Parent material 2 texture modifier
+                        <input name="pm_mod_2" type="text">
+                    </label>
                 </div>
             </div>
-        </div>       
-
-        <div class="collapsible-section">
-            <div class="collapsible-header" onclick="toggleSection(this)">
-                <span>Buried soils</span>
-                <span class="collapsible-arrow">▼</span>
+    <!--secondary subsection: parent material 3-->
+        <div class="static-section">
+            <div class="static-header">
+                <span>Parent Material 3</span>
             </div>
-            <div class="collapsible-content">
-                <label>Buried soil?
-                    <input name="buried_soil" type="checkbox" value="true">
+            <div class="static-content">
+                <label>Parent material 3 kind
+                    <input name="pm_kind_3" type="text">
                 </label>
 
-                <label>Surface mantal material
-                    <input name="surf_mantle" type="text">
+                <label>Parent material 3 top depth
+                    <input name="pm_dept_3" type="number">
+                </label>
+
+                <label>Parent material 3 bottom depth
+                    <input name="pm_depb_3" type="number">
+                </label>
+
+                <label>Parent material 3 texture modifier
+                    <input name="pm_mod_3" type="text">
                 </label>
             </div>
-        </div>        
-
-        <div class="collapsible-section">
-            <div class="collapsible-header" onclick="toggleSection(this)">
-                <span>Bedrock</span>
-                <span class="collapsible-arrow">▼</span>
+        </div>
+        <!--secondary subsection: parent material 4-->
+        <div class="static-section">
+            <div class="static-header">
+                <span>Parent material 4</span>
             </div>
-            <div class="collapsible-content">
-                <label>Bedrock kind
-                    <input name="bdrock_kind" type="text">
+            <div class="static-content">
+                <label>Parent material 4 kind
+                    <input name="pm_kind_4" type="text">
                 </label>
 
-                <label>Bedrock top depth (cm)
-                    <input name="bdrock_dept" type="number">
+                <label>Parent material 4 top depth
+                    <input name="pm_dept_4" type="number">
                 </label>
 
-                <label>Bedrock bottom depth (cm)
-                    <input name="bdrock_depb" type="number">
+                <label>Parent material 4 bottom depth
+                    <input name="pm_depb_4" type="number">
                 </label>
 
-                <label>Bedrock hardness
-                    <input name="bdrock_hard" type="text">
+                <label>Parent material 4 texture modifier
+                    <input name="pm_mod_4" type="text">
                 </label>
             </div>
         </div>
     </div>
 </div>
 
+<!--subsection: buried soils-->
+    <div class="collapsible-section">
+        <div class="collapsible-header" onclick="toggleSection(this)">
+            <span>Buried soils</span>
+            <span class="collapsible-arrow">▼</span>
+        </div>
+        <div class="collapsible-content">
+            <label>Buried soil?
+                <input name="buried_soil" type="checkbox" value="true">
+            </label>
+
+            <label>Surface mantal material
+                <input name="surf_mantle" type="text">
+            </label>
+        </div>
+    </div> 
+
+
+<!--subsection: bedrock-->
+    <div class="collapsible-section">
+        <div class="collapsible-header" onclick="toggleSection(this)">
+            <span>Bedrock</span>
+            <span class="collapsible-arrow">▼</span>
+        </div>
+        <div class="collapsible-content">
+            <label>Bedrock kind
+                <input name="bdrock_kind" type="text">
+            </label>
+
+            <label>Bedrock top depth (cm)
+                <input name="bdrock_dept" type="number">
+            </label>
+
+            <label>Bedrock bottom depth (cm)
+                <input name="bdrock_depb" type="number">
+            </label>
+
+            <label>Bedrock hardness
+                <input name="bdrock_hard" type="text">
+            </label>
+        </div>
+    </div>
+</div>
+
 <!--catagory: surface cover-->
-<label>Surface stoniness (%)        <!--restricted values (0-100)-->
-    <input name="surfston_pct" type="number">
-</label>
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: Surface Cover</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>Surface stoniness (%)        <!--restricted values (0-100)-->
+            <input name="surfston_pct" type="number">
+        </label>
 
-<label>Surface stoniness spacing (cm)
-    <input name="surfston_spc" type="number">
-</label>
+        <label>Surface stoniness spacing (cm)
+            <input name="surfston_spc" type="number">
+        </label>
 
-<label>Surface stoniness size
-    <input name="surfston_sz" type="number">
-</label>
+        <label>Surface stoniness size
+            <input name="surfston_sz" type="number">
+        </label>
 
-<label>Surface crust and cracks?
-    <input name="crust_crack" type="checkbox" value="true">
-</label>
+        <label>Surface crust and cracks?
+            <input name="crust_crack" type="checkbox" value="true">
+        </label>
 
-<label>Landcover kind 1              <!--controlled vocab-->
-    <input name="landcov_1" type="text">
-</label>
+        <label>Landcover kind 1              <!--controlled vocab-->
+            <input name="landcov_1" type="text">
+        </label>
 
-<label>Landcover kind 2              <!--controlled vocab-->
-    <input name="landcov_2" type="text">
-</label>
+        <label>Landcover kind 2              <!--controlled vocab-->
+            <input name="landcov_2" type="text">
+        </label>
+    </div>
+</div>
 
+<!--
+New page/header: soil classification
+-->
 
-<!--catagory: soil classification-->
-    <!--epipedon-->
+<!--Catagory: epipedon-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: Epipedon</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
     <label>Epipedon 1 type      <!--controlled vocab-->
             <input name="epi_type_1" type="text">
         </label>
@@ -609,32 +613,48 @@ div class="collapsible-section">
         <label>Epipedon 1 bottom depth
             <input name="epi_depb_1" type="number">
         </label>
+    </div>
+<!--subcatagory: additional epipedons-->
+    <div class="collapsible-section">
+        <div class="collapsible-header" onclick="toggleSection(this)">
+            <span>Additional Epipedons</span>
+            <span class="collapsible-arrow">▼</span>
+        </div>
+        <div class="collapsible-content">
+            <label>Epipedon 2 type      <!--controlled vocab-->
+                <input name="epi_type_2" type="text">
+            </label>
 
-    <label>Epipedon 2 type      <!--controlled vocab-->
-            <input name="epi_type_2" type="text">
-        </label>
+            <label>Epipedon 2 top depth
+                <input name="epi_dept_2" type="number">
+            </label>
 
-        <label>Epipedon 2 top depth
-            <input name="epi_dept_2" type="number">
-        </label>
+            <label>Epipedon 2 bottom depth
+                <input name="epi_depb_2" type="number">
+            </label>
+        
+            <label>Epipedon 3 type      <!--controlled vocab-->
+                <input name="epi_type_3" type="text">
+            </label>
 
-        <label>Epipedon 2 bottom depth
-            <input name="epi_depb_2" type="number">
-        </label>
-      
-    <label>Epipedon 3 type      <!--controlled vocab-->
-            <input name="epi_type_3" type="text">
-        </label>
+            <label>Epipedon 3 top depth
+                <input name="epi_dept_3" type="number">
+            </label>
 
-        <label>Epipedon 3 top depth
-            <input name="epi_dept_3" type="number">
-        </label>
-
-        <label>Epipedon 3 bottom depth
-            <input name="epi_depb_3" type="number">
-        </label>
+            <label>Epipedon 3 bottom depth
+                <input name="epi_depb_3" type="number">
+            </label>
+        </div>
+    </div>
+</div>
     
-    <!--diagnostic horizon(s)-->
+<!--Catagory: diagnostic horizon(s)-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: Diagnostic Horizon(s)</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
      <label>Diagnostic horizon 1 type    <!--controlled vocab-->
             <input name="diaghz_type_1" type="text">
         </label>                
@@ -646,57 +666,97 @@ div class="collapsible-section">
         <label>Diagnostic horizon 1 bottom depth (cm)
             <input name="diaghz_depb_1" type="number">
         </label>
+    </div>
+<!--subcatagory: additional diagnostic horizons-->    
+    <div class="collapsible-section">
+        <div class="collapsible-header" onclick="toggleSection(this)">
+            <span>Additional Diagnostic Horizons</span>
+            <span class="collapsible-arrow">▼</span>
+        </div>
+        <div class="collapsible-content">
+        <label>Diagnostic horizon 2 type     <!--controlled vocab-->
+                <input name="diaghz_type_2" type="text">
+            </label>                
 
-    <label>Diagnostic horizon 2 type     <!--controlled vocab-->
-            <input name="diaghz_type_2" type="text">
-        </label>                
+            <label>Diagnostic horizon 2 top depth (cm)
+                <input name="diaghz_dept_2" type="number">
+            </label>
 
-        <label>Diagnostic horizon 2 top depth (cm)
-            <input name="diaghz_dept_2" type="number">
-        </label>
+            <label>Diagnostic horizon 2 bottom depth (cm)
+                <input name="diaghz_depb_2" type="number">
+            </label>
+        </div>
+    <!--secondary subcatagory: diagnostic horizon 3-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Diagnostic Horizon 3</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+            <label>Diagnostic horizon 3 type     <!--controlled vocab-->
+                    <input name="diaghz_type_3" type="text">
+                </label>                
 
-        <label>Diagnostic horizon 2 bottom depth (cm)
-            <input name="diaghz_depb_2" type="number">
-        </label>
+                <label>Diagnostic horizon 3 top depth (cm)
+                    <input name="diaghz_dept_3" type="number">
+                </label>
 
-    <label>Diagnostic horizon 3 type     <!--controlled vocab-->
-            <input name="diaghz_type_3" type="text">
-        </label>                
+                <label>Diagnostic horizon 3 bottom depth (cm)
+                    <input name="diaghz_depb_3" type="number">
+                </label>
+            </div>
+        </div>       
+    <!--secondary subcatagory: diagnostic horizon 4-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Diagnostic Horizon 4</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+            <label>Diagnostic horizon 4 type     <!--controlled vocab-->
+                    <input name="diaghz_type_4" type="text">
+                </label>                
 
-        <label>Diagnostic horizon 3 top depth (cm)
-            <input name="diaghz_dept_3" type="number">
-        </label>
+                <label>Diagnostic horizon 4 top depth (cm)
+                    <input name="diaghz_dept_4" type="number">
+                </label>
 
-        <label>Diagnostic horizon 3 bottom depth (cm)
-            <input name="diaghz_depb_3" type="number">
-        </label>
+                <label>Diagnostic horizon 4 bottom depth (cm)
+                    <input name="diaghz_depb_4" type="number">
+                </label>
+            </div>
+        </div>
+    <!--secondary subcatagory: diagnostic horizon 5-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Diagnostic Horizon 5</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Diagnostic horizon 5 type     <!--controlled vocab-->
+                    <input name="diaghz_type_5" type="text">
+                </label>                
 
-    <label>Diagnostic horizon 4 type     <!--controlled vocab-->
-            <input name="diaghz_type_4" type="text">
-        </label>                
+                <label>Diagnostic horizon 5 top depth (cm)
+                    <input name="diaghz_dept_5" type="number">
+                </label>
 
-        <label>Diagnostic horizon 4 top depth (cm)
-            <input name="diaghz_dept_4" type="number">
-        </label>
+                <label>Diagnostic horizon 5 bottom depth (cm)
+                    <input name="diaghz_depb_5" type="number">
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
 
-        <label>Diagnostic horizon 4 bottom depth (cm)
-            <input name="diaghz_depb_4" type="number">
-        </label>
-
-    <label>Diagnostic horizon 5 type     <!--controlled vocab-->
-            <input name="diaghz_type_5" type="text">
-        </label>                
-
-        <label>Diagnostic horizon 5 top depth (cm)
-            <input name="diaghz_dept_5" type="number">
-        </label>
-
-        <label>Diagnostic horizon 5 bottom depth (cm)
-            <input name="diaghz_depb_5" type="number">
-        </label>
-
-    <!--subsurface features-->
-    <label>Subsurface feature 1 type    <!--controlled vocab-->
+<!--Catagory: subsurface features-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: Surface Features</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>Subsurface feature 1 type    <!--controlled vocab-->
             <input name="sbsft_type_1" type="text">
         </label>                
 
@@ -707,212 +767,322 @@ div class="collapsible-section">
         <label>Subsurface feature 1 bottom depth (cm)
             <input name="sbsft_depb_1" type="number">
         </label>
+    </div>
+<!--subsection: additional subsurface features-->
+    <div class="collapsible-section">
+        <div class="collapsible-header" onclick="toggleSection(this)">
+            <span>Additional Subsurface Features</span>
+            <span class="collapsible-arrow">▼</span>
+        </div>
+        <div class="collapsible-content">
+            <label>Subsurface feature 2 type    <!--controlled vocab-->
+                <input name="sbsft_type_2" type="text">
+            </label>                
 
-    <label>Subsurface feature 2 type    <!--controlled vocab-->
-            <input name="sbsft_type_2" type="text">
-        </label>                
+            <label>Subsurface feature 2 top depth (cm)
+                <input name="sbsft_dept_2" type="number">
+            </label>
 
-        <label>Subsurface feature 2 top depth (cm)
-            <input name="sbsft_dept_2" type="number">
+            <label>Subsurface feature 2 bottom depth (cm)
+                <input name="sbsft_depb_2" type="number">
+            </label>
+        </div>
+    <!--secondary subsection: subsurface feature 3-->   
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Subsurface Feature 3</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Subsurface feature 3 type    <!--controlled vocab-->
+                    <input name="sbsft_type_3" type="text">
+                </label>                
+
+                <label>Subsurface feature 3 top depth (cm)
+                    <input name="sbsft_dept_3" type="number">
+                </label>
+
+                <label>Subsurface feature 3 bottom depth (cm)
+                    <input name="sbsft_depb_3" type="number">
+                </label>
+            </div>
+        </div>
+    <!--secondary subsection: subsurface feature 4-->   
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Subsurface Feature 4</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Subsurface feature 4 type    <!--controlled vocab-->
+                    <input name="sbsft_type_4" type="text">
+                </label>                
+
+                <label>Subsurface feature 4 top depth (cm)
+                    <input name="sbsft_dept_4" type="number">
+                </label>
+
+                <label>Subsurface feature 4 bottom depth (cm)
+                    <input name="sbsft_depb_4" type="number">
+                </label>
+            </div>
+        </div>
+    <!--secondary subsection: subsurface feature 5-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Subsurface Feature 5</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Subsurface feature 5 type    <!--controlled vocab-->
+                    <input name="sbsft_type_5" type="text">
+                </label>                
+
+                <label>Subsurface feature 5 top depth (cm)
+                    <input name="sbsft_dept_5" type="number">
+                </label>
+
+                <label>Subsurface feature 5 bottom depth (cm)
+                    <input name="sbsft_depb_5" type="number">
+                </label>
+            </div>
+        </div>
+    <!--secondary subsection: subsurface feature 6-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Subsurface Feature 6</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Subsurface feature 6 type    <!--controlled vocab-->
+                    <input name="sbsft_type_6" type="text">
+                </label>                
+
+                <label>Subsurface feature 6 top depth (cm)
+                    <input name="sbsft_dept_6" type="number">
+                </label>
+
+                <label>Subsurface feature 6 bottom depth (cm)
+                    <input name="sbsft_depb_6" type="number">
+                </label>
+            </div>
+        </div>
+    <!--secondary subsection: subsurface feature 7-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Subsurface Feature 7</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Subsurface feature 7 type    <!--controlled vocab-->
+                    <input name="sbsft_type_7" type="text">
+                </label>                
+
+                <label>Subsurface feature 7 top depth (cm)
+                    <input name="sbsft_dept_7" type="number">
+                </label>
+
+                <label>Subsurface feature 7 bottom depth (cm)
+                    <input name="sbsft_depb_7" type="number">
+                </label>
+            </div>
+        </div>
+    <!--secondary subsection: subsurface feature 8-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Subsurface Feature 8</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Subsurface feature 8 type    <!--controlled vocab-->
+                    <input name="sbsft_type_8" type="text">
+                </label>                
+
+                <label>Subsurface feature 8 top depth (cm)
+                    <input name="sbsft_dept_8" type="number">
+                </label>
+
+                <label>Subsurface feature 8 bottom depth (cm)
+                    <input name="sbsft_depb_8" type="number">
+                </label>
+            </div>
+        </div>
+    <!--secondary subsection: subsurface feature 9-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Subsurface Feature 9</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Subsurface feature 9 type    <!--controlled vocab-->
+                    <input name="sbsft_type_9" type="text">
+                </label>                
+
+                <label>Subsurface feature 9 top depth (cm)
+                    <input name="sbsft_dept_9" type="number">
+                </label>
+
+                <label>Subsurface feature 9 bottom depth (cm)
+                    <input name="sbsft_depb_9" type="number">
+                </label>
+            </div>
+        </div>
+    <!--secondary subsection: subsurface feature 10-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Subsurface Feature 10</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Subsurface feature 10 type   <!--controlled vocab-->
+                    <input name="sbsft_type_10" type="text">
+                </label>                
+
+                <label>Subsurface feature 10 top depth (cm)
+                    <input name="sbsft_dept_10" type="number">
+                </label>
+
+                <label>Subsurface feature 10 bottom depth (cm)
+                    <input name="sbsft_depb_10" type="number">
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Catagory: taxonomy-->
+<div class="static-section">
+    <div class="static-header">
+        <span>Catagory: Taxonomy</span>
+    </div>
+    <div class="static-content">
+<!--subsection: field taxonomy-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Preliminary/Field Taxonomy</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Preliminary/field order  <!--controlled vocab-->
+                    <input name="prelimtax_order" type="text">
+                </label>
+
+                <label>Preliminary/field suborder   <!--controlled vocab-->
+                    <input name="prelimtax_suborder" type="text">
+                </label>
+
+                <label>Preliminary/field great group    <!--controlled vocab-->
+                    <input name="prelimtax_grtgrp" type="text">
+                </label>
+
+                <label>Preliminary/field subgroup   <!--controlled vocab-->
+                    <input name="prelimtax_sbgrp" type="text">
+                </label>
+
+                <label>Preliminary/field taxon family
+                    <input name="prelimtax_fam" type="text">
+                </label>
+
+                <label>Preliminary/field particle size control section top
+                    <input name="prelimtax_pscst" type="number">
+                </label>
+
+                <label>Preliminary/field particle size control section bottom
+                    <input name="prelimtax_pscsb" type="number">
+                </label>
+
+                <label>Preliminary/field family particle size class <!--controlled vocab-->
+                    <input name="prelimtax_fpsc" type="text">
+                </label>
+
+                <label>Preliminary/field full taxonomic name
+                    <input name="prelimtax_fullname" type="text">
+                </label>
+
+                <label>Preliminary/field series name
+                    <input name="prelimtax_srs" type="text">
+                </label>
+            </div>  
+        </div>
+    <!--subsection: final taxonomy--> 
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Finalized Taxonomy</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Final order  <!--controlled vocab-->
+                    <input name="finaltax_order" type="text">
+                </label>
+
+                <label>Final suborder   <!--controlled vocab-->
+                    <input name="finaltax_suborder" type="text">
+                </label>
+
+                <label>Final great group    <!--controlled vocab-->
+                    <input name="finaltax_grtgrp" type="text">
+                </label>
+
+                <label>Final subgroup   <!--controlled vocab-->
+                    <input name="finaltax_sbgrp" type="text">
+                </label>
+
+                <label>Final taxon family
+                    <input name="finaltax_fam" type="text">
+                </label>
+
+                <label>Final particle size control section top
+                    <input name="finaltax_pscst" type="number">
+                </label>
+
+                <label>Final particle size control section bottom
+                    <input name="finaltax_pscsb" type="number">
+                </label>
+
+                <label>Final family particle size class <!--controlled vocab-->
+                    <input name="finaltax_fpsc" type="text">
+                </label>
+
+                <label>Final full taxonomic name
+                    <input name="finaltax_fullname" type="text">
+                </label>
+
+                <label>Final series name
+                    <input name="finaltax_srs" type="text">
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Catagory: misc.-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Catagory: RUSI/Misc.</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>Rusi performed?
+            <input name="rusi_boolean" type="checkbox" value="true">
         </label>
 
-        <label>Subsurface feature 2 bottom depth (cm)
-            <input name="sbsft_depb_2" type="number">
+        <label>RUSI value
+            <input name="rusi_val_ref" type="number">
         </label>
-        
-    <label>Subsurface feature 3 type    <!--controlled vocab-->
-            <input name="sbsft_type_3" type="text">
-        </label>                
-
-        <label>Subsurface feature 3 top depth (cm)
-            <input name="sbsft_dept_3" type="number">
-        </label>
-
-        <label>Subsurface feature 3 bottom depth (cm)
-            <input name="sbsft_depb_3" type="number">
-        </label>
-
-    <label>Subsurface feature 4 type    <!--controlled vocab-->
-            <input name="sbsft_type_4" type="text">
-        </label>                
-
-        <label>Subsurface feature 4 top depth (cm)
-            <input name="sbsft_dept_4" type="number">
-        </label>
-
-        <label>Subsurface feature 4 bottom depth (cm)
-            <input name="sbsft_depb_4" type="number">
-        </label>
-
-    <label>Subsurface feature 5 type    <!--controlled vocab-->
-            <input name="sbsft_type_5" type="text">
-        </label>                
-
-        <label>Subsurface feature 5 top depth (cm)
-            <input name="sbsft_dept_5" type="number">
-        </label>
-
-        <label>Subsurface feature 5 bottom depth (cm)
-            <input name="sbsft_depb_5" type="number">
-        </label>
-
-    <label>Subsurface feature 6 type    <!--controlled vocab-->
-            <input name="sbsft_type_6" type="text">
-        </label>                
-
-        <label>Subsurface feature 6 top depth (cm)
-            <input name="sbsft_dept_6" type="number">
-        </label>
-
-        <label>Subsurface feature 6 bottom depth (cm)
-            <input name="sbsft_depb_6" type="number">
-        </label>
-
-    <label>Subsurface feature 7 type    <!--controlled vocab-->
-            <input name="sbsft_type_7" type="text">
-        </label>                
-
-        <label>Subsurface feature 7 top depth (cm)
-            <input name="sbsft_dept_7" type="number">
-        </label>
-
-        <label>Subsurface feature 7 bottom depth (cm)
-            <input name="sbsft_depb_7" type="number">
-        </label>
-
-    <label>Subsurface feature 8 type    <!--controlled vocab-->
-            <input name="sbsft_type_8" type="text">
-        </label>                
-
-        <label>Subsurface feature 8 top depth (cm)
-            <input name="sbsft_dept_8" type="number">
-        </label>
-
-        <label>Subsurface feature 8 bottom depth (cm)
-            <input name="sbsft_depb_8" type="number">
-        </label>
-
-    <label>Subsurface feature 9 type    <!--controlled vocab-->
-            <input name="sbsft_type_9" type="text">
-        </label>                
-
-        <label>Subsurface feature 9 top depth (cm)
-            <input name="sbsft_dept_9" type="number">
-        </label>
-
-        <label>Subsurface feature 9 bottom depth (cm)
-            <input name="sbsft_depb_9" type="number">
-        </label>
-
-    <label>Subsurface feature 10 type   <!--controlled vocab-->
-            <input name="sbsft_type_10" type="text">
-        </label>                
-
-        <label>Subsurface feature 10 top depth (cm)
-            <input name="sbsft_dept_10" type="number">
-        </label>
-
-        <label>Subsurface feature 10 bottom depth (cm)
-            <input name="sbsft_depb_10" type="number">
-        </label>
-
-
-<!--field taxonomy-->   
-    <label>Preliminary/field order  <!--controlled vocab-->
-        <input name="prelimtax_order" type="text">
-    </label>
-
-    <label>Preliminary/field suborder   <!--controlled vocab-->
-        <input name="prelimtax_suborder" type="text">
-    </label>
-
-    <label>Preliminary/field great group    <!--controlled vocab-->
-        <input name="prelimtax_grtgrp" type="text">
-    </label>
-
-    <label>Preliminary/field subgroup   <!--controlled vocab-->
-        <input name="prelimtax_sbgrp" type="text">
-    </label>
-
-    <label>Preliminary/field taxon family
-        <input name="prelimtax_fam" type="text">
-    </label>
-
-    <label>Preliminary/field particle size control section top
-        <input name="prelimtax_pscst" type="number">
-    </label>
-
-    <label>Preliminary/field particle size control section bottom
-        <input name="prelimtax_pscsb" type="number">
-    </label>
-
-    <label>Preliminary/field family particle size class <!--controlled vocab-->
-        <input name="prelimtax_fpsc" type="text">
-    </label>
-
-    <label>Preliminary/field full taxonomic name
-        <input name="prelimtax_fullname" type="text">
-    </label>
-
-    <label>Preliminary/field series name
-        <input name="prelimtax_srs" type="text">
-    </label>
-
-    <!--final taxonomy-->   
-    <label>Final order  <!--controlled vocab-->
-        <input name="finaltax_order" type="text">
-    </label>
-
-    <label>Final suborder   <!--controlled vocab-->
-        <input name="finaltax_suborder" type="text">
-    </label>
-
-    <label>Final great group    <!--controlled vocab-->
-        <input name="finaltax_grtgrp" type="text">
-    </label>
-
-    <label>Final subgroup   <!--controlled vocab-->
-        <input name="finaltax_sbgrp" type="text">
-    </label>
-
-    <label>Final taxon family
-        <input name="finaltax_fam" type="text">
-    </label>
-
-    <label>Final particle size control section top
-        <input name="finaltax_pscst" type="number">
-    </label>
-
-    <label>Final particle size control section bottom
-        <input name="finaltax_pscsb" type="number">
-    </label>
-
-    <label>Final family particle size class <!--controlled vocab-->
-        <input name="finaltax_fpsc" type="text">
-    </label>
-
-    <label>Final full taxonomic name
-        <input name="finaltax_fullname" type="text">
-    </label>
-
-    <label>Final series name
-        <input name="finaltax_srs" type="text">
-    </label>
-
-<!--catagory: misc.-->
-<label>Rusi performed?
-    <input name="rusi_boolean" type="checkbox" value="true">
-</label>
-
-<label>RUSI value
-    <input name="rusi_val_ref" type="number">
-</label>
+    </div>
+</div>
 
 <!--Pedon notes-->
-<label>Pedon notes
-    <input name="ped_notes" type="text">
-</label>
-
+<div class="static-section">
+    <div class="static-header">
+        <span>Pedon Notes</span>
+    </div>
+    <div class="static-content">
+        <label>Pedon notes
+            <input name="ped_notes" type="text">
+        </label>
+    </div>
+</div>
 
 <!--This is the save button at the end of the form, needs work-->
  
