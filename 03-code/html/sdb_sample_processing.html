@@ -89,98 +89,115 @@ body {
 
 <!--STATIC BOX
 <div class="static-section">
-    <div class="static-header">
-        <span>NAME</span>
-    </div>
-    <div class="static-content">
-        FIELDS
-    </div>
+  <div class="static-header">
+      <span>NAME</span>
+  </div>
+  <div class="static-content">
+      FIELDS
+  </div>
 </div>
 -->
 
 <!-- COLLAPSABLE BOX
 <div class="collapsible-section">
-    <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>NAME</span>
-        <span class="collapsible-arrow">▼</span>
-    </div>
-    <div class="collapsible-content">
-        FIELDS
-    </div>
+  <div class="collapsible-header" onclick="toggleSection(this)">
+    <span>NAME</span>
+    <span class="collapsible-arrow">▼</span>
+  </div>
+  <div class="collapsible-content">
+    FIELDS
+  </div>
 </div>
 -->
 
 <!--this is where the form actually begins-->
 
-<!--Catagory: Sample Processing Identifying Informatiom-->
+<!--Category: Sample Processing Identifying Information-->
+<div class="static-section">
+  <div class="static-header">
+    <span>Sample Processing Identifying Information</span>
+  </div>
+  <div class="static-content">
+    <label>SDB sample ID
+      <input name="sdb_smiid_ref" type="text" required>
+    </label>
 
-<label>SDB sample ID
-  <input name="sdb_smiid_ref" type="text" required>
-</label>
+    <label>SDB sample processing ID
+      <input name="sdb_smprociid" type="text" required>
+    </label>
 
-<label>SDB sample processing ID
-  <input name="sdb_smprociid" type="text" required>
-</label>
+    <label>entry date
+      <input name="smpro_entry_dts" type="dts" required>
+    </label>
+  </div>
+</div>
 
-<label>entry date
-  <input name="smpro_entry_dts" type="dts" required>
-</label>
+<!--Category: Sieving-->
+<div class="collapsible-section">
+  <div class="collapsible-header" onclick="toggleSection(this)">
+    <span>Sieving</span>
+    <span class="collapsible-arrow">▼</span>
+  </div>
+  <div class="collapsible-content">
+    <label>Bag weight (g)
+      <input name="wt_bag" type="number">
+    </label>
 
-<!--Catagory: Sieving-->
+    <label>Field moist weight of soil (with bag) (g)
+      <input name="wt_wet_bag" type="number">
+    </label>
 
-<label>Bag weight (g)
-  <input name="wt_bag" type="number">
-</label>
+    <label>Field moist weight of soil (no bag) (g)  <!--calculated-->
+      <input name="wt_wet" type="number">
+    </label>
 
-<label>Field moist weight of soil (with bag) (g)
-  <input name="wt_wet_bag" type="number">
-</label>
+    <label>Dry weight of soil (with bag) (g)
+      <input name="wt_dry_bag" type="number">
+    </label>
 
-<label>Field moist weight of soil (no bag) (g)  <!--calculated-->
-  <input name="wt_wet" type="number">
-</label>
+    <label>Dry weight of soil (no bag) (g)  <!--calculated-->
+      <input name="wt_dry" type="number">
+    </label>
 
-<label>Dry weight of soil (with bag) (g)
-  <input name="wt_dry_bag" type="number">
-</label>
+    <label>Weight of soil passed through 2mm sieve (g)
+      <input name="wt_fines" type="number">
+    </label>
 
-<label>Dry weight of soil (no bag) (g)  <!--calculated-->
-  <input name="wt_dry" type="number">
-</label>
+    <label>Sample water weight (g)    <!--calculated-->
+      <input name="wt_water" type="number">
+    </label>
 
-<label>Weight of soil passed through 2mm sieve (g)
-  <input name="wt_fines" type="number">
-</label>
+    <label>Sieving notes
+      <input name="sieve_notes" type="text">
+    </lable>  
+  </div>
+</div>
 
-<label>Sample water weight (g)    <!--calculated-->
-  <input name="wt_water" type="number">
-</label>
+<!--Category: Coarse Fragment Washing-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Coarse Fragment Washing</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+      <label>Total weight of washed CF (g)
+        <input name="wt_washcf" type="number">
+      </label>
 
-<label>Sieving notes
-  <input name="sieve_notes" type="text">
-</label>
+      <label>Weight of washed CF artifacts (g)
+        <input name="wt_washcf_artif" type="number">
+      </label>
 
-<label>
-  <input name="" type="">
-</label>
+      <label>CF washing notes
+        <input name="washcf_note" type="text">
+      </label>
 
-<!--Catagory: Coarse Fragment Washing-->
+      <label>CF washing artifact notes
+        <input name="washcf_artif_note" type="text">
+      </label>
+    </div>
+</div>
 
-<label>Total weight of washed CF (g)
-  <input name="wt_washcf" type="number">
-</label>
-
-<label>Weight of washed CF artifacts (g)
-  <input name="wt_washcf_artif" type="number">
-</label>
-
-<label>CF washing notes
-  <input name="washcf_note" type="text">
-</label>
-
-<label>CF washing artifact notes
-  <input name="washcf_artif_note" type="text">
-</label>
 
 <!--This is the save button at the end of the form, needs work-->
  

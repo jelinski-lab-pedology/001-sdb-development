@@ -107,57 +107,54 @@ body {
 <!--this is where the form actually begins-->
 
 
-<!--catagory: Vegetation entry identifiers-->
-
+<!--category: horizon entry identifiers-->
 <div class="static-section">
     <div class="static-header">
-        <span>Catagory: Horizon Entry Identifiers</span>
+        <span>Horizon Entry Identifiers</span>
     </div>
-    <div class="static-content"> 
+    <div class="static-content">
+        <label>SDB pedon ID
+            <input name="sdb_peiid_ref" required>
+        </label>
 
-                <label>SDB pedon ID
-                <input name="sdb_peiid_ref" required>
-                </label>
+        <label>Lab horizon ID
+            <input name="lab_hziid" required>
+        </label>
 
-                <label>Lab horizon ID
-                <input name="lab_hziid" required>
-                </label>
+        <label>SDB horizon ID
+            <input name="sdb_hziid_ref" required>
+        </label>
 
-                <label>SDB horizon ID
-                <input name="sdb_hziid_ref" required>
-                </label>
+        <label>Horizon top depth
+            <input name="hzdept" type="number">
+        </label>
 
-                <label>Horizon top depth
-                <input name="hzdept" type="number">
-                </label>
+        <label>Horizon bottom depth
+            <input name="hzdepb" type="number">
+        </label>
 
-                <label>Horizon bottom depth
-                <input name="hzdepb" type="number">
-                </label>
+        <label>Horizon bottom depth is incomplete, or ends in +
+            <input name="hz_plus_depb" type="checkbox">
+        </label>
 
-                <label>Horizon bottom depth is incomplete, or ends in +
-                <input name="hz_plus_depb" type="checkbox">
-                </label>
+        <label>Horizon name
+            <input name="hzname" required>
+        </label>
 
-                <label>Horizon name
-                <input name="hzname" required>
-                </label>
+        <label>SDB Horizon ID
+            <input name="sdb_hziid" required>
+        </label>
 
-                <label>SDB Horizon ID
-                <input name="sdb_hziid" required>
-                </label>
-
-                <!-- <label>Entry date -to be collected on backend- automatic hidden field
-                <input name="rusi_entry_dts" required>
-                </label> -->
+        <label>Entry date <!--to be collected on backend- automatic hidden field-->
+            <input name="rusi_entry_dts" required>
+        </label>
     </div>
 </div>
 
-<!--catagory: horizon description-->
-
+<!--category: horizon description-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: Horizon Description</span>
+        <span>Horizon Description</span>
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
@@ -175,12 +172,10 @@ body {
     </div>
 </div>
 
-
-<!--catagory: matrix color-->
-
+<!--category: matrix color-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: Matrix Color</span>
+        <span>Matrix Color</span>
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
@@ -190,8 +185,9 @@ body {
 
         <label>Horizon matrix color 1 (%)
             <input name="hz_col_pct_1" type="number">
-        
-                <label>Horizon matrix color 2
+        </label>
+
+        <label>Horizon matrix color 2
             <input name="hz_col_2"> <!--controlled vocab for all colors-->
         </label>
 
@@ -201,167 +197,147 @@ body {
     </div>
 </div>
 
-<!--catagory: texture and von post-->
-
+<!--category: texture and von post-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: Von Post and Texture</span>
+        <span>Texture and Von Post</span>
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
-            
-            <div class="collapsible-section">
-                <div class="collapsible-header" onclick="toggleSection(this)">
-                    <span>Von post</span>
-                    <span class="collapsible-arrow">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <label>Von post estimate
-                            <input name="field_vpost"> <!--controlled vocabulary-->
-                    </label>
-                    <label>Fiber estimate (%)
-                        <input name="field_fibr_pct" type="number">
-                    </label>
-                </div>
+    <!--subsection: von post-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Von Post</span>
+                <span class="collapsible-arrow">▼</span>
             </div>
-         
+            <div class="collapsible-content">
+                <label>Von post estimate
+                    <input name="field_vpost"> <!--controlled vocabulary-->
+                </label>
+
+                <label>Fiber estimate (%)
+                    <input name="field_fibr_pct" type="number">
+                </label>
+            </div>
+        </div>
+<!--subsection: texture-->
         <div class="collapsible-section">
             <div class="collapsible-header" onclick="toggleSection(this)">
                 <span>Texture</span>
                 <span class="collapsible-arrow">▼</span>
             </div>
             <div class="collapsible-content">
-                
+<!--texture 1-->
+                <label>Texture 1 class
+                    <input name="fieldtx_type_1" type="text"> <!--controlled vocabulary-->
+                </label>
+
+                <label>Texture 1 modifier
+                    <input name="fieldtx_mod_1" type="text"> <!--controlled vocabulary-->
+                </label>
+
+                <label>Texture 1 clay estimate (%)
+                    <input name="fieldtx_c_1" type="number"> <!--controlled vocabulary-->
+                </label>
+
+                <label>Texture 1 sand estimate (%)
+                    <input name="fieldtx_s_1" type="text"> <!--controlled vocabulary-->
+                </label>            
+
+                <label>Texture 1 silt estimate (%)
+                    <input name="fieldtx_si_1" type="number"> <!--calculated value (100-(s%+c%)-->
+                </label> 
+<!--secondary subsection: texture 2-->
                 <div class="collapsible-section">
                     <div class="collapsible-header" onclick="toggleSection(this)">
-                        <span>Texture 1</span>
+                        <span>Texture 2</span>
                         <span class="collapsible-arrow">▼</span>
                     </div>
                     <div class="collapsible-content">
-
-                        <label>Texture 1 class
-                            <input name="fieldtx_type_1" type="text"> <!--controlled vocabulary-->
+                        <label>Texture 2 class
+                            <input name="fieldtx_type_2" type="text"> <!--controlled vocabulary-->
                         </label>
 
-                        <label>Texture 1 modifier
-                            <input name="fieldtx_mod_1" type="text"> <!--controlled vocabulary-->
+                        <label>Texture 2 modifier
+                            <input name="fieldtx_mod_2" type="text"> <!--controlled vocabulary-->
                         </label>
 
-                        <label>Texture 1 clay estimate (%)
-                            <input name="fieldtx_c_1" type="number"> <!--controlled vocabulary-->
+                        <label>Texture 2 clay estimate (%)
+                            <input name="fieldtx_c_2" type="number"> <!--controlled vocabulary-->
                         </label>
 
-                        <label>Texture 1 sand estimate (%)
-                            <input name="fieldtx_s_1" type="text"> <!--controlled vocabulary-->
+                        <label>Texture 2 sand estimate (%)
+                            <input name="fieldtx_s_2" type="text"> <!--controlled vocabulary-->
                         </label>            
 
-                        <label>Texture 1 silt estimate (%)
-                            <input name="fieldtx_si_1" type="number"> <!--calculated value (100-(s%+c%)-->
-                        </label>  
-
+                        <label>Texture 2 silt estimate (%)
+                            <input name="fieldtx_si_2" type="number"> <!--calculated value (100-(s%+c%)-->
+                        </label> 
                     </div>
-                </div>
-                
-            <div class="collapsible-section">
-                <div class="collapsible-header" onclick="toggleSection(this)">
-                    <span>Texture 2</span>
-                    <span class="collapsible-arrow">▼</span>
-                </div>
-                <div class="collapsible-content">
-
-                    <label>Texture 2 class
-                        <input name="fieldtx_type_2" type="text"> <!--controlled vocabulary-->
-                    </label>
-
-                    <label>Texture 2 modifier
-                        <input name="fieldtx_mod_2" type="text"> <!--controlled vocabulary-->
-                    </label>
-
-                    <label>Texture 2 clay estimate (%)
-                        <input name="fieldtx_c_2" type="number"> <!--controlled vocabulary-->
-                    </label>
-
-                    <label>Texture 2 sand estimate (%)
-                        <input name="fieldtx_s_2" type="text"> <!--controlled vocabulary-->
-                    </label>            
-
-                    <label>Texture 2 silt estimate (%)
-                        <input name="fieldtx_si_2" type="number"> <!--calculated value (100-(s%+c%)-->
-                    </label> 
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<!--Category: Coarse Fragments-->
 
-<!--Catagory: Coarse Fragments-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: Coarse Fragments</span>
+        <span>Coarse Fragments</span>
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
+<!--coarse fragment 1-->
+        <label>Coarse fragment 1 estimate (%)
+            <input name="frag_pct_1" type="number">
 
+        <label>Coarse fragment 1 minimum size (cm)
+            <input name="frag_szrmin_1" type="number">
+        </label>
+
+        <label>Coarse fragment 1 maximum size (cm)
+            <input name="frag_szrmax_1" type="number">
+        </label>
+
+        <label>Coarse fragment 1 type <!--controlled vocabulary-->
+            <input name="frag_type_1" type="text">
+        </label>
+
+        <label>Coarse fragment 1 roundness <!--controlled vocabulary-->
+            <input name="frag_rnd_1" type="text">
+        </label>
+
+        <label>Coarse fragment 1 rock material <!--controlled vocabulary-->
+            <input name="frag_kind_1" type="text">
+        </label>
+<!--subsection: coarse fragment 2-->
         <div class="collapsible-section">
             <div class="collapsible-header" onclick="toggleSection(this)">
-                <span>Coarse fragment entry 1</span>
+                <span>Coarse Fragment 2</span>
                 <span class="collapsible-arrow">▼</span>
             </div>
             <div class="collapsible-content">
-
-                <label>Coarse fragment entry 1 estimate (%)
-                    <input name="frag_pct_1" type="number">
-
-                <label>Coarse fragment entry 1 minimum size (cm)
-                    <input name="frag_szrmin_1" type="number">
-                </label>
-
-                <label>Coarse fragment entry 1 maximum size (cm)
-                    <input name="frag_szrmax_1" type="number">
-                </label>
-
-                <label>Coarse fragment entry 1 type <!--controlled vocabulary-->
-                    <input name="frag_type_1" type="text">
-                </label>
-
-                <label>Coarse fragment entry 1 roundness <!--controlled vocabulary-->
-                    <input name="frag_rnd_1" type="text">
-                </label>
-
-                <label>Coarse fragment entry 1 rock material <!--controlled vocabulary-->
-                    <input name="frag_kind_1" type="text">
-                </label>
-            </div>
-        </div>
-
-        <div class="collapsible-section">
-            <div class="collapsible-header" onclick="toggleSection(this)">
-                <span>Coarse fragment entry 1</span>
-                <span class="collapsible-arrow">▼</span>
-            </div>
-            <div class="collapsible-content">
-
-                <label>Coarse fragment entry 2 estimate (%)
+                <label>Coarse fragment 2 estimate (%)
                     <input name="frag_pct_2" type="number">
 
-                <label>Coarse fragment entry 2 minimum size (cm)
+                <label>Coarse fragment 2 minimum size (cm)
                     <input name="frag_szrmin_2" type="number">
                 </label>
 
-                <label>Coarse fragment entry 2 maximum size (cm)
+                <label>Coarse fragment 2 maximum size (cm)
                     <input name="frag_szrmax_2" type="number">
                 </label>
 
-                <label>Coarse fragment entry 2 type <!--controlled vocabulary-->
+                <label>Coarse fragment 2 type <!--controlled vocabulary-->
                     <input name="frag_type_2" type="text">
                 </label>
 
-                <label>Coarse fragment entry 2 roundness <!--controlled vocabulary-->
+                <label>Coarse fragment 2 roundness <!--controlled vocabulary-->
                     <input name="frag_rnd_2" type="text">
                 </label>
 
-                <label>Coarse fragment entry 2 rock material <!--controlled vocabulary-->
+                <label>Coarse fragment 2 rock material <!--controlled vocabulary-->
                     <input name="frag_kind_2" type="text">
                 </label>
             </div>
@@ -369,45 +345,52 @@ body {
     </div>
 </div>
 
-<!--Catagory: Structure-->
+<!--category: Structure-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: Structure</span>
+        <span>Structure</span>
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
-        
-        <label>Strucutre type
+<!--primary structure-->
+        <label>Primary strucutre type
             <input name="strut_kind_1" type="text"> <!--controlled vocab-->
         </label>
 
-        <label>Strucutre grade
+        <label>Primary strucutre grade
             <input name="strut_grad_1" type="number"> <!--controlled range-->
         </label>
 
-        <label>Strucutre size
+        <label>Primary strucutre size
             <input name="strut_sz_1" type="text"> <!--controlled vocab-->
         </label>
+<!--subsection: parting structure-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Parting Structure</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Parting strucutre type
+                    <input name="strut_kind_2" type="text"> <!--controlled vocab-->
+                </label>
 
-        <label>Parting strucutre type
-            <input name="strut_kind_2" type="text"> <!--controlled vocab-->
-        </label>
+                <label>Parting strucutre grade
+                    <input name="strut_grad_2" type="number"> <!--controlled range-->
+                </label>
 
-        <label>Parting strucutre grade
-            <input name="strut_grad_2" type="number"> <!--controlled range-->
-        </label>
-
-        <label>Parting strucutre size
-            <input name="strut_sz_2" type="text"> <!--controlled vocab-->
-        </label>
+                <label>Parting strucutre size
+                    <input name="strut_sz_2" type="text"> <!--controlled vocab-->
+                </label>
+            </div>
+        </div>
     </div>
 </div>
 
-<!--Catagory: Misc.-->
-
+<!--category: Misc.-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: Misc.</span>
+        <span>Misc.</span>
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
@@ -425,59 +408,51 @@ body {
     </div>
 </div>
 
-<!--Catagory: Features-->
-
+<!--category: Features-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: Features</span>
+        <span>Features</span>
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
-    </div>
+    <!--subsection: redox features (Fe, Mn)-->
         <div class="collapsible-section">
             <div class="collapsible-header" onclick="toggleSection(this)">
-                <span>Redox Features</span>
+                <span>Redox Features (Fe, Mn)</span>
                 <span class="collapsible-arrow">▼</span>
             </div>
             <div class="collapsible-content">
+    <!--redox feature 1 (Fe, Mn)-->
+                <label>Redox 1 kind        <!--controlled vocab-->
+                    <input name="redox_kind_1" type="text">
+                </label>
+
+                <label>Redox 1 estimate (%)  <!--restricted range-->
+                    <input name="redox_pct_1" type="number">
+                </label>
+
+                <label>Redox 1 size       <!--restricted range-->
+                    <input name="redox_sz_1" type="number">
+                </label>
+
+                <label>Redox 1 contrast        <!--controlled vocab-->
+                    <input name="redox_contr_1" type="text">
+                </label>
+
+                <label>Redox 1 color  <!--controlled vocabulary-->
+                    <input name="redox_col_1" type="text">
+                </label>
+
+                <label>Redox 1 location       <!--controleld vocabulary-->
+                    <input name="redox_loc_1" type="text">
+                </label>
+        <!--secondary subsection: redox feature 2 (Fe, Mn)-->
                 <div class="collapsible-section">
                     <div class="collapsible-header" onclick="toggleSection(this)">
-                        <span>Redox Feature (Fe, Mn) 1</span>
+                        <span>Redox Feature 2 (Fe, Mn)</span>
                         <span class="collapsible-arrow">▼</span>
                     </div>
                     <div class="collapsible-content">
-                        <label>Redox kind        <!--controlled vocab-->
-                            <input name="redox_kind_1" type="text">
-                        </label>
-
-                        <label>Redox estimate (%)  <!--restricted range-->
-                            <input name="redox_pct_1" type="number">
-                        </label>
-
-                        <label>Redox size       <!--restricted range-->
-                            <input name="redox_sz_1" type="number">
-                        </label>
-
-                        <label>Redox contrast        <!--controlled vocab-->
-                            <input name="redox_contr_1" type="text">
-                        </label>
-
-                        <label>Redox color  <!--controlled vocabulary-->
-                            <input name="redox_col_1" type="text">
-                        </label>
-
-                        <label>Redox location       <!--controleld vocabulary-->
-                            <input name="redox_loc_1" type="text">
-                        </label>
-                    </div>
-                </div>
-
-            <div class="collapsible-section">
-                <div class="collapsible-header" onclick="toggleSection(this)">
-                    <span>Redox (Fe, Mn) Feature 2</span>
-                    <span class="collapsible-arrow">▼</span>
-                </div>
-                <div class="collapsible-content">
                         <label>Redox kind        <!--controlled vocab-->
                             <input name="redox_kind_2" type="text">
                         </label>
@@ -501,143 +476,164 @@ body {
                         <label>Redox location       <!--controleld vocabulary-->
                             <input name="redox_loc_2" type="text">
                         </label>
+                    </div>
                 </div>
             </div>
-            </div>
         </div>
-
-<div class="collapsible-section">
+<!--subsection: ped and void surface features (PVSF)-->
+        <div class="collapsible-section">
             <div class="collapsible-header" onclick="toggleSection(this)">
-                <span>Ped and Void Surface Features</span>
+                <span>Ped and Void Surface Features (PVSF)</span>
                 <span class="collapsible-arrow">▼</span>
             </div>
             <div class="collapsible-content">
+<!--pvsf 1-->
+                <label>PVSF 1 kind        <!--controlled vocab-->
+                    <input name="pvsf_kind_1" type="text">
+                </label>
+
+                <label> PVSF 1 estimate (%)  <!--restricted range-->
+                    <input name="pvsf_pct_1" type="number">
+                </label>
+
+                <label>PVSF 1 color  <!--controlled vocabulary-->
+                    <input name="pvsf_col_1" type="text">
+                </label>
+
+                <label>PVSF 1 contrast        <!--controlled vocab-->
+                    <input name="pvsf_contr_1" type="text">
+                </label>
+
+                <label>PVSF 1 location       <!--controleld vocabulary-->
+                    <input name="pvsf_loc_1" type="text">
+                </label>
+<!--secondary subsection: pvsf 2-->
                 <div class="collapsible-section">
                     <div class="collapsible-header" onclick="toggleSection(this)">
-                        <span>Ped and Void Surface Feature (PVSF) 1</span>
+                        <span>PVSF 2</span>
                         <span class="collapsible-arrow">▼</span>
                     </div>
                     <div class="collapsible-content">
-                        <label>PVSF kind        <!--controlled vocab-->
-                            <input name="pvsf_kind_1" type="text">
+                        <label>PVSF 2 kind        <!--controlled vocab-->
+                            <input name="pvsf_kind_2" type="text">
                         </label>
 
-                        <label> PVSF estimate (%)  <!--restricted range-->
-                            <input name="pvsf_pct_1" type="number">
+                        <label> PVSF 2 estimate (%)  <!--restricted range-->
+                            <input name="pvsf_pct_2" type="number">
                         </label>
 
-                        <label>PVSF color  <!--controlled vocabulary-->
+                        <label>PVSF 2 color  <!--controlled vocabulary-->
                             <input name="pvsf_col_1" type="text">
                         </label>
 
-                        <label>PVSF contrast        <!--controlled vocab-->
-                            <input name="pvsf_contr_1" type="text">
+                        <label>PVSF 2 contrast        <!--controlled vocab-->
+                            <input name="pvsf_contr_2" type="text">
                         </label>
 
-                        <label>PVSF location       <!--controleld vocabulary-->
-                            <input name="pvsf_loc_1" type="text">
+                        <label>PVSF 2 location       <!--controleld vocabulary-->
+                            <input name="pvsf_loc_2" type="text">
                         </label>
                     </div>
                 </div>
+            </div>
+        </div>
+<!--subsection: concentration features-->
 
-<div class="collapsible-section">
+        <div class="collapsible-section">
             <div class="collapsible-header" onclick="toggleSection(this)">
                 <span>Concentration Features</span>
                 <span class="collapsible-arrow">▼</span>
             </div>
             <div class="collapsible-content">
+<!--concentration 1-->
+                <label>Concentration 1 kind        <!--controlled vocab-->
+                    <input name="conc_kind_1" type="text">
+                </label>
+
+                <label>Concentration 1 estimate (%)  <!--restricted range-->
+                    <input name="conc_pct_1" type="number">
+                </label>
+
+                <label>Concentration 1 color  <!--controlled vocabulary-->
+                    <input name="conc_col_1" type="text">
+                </label>
+
+                <label>Concentration 1 contrast        <!--controlled vocab-->
+                    <input name="conc_contr_1" type="text">
+                </label>
+
+                <label>Concentration 1 location       <!--controleld vocabulary-->
+                    <input name="conc_loc_1" type="text">
+                </label>
+<!--secondary subsection: concentration 2-->
                 <div class="collapsible-section">
                     <div class="collapsible-header" onclick="toggleSection(this)">
-                        <span>Concentration Feature 1</span>
+                        <span>NAME</span>
                         <span class="collapsible-arrow">▼</span>
                     </div>
                     <div class="collapsible-content">
-                        <label>Concentration kind        <!--controlled vocab-->
-                            <input name="conc_kind_1" type="text">
+                        <label>Concentration 2 kind        <!--controlled vocab-->
+                            <input name="conc_kind_2" type="text">
                         </label>
 
-                        <label>Concentration estimate (%)  <!--restricted range-->
-                            <input name="conc_pct_1" type="number">
+                        <label>Concentration 2 estimate (%)  <!--restricted range-->
+                            <input name="conc_pct_2" type="number">
                         </label>
 
-                        <label>Concentration color  <!--controlled vocabulary-->
-                            <input name="conc_col_1" type="text">
+                        <label>Concentration 2 color  <!--controlled vocabulary-->
+                            <input name="conc_col_2" type="text">
                         </label>
 
-                        <label>Concentration contrast        <!--controlled vocab-->
-                            <input name="conc_contr_1" type="text">
+                        <label>Concentration 2 contrast        <!--controlled vocab-->
+                            <input name="conc_contr_2" type="text">
                         </label>
 
-                        <label>Concentration location       <!--controleld vocabulary-->
-                            <input name="conc_loc_1" type="text">
+                        <label>Concentration 2 location       <!--controleld vocabulary-->
+                            <input name="conc_loc_2" type="text">
                         </label>
                     </div>
-                </div>
-            <div class="collapsible-section">
-                <div class="collapsible-header" onclick="toggleSection(this)">
-                    <span>Concentration Feature 2</span>
-                    <span class="collapsible-arrow">▼</span>
-                </div>
-                <div class="collapsible-content">
-                    <label>Concentration kind        <!--controlled vocab-->
-                        <input name="conc_kind_2" type="text">
-                    </label>
-
-                    <label>Concentration estimate (%)  <!--restricted range-->
-                        <input name="conc_pct_2" type="number">
-                    </label>
-
-                    <label>Concentration color  <!--controlled vocabulary-->
-                        <input name="conc_col_2" type="text">
-                    </label>
-
-                    <label>Concentration contrast        <!--controlled vocab-->
-                        <input name="conc_contr_2" type="text">
-                    </label>
-
-                    <label>Concentration location       <!--controleld vocabulary-->
-                        <input name="conc_loc_2" type="text">
-                    </label>
-                </div>
+                </div>                
             </div>
         </div>
-    <div class="collapsible-section">
-        <div class="collapsible-header" onclick="toggleSection(this)">
-            <span>Pores</span>
-            <span class="collapsible-arrow">▼</span>
-        </div>
-        <div class="collapsible-content">
-            <label>Pore quantity, size, and location 1 (QTY-SZ-LOC format)
-                <input name="pore_qsl_1" type="text">
-            </label>
+<!--subsection: roots-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Roots</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Root quantity, size, and location 1 (QTY-SZ-LOC format)
+                    <input name="root_qsl_1" type="text">
+                </label>
 
-            <label>Pore quantity, size, and location 2 (QTY-SZ-LOC format)
-                <input name="pore_qsl_2" type="text">
-            </label>
+                <label>Root quantity, size, and location 2 (QTY-SZ-LOC format)
+                    <input name="root_qsl_2" type="text">
+                </label>
+            </div>
         </div>
-    </div>
-    <div class="collapsible-section">
-        <div class="collapsible-header" onclick="toggleSection(this)">
-            <span>Roots</span>
-            <span class="collapsible-arrow">▼</span>
-        </div>
-        <div class="collapsible-content">
-            <label>Root quantity, size, and location 1 (QTY-SZ-LOC format)
-                <input name="root_qsl_1" type="text">
-            </label>
+<!--subsection: pores-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Pores</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Pore quantity, size, and location 1 (QTY-SZ-LOC format)
+                    <input name="pore_qsl_1" type="text">
+                </label>
 
-            <label>Root quantity, size, and location 2 (QTY-SZ-LOC format)
-                <input name="root_qsl_2" type="text">
-            </label>
+                <label>Pore quantity, size, and location 2 (QTY-SZ-LOC format)
+                    <input name="pore_qsl_2" type="text">
+                </label>
+            </div>
         </div>
     </div>
 </div>
 
-<!--Catagory: Horizon-Specific Notes-->
-
+<!--category: Horizon-Specific Notes-->
 <div class="static-section">
     <div class="static-header">
-        <span>Catagory: Horizon-Specific Notes</span>
+        <span>Horizon-Specific Notes</span>
     </div>
     <div class="static-content">
         <label>Horizon-Specific Notes

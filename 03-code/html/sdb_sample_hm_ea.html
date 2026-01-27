@@ -106,47 +106,51 @@ body {
 
 <!--this is where the form actually begins-->
 
-<!--Catagory: Sample Heavy Metal Elemental Analysis Identifying Informatiom-->
-
+<!--Category: Sample Heavy Metal Elemental Analysis Identifying Informatiom-->
 <div class="static-section">
     <div class="static-header">
-        <span>Heavy Metal Elemental Analysis Sample Identifying Information</span>
+        <span>Heavy Metal Elemental Analysis (HMEA) Sample Identifying Information</span>
     </div>
     <div class="static-content">
-        <label>SDB Sample ID
+        <label>SDB Sample ID*
             <input name="sdb_smiid_ref" type="text" required>
         </label>
 
-        <label>SDB HM EA ID
+        <label>SDB HMEA ID*
             <input name="sdb_hmeaiid" type="text" required>
         </label>
 
-        <label>Entry date
+        <label>Entry date*
             <input name="hmea_entry_dts" type="dts" required>
+        </label>
+
+        <label>Heavy metal elemental analysis method*
+            <input name="hmea_method" type="text" required>
+        </label>
+
+        <label>HMEA rep
+            <input name="hmea_rep" type="number">
         </label>
     </div>
 </div>
 
-<!--Catagory: HM EA Elements and Quantities-->
-
+<!--Category: HMEA Elements and Quantities-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: HM EA Elements and Quantites</span>
+        <span>HMEA Elements and Quantites</span>
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content"> 
-
-        <label>Lead ppm
+        <label>Lead ppm <!--lead is seperate from the rest since it's commonly measured/reported-->
             <input name="hm_ea_pb" type="number">
         </label>
 
         <div class="collapsible-section">
             <div class="collapsible-header" onclick="toggleSection(this)">
-                <span>Other elements</span>
+                <span>Other Elements</span>
                 <span class="collapsible-arrow">▼</span>
             </div>
             <div class="collapsible-content">
-
                 <label>Aluminum ppm
                     <input name="hm_ea_al" type="number">
                 </label>

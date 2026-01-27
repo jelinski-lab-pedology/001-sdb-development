@@ -82,105 +82,92 @@ body {
 
 <!--this is where the form actually begins-->
 
+<!--category: project identifiers-->
 <div class="static-section">
     <div class="static-header">
-        <span>Catagory: Project Identifiers</span>
+        <span>Project Identifiers</span>
     </div>
     <div class="static-content">
-                <label>Lab project ID
-                <input name="lab_projiid" required>
-                </label>
+      <label>Lab project ID*
+        <input name="lab_projiid" required>
+      </label>
 
-                <label>Official SDB Project ID
-                <input name="sdb_projiid" required>
-                </label> 
+      <label>Official SDB Project ID*
+        <input name="sdb_projiid" required>
+      </label> 
 
-                <!-- <label>Entry date -to be collected on backend- automatic hidden field
-                <input name="proj_entry_dts" required>
-                </label> -->
+      <label>Entry date -to be collected on backend- automatic hidden field*
+        <input name="proj_entry_dts" required>
+      </label>
     </div>
 </div>
 
-
-<!--catagory: basic project information-->
-
-<div class="collapsible-section">
-        <div class="collapsible-header" onclick="toggleSection(this)">
-                <span>Catagory: Basic Project Information</span>
-                <span class="collapsible-arrow">▼</span>
-        </div>
-        <div class="collapsible-content">
-                <label>Start date
-                        <input name="proj_start" type="date">
-                </label>
-
-                <label>Project end date
-                        <input name="proj_end" type="date">
-                </label>
-
-                <label>Legacy data?
-                        <input name="legacy" type="checkbox" required>
-                </label>
-                
-                <label>Project description
-                        <input name="proj_description" type="text" required>
-                </label>
-        </div>
-</div>
-
-
-
-
-<!--catagory: grant information-->
-
+<!--category: basic project information-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: Grant Information</span>
-        <span class="collapsible-arrow">▼</span>
+            <span>Basic Project Information</span>
+            <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
-        <label>Grant agency
-                <input name="grant_agent" type="text">
-        </label>
+      <label>Start date
+        <input name="proj_start" type="date">
+      </label>
 
-        <label>Agency grant number
-                <input name="grant_agent_num" type="number">
-        </label>
+      <label>Project end date
+        <input name="proj_end" type="date">
+      </label>
 
-        <label>Grant agent number internal
-                <input name="grant_internal_num" type="number">
-        </label>
-        </label>
+      <label>Legacy data?
+        <input name="legacy" type="checkbox">
+      </label>
+      
+      <label>Project description*
+        <input name="proj_description" type="text" required>
+      </label>
     </div>
 </div>
 
+<!--category: grant information-->
+<div class="collapsible-section">
+  <div class="collapsible-header" onclick="toggleSection(this)">
+      <span>Grant Information</span>
+      <span class="collapsible-arrow">▼</span>
+  </div>
+  <div class="collapsible-content">
+    <label>Grant agency
+      <input name="grant_agent" type="text">
+    </label>
 
+    <label>Agency grant number
+      <input name="grant_agent_num" type="number">
+    </label>
 
-<!--catagory: personnel-->
+    <label>Grant agent number internal
+      <input name="grant_internal_num" type="number">
+    </label>
+  </div>
+</div>
 
+<!--category: personnel-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: Personnel</span>
+        <span>Personnel</span>
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
         <label>PI personnel
-                <input name="personnel_pi" type="text">
+          <input name="personnel_pi" type="text">
         </label>
 
         <label>Grad student personnel
-                <input name="personnel_grad" type="text">
+          <input name="personnel_grad" type="text">
         </label>
 
         <label>Other personnel
-                <input name="personnel_other" type="text">
-        </label>
+          <input name="personnel_other" type="text">
         </label>
     </div>
 </div>
-
-
-
 
 <!--This is the save button at the end of the form, needs work-->
  

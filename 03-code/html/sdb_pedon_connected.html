@@ -101,10 +101,10 @@ FIELDS
 -->
 
 
-<!--catagory: pedon identifiers-->
+<!--category: pedon identifiers-->
 <div class="static-section"> 
     <div class="static-header">
-        <span>Catagory: Pedon Identifiers</span>
+        <span>Pedon Identifiers</span>
     </div>
     <div class="static-content">
         <label>SDB project ID
@@ -133,10 +133,10 @@ FIELDS
     </div>
 </div> 
 
-<!--catagory: pedon location-->
+<!--category: pedon location-->
 <div class="static-section">
     <div class="static-header">
-        <span>Catagory: Pedon Location</span>
+        <span>Pedon Location</span>
     </div>
     <div class="static-content">
         <label>Latitude (dec deg WGS-84)
@@ -214,10 +214,10 @@ FIELDS
     </div>
 </div>
 
-<!--catagory: depth information-->
+<!--category: depth information-->
 <div class="static-section">
     <div class="static-header">
-        <span>Catagory: Pedon Depth</span>
+        <span>Pedon Depth</span>
     </div>
     <div class="static-content">
         <label>Observed pedon depth (cm)
@@ -239,10 +239,10 @@ FIELDS
     </div>
 </div>
 
-<!--catagory: photos/videos-->
+<!--category: photos/videos-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: Photos and Videos</span>
+        <span>Photos and Videos</span>
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
@@ -265,10 +265,10 @@ FIELDS
     </div>
 </div>
 
-<!--catagory: landscape/landform-->
+<!--category: landscape/landform-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: Landscape and Landform</span>
+        <span>Landscape and Landform</span>
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
@@ -327,10 +327,10 @@ FIELDS
     </div>
 </div>
 
-<!--catagory: soil water-->
+<!--category: soil water-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: Soil Water</span>
+        <span>Soil Water</span>
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
@@ -352,12 +352,12 @@ FIELDS
                 <span>Moisture status</span>
                 <span class="collapsible-arrow">▼</span>
             </div>
-            <div class="collapsible-content">
-                <div class="collapsible-section">
-                    <div class="collapsible-header" onclick="toggleSection(this)">
+                <div class="static-section">
+                    <div class="static-header">
                         <span>Moisture status 1</span>
-                        <span class="collapsible-arrow">▼</span>
                     </div>
+                    <div class="static-content">
+                </div>
                     <div class="collapsible-content">
                         <label>Moisture status 1         <!--controlled vocab-->
                             <input name="mst_kind_1" type="text">
@@ -412,10 +412,10 @@ FIELDS
     </div>
 </div>
 
-<!--catagory: parent material-->
+<!--category: parent material-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: Parent Material(s)</span>
+        <span>Parent Material(s)</span>
         <span class="collapsible-arrow">▼</span>
     </div>
         <div class="collapsible-content">
@@ -558,10 +558,10 @@ FIELDS
     </div>
 </div>
 
-<!--catagory: surface cover-->
+<!--category: surface cover-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: Surface Cover</span>
+        <span>Surface Cover</span>
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
@@ -595,10 +595,10 @@ FIELDS
 New page/header: soil classification
 -->
 
-<!--Catagory: epipedon-->
+<!--Category: epipedon-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: Epipedon</span>
+        <span>Epipedon</span>
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
@@ -614,7 +614,7 @@ New page/header: soil classification
             <input name="epi_depb_1" type="number">
         </label>
     </div>
-<!--subcatagory: additional epipedons-->
+<!--subsection: additional epipedons-->
     <div class="collapsible-section">
         <div class="collapsible-header" onclick="toggleSection(this)">
             <span>Additional Epipedons</span>
@@ -648,10 +648,10 @@ New page/header: soil classification
     </div>
 </div>
     
-<!--Catagory: diagnostic horizon(s)-->
+<!--Category: diagnostic horizon(s)-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: Diagnostic Horizon(s)</span>
+        <span>Diagnostic Horizon(s)</span>
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
@@ -667,7 +667,7 @@ New page/header: soil classification
             <input name="diaghz_depb_1" type="number">
         </label>
     </div>
-<!--subcatagory: additional diagnostic horizons-->    
+<!--subsection: additional diagnostic horizons-->    
     <div class="collapsible-section">
         <div class="collapsible-header" onclick="toggleSection(this)">
             <span>Additional Diagnostic Horizons</span>
@@ -686,7 +686,7 @@ New page/header: soil classification
                 <input name="diaghz_depb_2" type="number">
             </label>
         </div>
-    <!--secondary subcatagory: diagnostic horizon 3-->
+    <!--secondary subsection: diagnostic horizon 3-->
         <div class="collapsible-section">
             <div class="collapsible-header" onclick="toggleSection(this)">
                 <span>Diagnostic Horizon 3</span>
@@ -706,7 +706,7 @@ New page/header: soil classification
                 </label>
             </div>
         </div>       
-    <!--secondary subcatagory: diagnostic horizon 4-->
+    <!--secondary subsection: diagnostic horizon 4-->
         <div class="collapsible-section">
             <div class="collapsible-header" onclick="toggleSection(this)">
                 <span>Diagnostic Horizon 4</span>
@@ -726,7 +726,7 @@ New page/header: soil classification
                 </label>
             </div>
         </div>
-    <!--secondary subcatagory: diagnostic horizon 5-->
+    <!--secondary subsection: diagnostic horizon 5-->
         <div class="collapsible-section">
             <div class="collapsible-header" onclick="toggleSection(this)">
                 <span>Diagnostic Horizon 5</span>
@@ -749,219 +749,10 @@ New page/header: soil classification
     </div>
 </div>
 
-<!--Catagory: subsurface features-->
-<div class="collapsible-section">
-    <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: Surface Features</span>
-        <span class="collapsible-arrow">▼</span>
-    </div>
-    <div class="collapsible-content">
-        <label>Subsurface feature 1 type    <!--controlled vocab-->
-            <input name="sbsft_type_1" type="text">
-        </label>                
-
-        <label>Subsurface feature 1 top depth (cm)
-            <input name="sbsft_dept_1" type="number">
-        </label>
-
-        <label>Subsurface feature 1 bottom depth (cm)
-            <input name="sbsft_depb_1" type="number">
-        </label>
-    </div>
-<!--subsection: additional subsurface features-->
-    <div class="collapsible-section">
-        <div class="collapsible-header" onclick="toggleSection(this)">
-            <span>Additional Subsurface Features</span>
-            <span class="collapsible-arrow">▼</span>
-        </div>
-        <div class="collapsible-content">
-            <label>Subsurface feature 2 type    <!--controlled vocab-->
-                <input name="sbsft_type_2" type="text">
-            </label>                
-
-            <label>Subsurface feature 2 top depth (cm)
-                <input name="sbsft_dept_2" type="number">
-            </label>
-
-            <label>Subsurface feature 2 bottom depth (cm)
-                <input name="sbsft_depb_2" type="number">
-            </label>
-        </div>
-        </div>
-    <!--secondary subsection: subsurface feature 3-->   
-        <div class="collapsible-section">
-            <div class="collapsible-header" onclick="toggleSection(this)">
-                <span>Subsurface Feature 3</span>
-                <span class="collapsible-arrow">▼</span>
-            </div>
-            <div class="collapsible-content">
-                <label>Subsurface feature 3 type    <!--controlled vocab-->
-                    <input name="sbsft_type_3" type="text">
-                </label>                
-
-                <label>Subsurface feature 3 top depth (cm)
-                    <input name="sbsft_dept_3" type="number">
-                </label>
-
-                <label>Subsurface feature 3 bottom depth (cm)
-                    <input name="sbsft_depb_3" type="number">
-                </label>
-            </div>
-        </div>
-        </div>
-    <!--secondary subsection: subsurface feature 4-->   
-        <div class="collapsible-section">
-            <div class="collapsible-header" onclick="toggleSection(this)">
-                <span>Subsurface Feature 4</span>
-                <span class="collapsible-arrow">▼</span>
-            </div>
-            <div class="collapsible-content">
-                <label>Subsurface feature 4 type    <!--controlled vocab-->
-                    <input name="sbsft_type_4" type="text">
-                </label>                
-
-                <label>Subsurface feature 4 top depth (cm)
-                    <input name="sbsft_dept_4" type="number">
-                </label>
-
-                <label>Subsurface feature 4 bottom depth (cm)
-                    <input name="sbsft_depb_4" type="number">
-                </label>
-            </div>
-        </div>
-        </div>
-    <!--secondary subsection: subsurface feature 5-->
-        <div class="collapsible-section">
-            <div class="collapsible-header" onclick="toggleSection(this)">
-                <span>Subsurface Feature 5</span>
-                <span class="collapsible-arrow">▼</span>
-            </div>
-            <div class="collapsible-content">
-                <label>Subsurface feature 5 type    <!--controlled vocab-->
-                    <input name="sbsft_type_5" type="text">
-                </label>                
-
-                <label>Subsurface feature 5 top depth (cm)
-                    <input name="sbsft_dept_5" type="number">
-                </label>
-
-                <label>Subsurface feature 5 bottom depth (cm)
-                    <input name="sbsft_depb_5" type="number">
-                </label>
-            </div>
-        </div>
-    </div>
-    <!--secondary subsection: subsurface feature 6-->
-        <div class="collapsible-section">
-            <div class="collapsible-header" onclick="toggleSection(this)">
-                <span>Subsurface Feature 6</span>
-                <span class="collapsible-arrow">▼</span>
-            </div>
-            <div class="collapsible-content">
-                <label>Subsurface feature 6 type    <!--controlled vocab-->
-                    <input name="sbsft_type_6" type="text">
-                </label>                
-
-                <label>Subsurface feature 6 top depth (cm)
-                    <input name="sbsft_dept_6" type="number">
-                </label>
-
-                <label>Subsurface feature 6 bottom depth (cm)
-                    <input name="sbsft_depb_6" type="number">
-                </label>
-            </div>
-        </div>
-    </div>
-    <!--secondary subsection: subsurface feature 7-->
-        <div class="collapsible-section">
-            <div class="collapsible-header" onclick="toggleSection(this)">
-                <span>Subsurface Feature 7</span>
-                <span class="collapsible-arrow">▼</span>
-            </div>
-            <div class="collapsible-content">
-                <label>Subsurface feature 7 type    <!--controlled vocab-->
-                    <input name="sbsft_type_7" type="text">
-                </label>                
-
-                <label>Subsurface feature 7 top depth (cm)
-                    <input name="sbsft_dept_7" type="number">
-                </label>
-
-                <label>Subsurface feature 7 bottom depth (cm)
-                    <input name="sbsft_depb_7" type="number">
-                </label>
-            </div>
-        </div>
-    </div>
-    <!--secondary subsection: subsurface feature 8-->
-        <div class="collapsible-section">
-            <div class="collapsible-header" onclick="toggleSection(this)">
-                <span>Subsurface Feature 8</span>
-                <span class="collapsible-arrow">▼</span>
-            </div>
-            <div class="collapsible-content">
-                <label>Subsurface feature 8 type    <!--controlled vocab-->
-                    <input name="sbsft_type_8" type="text">
-                </label>                
-
-                <label>Subsurface feature 8 top depth (cm)
-                    <input name="sbsft_dept_8" type="number">
-                </label>
-
-                <label>Subsurface feature 8 bottom depth (cm)
-                    <input name="sbsft_depb_8" type="number">
-                </label>
-            </div>
-        </div>
-    </div>
-    <!--secondary subsection: subsurface feature 9-->
-        <div class="collapsible-section">
-            <div class="collapsible-header" onclick="toggleSection(this)">
-                <span>Subsurface Feature 9</span>
-                <span class="collapsible-arrow">▼</span>
-            </div>
-            <div class="collapsible-content">
-                <label>Subsurface feature 9 type    <!--controlled vocab-->
-                    <input name="sbsft_type_9" type="text">
-                </label>                
-
-                <label>Subsurface feature 9 top depth (cm)
-                    <input name="sbsft_dept_9" type="number">
-                </label>
-
-                <label>Subsurface feature 9 bottom depth (cm)
-                    <input name="sbsft_depb_9" type="number">
-                </label>
-            </div>
-        </div>
-    </div>
-    <!--secondary subsection: subsurface feature 10-->
-        <div class="collapsible-section">
-            <div class="collapsible-header" onclick="toggleSection(this)">
-                <span>Subsurface Feature 10</span>
-                <span class="collapsible-arrow">▼</span>
-            </div>
-            <div class="collapsible-content">
-                <label>Subsurface feature 10 type   <!--controlled vocab-->
-                    <input name="sbsft_type_10" type="text">
-                </label>                
-
-                <label>Subsurface feature 10 top depth (cm)
-                    <input name="sbsft_dept_10" type="number">
-                </label>
-
-                <label>Subsurface feature 10 bottom depth (cm)
-                    <input name="sbsft_depb_10" type="number">
-                </label>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!--Category: subsurface features-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Category: Subsurface Features</span>
+        <span>Subsurface Features</span>
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
@@ -975,16 +766,15 @@ New page/header: soil classification
         <label>Subsurface feature 1 bottom depth (cm)
             <input name="sbsft_depb_1" type="number">
         </label>
-
-        <!--subsection: additional subsurface features-->
+    <!--subsection: additional subsurface features;
+    2-10 are all at the same 'level'/in same box in the form-->
         <div class="collapsible-section">
             <div class="collapsible-header" onclick="toggleSection(this)">
                 <span>Additional Subsurface Features</span>
                 <span class="collapsible-arrow">▼</span>
             </div>
             <div class="collapsible-content">
-                <!-- subsurface features 2-10 at same level -->
-                <!-- secondary subsection: subsurface feature 2 -->
+        <!-- secondary subsection: subsurface feature 2 -->
                 <div class="collapsible-section">
                     <div class="collapsible-header" onclick="toggleSection(this)">
                         <span>Subsurface Feature 2</span>
@@ -1002,7 +792,7 @@ New page/header: soil classification
                         </label>
                     </div>
                 </div>
-         <!--secondary subsection: subsurface feature 3-->   
+        <!--secondary subsection: subsurface feature 3-->   
                 <div class="collapsible-section">
                     <div class="collapsible-header" onclick="toggleSection(this)">
                         <span>Subsurface Feature 3</span>
@@ -1022,7 +812,7 @@ New page/header: soil classification
                         </label>
                     </div>
                 </div>
-            <!--secondary subsection: subsurface feature 4-->   
+        <!--secondary subsection: subsurface feature 4-->   
                 <div class="collapsible-section">
                     <div class="collapsible-header" onclick="toggleSection(this)">
                         <span>Subsurface Feature 4</span>
@@ -1042,7 +832,7 @@ New page/header: soil classification
                         </label>
                     </div>
                 </div>
-            <!--secondary subsection: subsurface feature 5-->
+        <!--secondary subsection: subsurface feature 5-->
                 <div class="collapsible-section">
                     <div class="collapsible-header" onclick="toggleSection(this)">
                         <span>Subsurface Feature 5</span>
@@ -1062,7 +852,7 @@ New page/header: soil classification
                         </label>
                     </div>
                 </div>
-            <!--secondary subsection: subsurface feature 6-->
+        <!--secondary subsection: subsurface feature 6-->
                 <div class="collapsible-section">
                     <div class="collapsible-header" onclick="toggleSection(this)">
                         <span>Subsurface Feature 6</span>
@@ -1082,7 +872,7 @@ New page/header: soil classification
                         </label>
                     </div>
                 </div>
-            <!--secondary subsection: subsurface feature 7-->
+        <!--secondary subsection: subsurface feature 7-->
                 <div class="collapsible-section">
                     <div class="collapsible-header" onclick="toggleSection(this)">
                         <span>Subsurface Feature 7</span>
@@ -1102,7 +892,7 @@ New page/header: soil classification
                         </label>
                     </div>
                 </div>
-            <!--secondary subsection: subsurface feature 8-->
+        <!--secondary subsection: subsurface feature 8-->
                 <div class="collapsible-section">
                     <div class="collapsible-header" onclick="toggleSection(this)">
                         <span>Subsurface Feature 8</span>
@@ -1122,7 +912,7 @@ New page/header: soil classification
                         </label>
                     </div>
                 </div>
-            <!--secondary subsection: subsurface feature 9-->
+        <!--secondary subsection: subsurface feature 9-->
                 <div class="collapsible-section">
                     <div class="collapsible-header" onclick="toggleSection(this)">
                         <span>Subsurface Feature 9</span>
@@ -1142,7 +932,7 @@ New page/header: soil classification
                         </label>
                     </div>
                 </div>
-            <!--secondary subsection: subsurface feature 10-->
+        <!--secondary subsection: subsurface feature 10-->
                 <div class="collapsible-section">
                     <div class="collapsible-header" onclick="toggleSection(this)">
                         <span>Subsurface Feature 10</span>
@@ -1162,19 +952,16 @@ New page/header: soil classification
                         </label>
                     </div>
                 </div>                
-
-
-                <!-- Repeat similar structure for features 3-10 -->
             </div>
         </div>
     </div>
 </div>
 
 
-<!--Catagory: taxonomy-->
+<!--Category: taxonomy-->
 <div class="static-section">
     <div class="static-header">
-        <span>Catagory: Taxonomy</span>
+        <span>Taxonomy</span>
     </div>
     <div class="static-content">
 <!--subsection: field taxonomy-->
@@ -1276,14 +1063,14 @@ New page/header: soil classification
     </div>
 </div>
 
-<!--Catagory: misc.-->
+<!--Category: misc.-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Catagory: RUSI/Misc.</span>
+        <span>RUSI/Misc.</span>
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
-        <label>Rusi performed?
+        <label>RUSI performed?
             <input name="rusi_boolean" type="checkbox" value="true">
         </label>
 

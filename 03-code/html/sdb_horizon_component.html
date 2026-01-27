@@ -112,159 +112,240 @@ body {
 
 <!--this is where the form actually begins-->
 
-<!--Catagory: Horizon Component Identifying Information-->
+<!--Category: Horizon Component Identifying Information-->
+<div class="static-section">
+    <div class="static-header">
+        <span>Horizon Component Identifying Information</span>
+    </div>
+    <div class="static-content">
+      <label>SDB horizon ID
+        <input name="sbd_hziid_ref" type="text" required>
+      </label>
 
-<label>SDB horizon ID
-  <input name="sbd_hziid_ref" type="text" required>
-</label>
+      <label>Horizon component name
+        <input name="hzcomp_name" type="text" required>
+      </label>
 
-<label>Horizon component name
-  <input name="hzcomp_name" type="text" required>
-</label>
+      <label>Horizon component percent
+        <input name="hzcomp_pct" type="number" required>
+      </label>
 
-<label>Horizon component percent
-  <input name="hzcomp_pct" type="number" required>
-</label>
+      <label>SBD horizon component ID
+        <input name="sdbhzcompiid" type="text" required>
+      </label>
 
-<label>SBD horizon component ID
-  <input name="sdbhzcompiid" type="text" required>
-</label>
+      <label>entry date
+        <input name="hzcomp_entry_dts" type="dts" required>
+      </label>
+    </div>
+</div>
 
-<label>entry date
-  <input name="hzcomp_entry_dts" type="dts" required>
-</label>
+<!--Category: Matrix Color-->
+<div class="static-section">
+    <div class="static-header">
+        <span>Matrix Color</span>
+    </div>
+    <div class="static-content">
+      <label>matrix color
+        <input name="hzcomp_col" type="text"> <!--controlled vocab-->
+      </label>
+    </div>
+</div>
 
-<!--Catagory: Matrix Color-->
+<!--Category: Texture and Von Post-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Texture and Von Post</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+  <!--subsection: organics-->
+      <div class="collapsible-section">
+          <div class="collapsible-header" onclick="toggleSection(this)">
+              <span>Organics</span>
+              <span class="collapsible-arrow">▼</span>
+          </div>
+          <div class="collapsible-content">
+      <label>Von Post estimate  <!--controlled vocab-->
+        <input name="hzcomp_field_vpost" type="text">
+      </label>
 
-<label>Horizon component matrix color
-  <input name="hzcomp_col" type="text"> <!--controlled vocab-->
-</label>
+      <label>fiber estimate (%)
+        <input name="hzcomp_field_fibrpct" type="number">
+      </label>
+          </div>
+      </div>
+  <!--subsection: mineral texture-->
+      <div class="collapsible-section">
+          <div class="collapsible-header" onclick="toggleSection(this)">
+              <span>Mineral Texture</span>
+              <span class="collapsible-arrow">▼</span>
+          </div>
+          <div class="collapsible-content">
+            <label>texture class  <!--controlled vocab-->
+              <input name="hzcomp_fieldtx_type" type="text">
+            </label>
 
-<!--Catagory: Texture and Von Post-->
+            <label>texture modifier <!--controlled vocab-->
+              <input name="hzcomp_fieldtx_mod" type="text">
+            </label>
 
-<label>Hz comp von post estimate  <!--controlled vocab-->
-  <input name="hzcomp_field_vpost" type="text">
-</label>
+            <label>clay estimate (%)
+              <input name="hzcomp_fieldtx_c" type="number">
+            </label>
 
-<label>Hz comp fiber estimate (%)
-  <input name="hzcomp_field_fibrpct" type="number">
-</label>
+            <label>silt estimate (%)
+              <input name="hzcomp_fieldtx_s" type="number">
+            </label>
 
-<label>Hz comp texture class  <!--controlled vocab-->
-  <input name="hzcomp_fieldtx_type" type="text">
-</label>
+            <label>sand estimate (%)
+              <input name="hzcomp_fieldtx_si" type="number">
+            </label>
+          </div>
+      </div>
+    </div>
+</div>
 
-<label>Hz comp texture modifier <!--controlled vocab-->
-  <input name="hzcomp_fieldtx_mod" type="text">
-</label>
+<!--Category: Coarse Fragments-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Coarse Fragments</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+<!--coarse fragment 1-->
+      <label>coarse fragment 1 estimate (%)
+        <input name="hzcomp_frag_pct_1" type="number">
+      </label>
 
-<label>Hz comp texture clay estimate (%)
-  <input name="hzcomp_fieldtx_c" type="number">
-</label>
+      <label>coarse fragment 1 minimum size (cm)
+        <input name="hzcomp_frag_szrmin_1" type="number">
+      </label>
 
-<label>Hz comp texture silt estimate (%)
-  <input name="hzcomp_fieldtx_s" type="number">
-</label>
+      <label>coarse fragment 1 maximum size (cm)
+        <input name="hzcomp_frag_szrmax_1" type="number">
+      </label>
 
-<label>Hz comp texture sand estimate (%)
-  <input name="hzcomp_fieldtx_si" type="number">
-</label>
+      <label>coarse fragment 1 type
+        <input name="hzcomp_frag_type_1" type="text">
+      </label>
 
-<!--Catagory: Coarse Fragments-->
+      <label>coarse fragment 1 roundness
+        <input name="hzcomp_frag_rnd_1" type="text">
+      </label>
 
-<label>Hz comp coarse fragment 1 estimate (%)
-  <input name="hzcomp_frag_pct_1" type="number">
-</label>
+      <label>coarse fragment 1 rock material
+        <input name="hzcomp_frag_kind_1" type="text">
+      </label>
+  <!--subsection: coarse fragment 2-->
+      <div class="collapsible-section">
+          <div class="collapsible-header" onclick="toggleSection(this)">
+              <span>Coarse Fragment 2</span>
+              <span class="collapsible-arrow">▼</span>
+          </div>
+          <div class="collapsible-content">
+            <label>coarse fragment 2 estimate (%)
+              <input name="hzcomp_frag_pct_2" type="number">
+            </label>
 
-<label>Hz comp coarse fragment 1 minimum size (cm)
-  <input name="hzcomp_frag_szrmin_1" type="number">
-</label>
+            <label>coarse fragment 2 minimum size (cm)
+              <input name="hzcomp_frag_szrmin_2" type="number">
+            </label>
 
-<label>Hz comp coarse fragment 1 maximum size (cm)
-  <input name="hzcomp_frag_szrmax_1" type="number">
-</label>
+            <label>coarse fragment 2 maximum size (cm)
+              <input name="hzcomp_frag_szrmax_2" type="number">
+            </label>
 
-<label>Hz comp coarse fragment 1 type
-  <input name="hzcomp_frag_type_1" type="text">
-</label>
+            <label>coarse fragment 2 type
+              <input name="hzcomp_frag_type_2" type="text">
+            </label>
 
-<label>Hz comp coarse fragment 1 roundness
-  <input name="hzcomp_frag_rnd_1" type="text">
-</label>
+            <label>coarse fragment 2 roundness
+              <input name="hzcomp_frag_rnd_2" type="text">
+            </label>
 
-<label>Hz comp coarse fragment 1 rock material
-  <input name="hzcomp_frag_kind_1" type="text">
-</label>
+            <label>coarse fragment 2 rock material
+              <input name="hzcomp_frag_kind_2" type="text">
+            </label>
+          </div>
+      </div>
+    </div>
+</div>
 
-<label>Hz comp coarse fragment 2 estimate (%)
-  <input name="hzcomp_frag_pct_2" type="number">
-</label>
+<!--Category: Structure-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Structure</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+<!--primary structure-->
+      <label>structure type
+        <input name="hzcomp_strut_kind_1" type="text">
+      </label>
 
-<label>Hz comp coarse fragment 2 minimum size (cm)
-  <input name="hzcomp_frag_szrmin_2" type="number">
-</label>
+      <label>structure grade
+        <input name="hzcomp_srut_grad_1" type="number">
+      </label>
 
-<label>Hz comp coarse fragment 2 maximum size (cm)
-  <input name="hzcomp_frag_szrmax_2" type="number">
-</label>
+      <label>structure size
+        <input name="hzcomp_strut_sz_1" type="text">
+      </label>
+  <!--subsection: parting structure-->
+      <div class="collapsible-section">
+          <div class="collapsible-header" onclick="toggleSection(this)">
+              <span>Parting Structure</span>
+              <span class="collapsible-arrow">▼</span>
+          </div>
+          <div class="collapsible-content">
+            <label>parting structure type
+              <input name="hzcomp_strut_kind_2" type="text">
+            </label>
 
-<label>Hz comp coarse fragment 2 type
-  <input name="hzcomp_frag_type_2" type="text">
-</label>
+            <label>parting structure grade
+              <input name="hzcomp_srut_grad_2" type="number">
+            </label>
 
-<label>Hz comp coarse fragment 2 roundness
-  <input name="hzcomp_frag_rnd_2" type="text">
-</label>
+            <label>parting structure size
+              <input name="hzcomp_strut_sz_2" type="text">
+            </label>
+          </div>
+      </div>
+    </div>
+</div>
 
-<label>Hz comp coarse fragment 2 rock material
-  <input name="hzcomp_frag_kind_2" type="text">
-</label>
+<!--Category: Misc.-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Misc.</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+      <label>moist consistence
+        <input name="hzcomp_moistcon" type="text">
+      </label>
 
-<!--Catagory: Structure-->
+      <label>effervescence
+        <input name="hzcomp_eff" type="text">
+      </label>
 
-<label>Hz comp structure type
-  <input name="hzcomp_strut_kind_1" type="text">
-</label>
+      <label>field pH
+        <input name="hzcomp_field_ph" type="number">
+      </label>
+    </div>
+</div>
 
-<label>Hz comp structure grade
-  <input name="hzcomp_srut_grad_1" type="number">
-</label>
-
-<label>Hz comp structure size
-  <input name="hzcomp_strut_sz_1" type="text">
-</label>
-
-<label>Hz comp parting structure type
-  <input name="hzcomp_strut_kind_2" type="text">
-</label>
-
-<label>Hz comp parting structure grade
-  <input name="hzcomp_srut_grad_2" type="number">
-</label>
-
-<label>Hz comp parting structure size
-  <input name="hzcomp_strut_sz_2" type="text">
-</label>
-
-<!--Catagory: Misc.-->
-
-<label>Hz comp moist consistence
-  <input name="hzcomp_moistcon" type="text">
-</label>
-
-<label>Hz comp effervescence
-  <input name="hzcomp_eff" type="text">
-</label>
-
-<label>Hz comp field pH
-  <input name="hzcomp_field_ph" type="number">
-</label>
-
-<!--Catagory: Notes-->
-
-<label>Hz comp-specific notes
-  <input name="hzcomp_note" type="text">
-</label>
+<!--Category: Notes-->
+<div class="static-section">
+    <div class="static-header">
+        <span>Notes</span>
+    </div>
+    <div class="static-content">
+      <label>Hz comp-specific notes
+        <input name="hzcomp_note" type="text">
+      </label>
+    </div>
+</div>
 
 !--This is the save button at the end of the form, needs work-->
  

@@ -114,40 +114,38 @@ body {
 
 <!--this is where the form actually begins-->
 
-<!--Catagory: Sample Identifying Information-->
-
+<!--Category: Sample Identifying Information-->
 <div class="static-section">
     <div class="static-header">
-        <span>Catagory: Sample Identifying Information</span>
+        <span>Sample Identifying Information</span>
     </div>
     <div class="static-content">
-        <label>SDB pedon ID
+        <label>SDB pedon ID*
           <input name="sdb_peiid_ref" type="text" required>
         </label>
 
-        <label>SDB horizon ID
+        <label>SDB horizon ID*
           <input name="sdb_hziid_ref" type="text" required>
         </label>
 
-        <label>Lab sample ID
+        <label>Lab sample ID*
           <input name="lab_smiid" type="text" required>
         </label>
 
-        <label>SDB sample ID
+        <label>SDB sample ID*
           <input name="sdb_smiid" type="text" required>
         </label>
 
-        <label>entry date
+        <label>entry date*
           <input name="sm_entry_dts" type="dts" required>
         </label>
     </div>
 </div>
 
-<!--Catagory: Location-->
-
+<!--Category: Location-->
 <div class="static-section">
     <div class="static-header">
-        <span>Catagory: Location</span>
+        <span>Location</span>
     </div>
     <div class="static-content">
         <label>Sample top depth (cm)
@@ -160,310 +158,435 @@ body {
     </div>
 </div>
 
-<!--Catagory: Lab Texture-->
-
-  <!--LPSA-->
-<label>LPSA file exists?
-  <input name="labtx_lpsa_file" type="checkbox"> <!--EDIT TO CORRECT TO BOOLEAN-->
-</label>
-
-<label>LPSA VCOS (%)
-  <input name="labtx_lpsa_vcos" type="number"> <!--bump in from sample_texture-->
-</label>
-
-<label>LPSA COS (%)
-  <input name="labtx_lpsa_cos" type="number"> <!--bump in from sample_texture-->
-</label>
-
-<label>LPSA S (%)
-  <input name="labtx_lpsa_s" type="number"> <!--bump in from sample_texture-->
-</label>
-
-<label>LPSA FS (%)
-  <input name="labtx_lpsa_fs" type="number"> <!--bump in from sample_texture-->
-</label>
-
-<label>LPSA VFS (%)
-  <input name="labtx_lpsa_vfs" type="number"> <!--bump in from sample_texture-->
-</label>
-
-<label>LPSA COSI (%)
-  <input name="labtx_lpsa_cosi" type="number"> <!--bump in from sample_texture-->
-</label>
-
-<label>LPSA FSI (%)
-  <input name="labtx_lpsa_fsi" type="number"> <!--bump in from sample_texture-->
-</label>
-
-<label>LPSA C (%)
-  <input name="labtx_lpsa_c" type="number"> <!--bump in from sample_texture-->
-</label>
-
-<label>LPSA notes
-  <input name="labtx_lpsa_note" type="text"> 
-</label>
-  
-  <!--Hydrometer-->
-
-<label>Hydrometer performed?
-  <input name="tabtx_hydm_boolean" type="checkbox"> <!--EDIT TO CORRECT TO BOOLEAN-->
-</label>
-
-<label>Hydrometer S (%)
-  <input name="labtx_hydm_s" type="number"> <!--bump in from sample_texture-->
-</label>
-
-<label>Hydrometer C (%)
-  <input name="labtx_hydm_c" type="number"> <!--bump in from sample_texture-->
-</label>
-
-<label>Hydrometer SI (%)
-  <input name="labtx_hydm_si" type="number"> <!--bump in from sample_texture-->
-</label>
-
-<label>Texture by hydrometer notes
-  <input name="labtx_hydm_note" type="text">
-</label>
-
-  <!--Wet sieving-->
-
-<label>Wet sieving performed?
-  <input name="tabtx_wetsiv_boolean" type="checkbox"> <!--EDIT TO CORRECT TO BOOLEAN-->
-</label>
-
-<label>Wet sieving VCOS (%)
-  <input name="labtx_wetsiv_vcos" type="number"> <!--bump in from sample_texture-->
-</label>
-
-<label>Wet sieving COS (%)
-  <input name="labtx_wetsiv_cos" type="number"> <!--bump in from sample_texture-->
-</label>
-
-<label>Wet sieving S (%)
-  <input name="labtx_wetsiv_s" type="number"> <!--bump in from sample_texture-->
-</label>
-
-<label>Wet sieving FS (%)
-  <input name="labtx_wetsiv_fs" type="number"> <!--bump in from sample_texture-->
-</label>
-
-<label>Wet sieving VFS (%)
-  <input name="labtx_wetsiv_vfs" type="number"> <!--bump in from sample_texture-->
-</label>
-
-<label>Wet sieving notes
-  <input name="labtx_wetsiv_note" type="text">
-</label>
-
-  <!--Pipette-->
-
-<label>Pipetting performed?
-  <input name="tabtx_pip_boolean" type="checkbox"> <!--EDIT TO CORRECT TO BOOLEAN-->
-</label>
-
-<label>Coarse silt via pipette (%)
-  <input name="labtx_pip_cosi" type="number"> <!--bump in from sample_texture-->
-</label>
-
-<label>Fine silt via pipette (%)
-  <input name="labtx_pip_fsi" type="number"> <!--bump in from sample_texture-->
-</label>
-
-<label>Clay via pipette (%)
-  <input name="labtx_pip_c" type="number"> <!--bump in from sample_texture-->
-</label>
-
-<label>Texture by pipette notes
-  <input name="labtx_pip_note" type="text">
-</label>
-
-<!--Catagory: Bulk Density-->
-
-  <!--Ring Method-->
-
-<label>Ring method bulk density (g/cm3)
-  <input name="db_ring" type="number">
-</label>
-
-<label>Ring method bulk density notes
-  <input name="db_ring_note" type="text">
-</label>
-
-  <!--Compliant Cavity Method-->
-
-<label>Compliant cavity bulk density (g/cm3)
-  <input name="db_compcav" type="number">
-</label>
-
-<label>Compliant cavity bulk density notes
-  <input name="db_compcav_note" type="text">
-</label>
-
-  <!--Soil Core Method-->
-
-<label>Soil core bulk density (g/cm3)
-  <input name="db_core" type="number">
-</label>
-
-<label>Soil core bulk density notes
-  <input name="db_core_note" type="text">
-</label>
-
-<!--Catagory: pH, EC, LOI-->
-
-  <!--pH-->
-
-<label>Lab pH
-  <input name="lab_ph" type="number">
-</label>
-
-<label>Lab pH notes
-  <input name="lab_ph_note" type="text">
-</label>
-
-  <!--Electrical Conductivity-->
-
-<label>Electrical Conductivity (us, microsiemens)
-  <input name="lab_ec" type="number">
-</label>
-
-<label>Electrical Conductivity notes
-  <input name="lab_ec_note" type="text">
-</label>
-
-  <!--LOI-->
-
-<label>LOI organic matter (%)
-  <input name="loi_om_pct" type="number">
-</label>
-
-<label>LOI notes
-  <input name="loi_note" type="text">
-</label>
-
-<!--Catagory: MIR-->
-
-<label>MIR spectral file 1
-  <input name="mir_spectra_1" type="checkbox">
-</label>
-
-<label>MIR 1 notes
-  <input name="mir_note_1" type="text">
-</label>
-
-<label>MIR spectral file 2
-  <input name="mir_spectra_2" type="checkbox">
-</label>
-
-<label>MIR 2 notes
-  <input name="mir_note_2" type="text">
-</label>
-
-<label>MIR spectral file 3
-  <input name="mir_spectra_3" type="checkbox">
-</label>
-
-<label>MIR 3 notes
-  <input name="mir_note_3" type="text">
-</label>
-
-<label>MIR spectral file 4
-  <input name="mir_spectra_4" type="checkbox">
-</label>
-
-<label>MIR 4 notes
-  <input name="mir_note_4" type="text">
-</label>
-
-<!--Catagory: Internal Elemental Analyses (PXRF, XRF, etc.)-->
-
-  <!--PXRF-->
-
-<label>PXRF scan file
-  <input name="pxrf_scan" type="checkbox">
-</label>
-
-<label>PXRF notes
-  <input name="pxrf_note" type="text">
-</label>
-
-  <!--XRF-->
-
-<label>XRF scan file
-  <input name="xrf_scan" type="checkbox">
-</label>
-
-<label>XRF notes
-  <input name="xrf_note" type="text">
-</label>
-
-<!--Catagory: External Analyses-->
-
-  <!--MVTL-->
-
-<label>MVTL measured total C (%)
-  <input name="mvtl_totc" type="number">
-</label>
-
-<label>MVTL measured inorganic C (%)
-  <input name="mvtl_inorgc" type="number">
-</label>
-
-<label>MVTL measured organic C (%)
-  <input name="mvtl_orgc" type="number">    <!--calculated-->
-</label>
-
-<label>MVTL measured P (Bray)
-  <input name="mvtl_pbray" type="number">
-</label>
-
-<label>MVTL measured P (Olsen)
-  <input name="mvtl_polsen" type="number">
-</label>
-
-<label>MVTL measured K
-  <input name="mvtl_k" type="number">
-</label>
-
-  <!--Agvise-->
-
-<label>Agvise measured pH
-  <input name="agvise_ph" type="number">
-</label>
-
-<label>Agvise measured EC (us, microsiemens)
-  <input name="agvise_ec" type="number">
-</label>
-
-<label>Agvise measured total C (%)
-  <input name="agvise_totc" type="number">
-</label>
-
-<label>Agvise measured inorganic C (%)
-  <input name="agvise_inorgc" type="number">
-</label>
-
-<label>Agvise measured organic C (%)
-  <input name="agvise_orgc" type="number">  <!--calculated-->
-</label>
-
-<!--Catagory: Lowland Conifer Specific-->
-
-<label>Fiber percent
-  <input name="fiber_pct" type="number">
-</label>
-
-<label>Pryophosphate extraction color     <!--controlled vocabulary-->
-  <input name="pyro_col" type="text">
-</label>
-
-<label>Pryophosphate extraction notes
-  <input name="pyro_col_note" type="text">
-</label>
-
+<!--Category: Lab Texture-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Lab Texture</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+<!--subsection: LPSA--> 
+      <div class="collapsible-section">
+          <div class="collapsible-header" onclick="toggleSection(this)">
+              <span>LPSA</span>
+              <span class="collapsible-arrow">▼</span>
+          </div>
+          <div class="collapsible-content">
+            <label>LPSA file exists?
+              <input name="labtx_lpsa_file" type="checkbox"> <!--EDIT TO CORRECT TO BOOLEAN-->
+            </label>
+
+            <label>VCOS (%)
+              <input name="labtx_lpsa_vcos" type="number"> <!--bump in from sample_texture-->
+            </label>
+
+            <label>COS (%)
+              <input name="labtx_lpsa_cos" type="number"> <!--bump in from sample_texture-->
+            </label>
+
+            <label>S (%)
+              <input name="labtx_lpsa_s" type="number"> <!--bump in from sample_texture-->
+            </label>
+
+            <label>FS (%)
+              <input name="labtx_lpsa_fs" type="number"> <!--bump in from sample_texture-->
+            </label>
+
+            <label>VFS (%)
+              <input name="labtx_lpsa_vfs" type="number"> <!--bump in from sample_texture-->
+            </label>
+
+            <label>COSI (%)
+              <input name="labtx_lpsa_cosi" type="number"> <!--bump in from sample_texture-->
+            </label>
+
+            <label>FSI (%)
+              <input name="labtx_lpsa_fsi" type="number"> <!--bump in from sample_texture-->
+            </label>
+
+            <label>C (%)
+              <input name="labtx_lpsa_c" type="number"> <!--bump in from sample_texture-->
+            </label>
+
+            <label>notes
+              <input name="labtx_lpsa_note" type="text"> 
+            </label>
+          </div>
+      </div>
+<!--subsection: Hydrometer-->
+      <div class="collapsible-section">
+          <div class="collapsible-header" onclick="toggleSection(this)">
+              <span>Hydrometer</span>
+              <span class="collapsible-arrow">▼</span>
+          </div>
+          <div class="collapsible-content">
+            <label>Hydrometer performed?
+              <input name="tabtx_hydm_boolean" type="checkbox"> <!--EDIT TO CORRECT TO BOOLEAN-->
+            </label>
+
+            <label>Hydrometer S (%)
+              <input name="labtx_hydm_s" type="number"> <!--bump in from sample_texture-->
+            </label>
+
+            <label>Hydrometer C (%)
+              <input name="labtx_hydm_c" type="number"> <!--bump in from sample_texture-->
+            </label>
+
+            <label>Hydrometer SI (%)
+              <input name="labtx_hydm_si" type="number"> <!--bump in from sample_texture-->
+            </label>
+
+            <label>Texture by hydrometer notes
+              <input name="labtx_hydm_note" type="text">
+            </label>
+        </div>
+    </div>
+<!--subsection: Wet sieving-->
+    <div class="collapsible-section">
+        <div class="collapsible-header" onclick="toggleSection(this)">
+            <span>Wet sieving</span>
+            <span class="collapsible-arrow">▼</span>
+        </div>
+        <div class="collapsible-content">
+          <label>Wet sieving performed?
+            <input name="tabtx_wetsiv_boolean" type="checkbox"> <!--EDIT TO CORRECT TO BOOLEAN-->
+          </label>
+
+          <label>Wet sieving VCOS (%)
+            <input name="labtx_wetsiv_vcos" type="number"> <!--bump in from sample_texture-->
+          </label>
+
+          <label>Wet sieving COS (%)
+            <input name="labtx_wetsiv_cos" type="number"> <!--bump in from sample_texture-->
+          </label>
+
+          <label>Wet sieving S (%)
+            <input name="labtx_wetsiv_s" type="number"> <!--bump in from sample_texture-->
+          </label>
+
+          <label>Wet sieving FS (%)
+            <input name="labtx_wetsiv_fs" type="number"> <!--bump in from sample_texture-->
+          </label>
+
+          <label>Wet sieving VFS (%)
+            <input name="labtx_wetsiv_vfs" type="number"> <!--bump in from sample_texture-->
+          </label>
+
+          <label>Wet sieving notes
+            <input name="labtx_wetsiv_note" type="text">
+          </label>
+        </div>
+    </div>
+<!--subsection: Pipette-->
+    <div class="collapsible-section">
+        <div class="collapsible-header" onclick="toggleSection(this)">
+            <span>Pipette</span>
+            <span class="collapsible-arrow">▼</span>
+        </div>
+        <div class="collapsible-content">
+          <label>Pipetting performed?
+            <input name="tabtx_pip_boolean" type="checkbox"> <!--EDIT TO CORRECT TO BOOLEAN-->
+          </label>
+
+          <label>Coarse silt via pipette (%)
+            <input name="labtx_pip_cosi" type="number"> <!--bump in from sample_texture-->
+          </label>
+
+          <label>Fine silt via pipette (%)
+            <input name="labtx_pip_fsi" type="number"> <!--bump in from sample_texture-->
+          </label>
+
+          <label>Clay via pipette (%)
+            <input name="labtx_pip_c" type="number"> <!--bump in from sample_texture-->
+          </label>
+
+          <label>Texture by pipette notes
+            <input name="labtx_pip_note" type="text">
+          </label>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!--Category: Bulk Density-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Bulk Density</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+  <!--subsection: Ring Method-->
+      <div class="collapsible-section">
+          <div class="collapsible-header" onclick="toggleSection(this)">
+              <span>Ring Method</span>
+              <span class="collapsible-arrow">▼</span>
+          </div>
+          <div class="collapsible-content">
+            <label>Ring method bulk density (g/cm3)
+              <input name="db_ring" type="number">
+            </label>
+
+            <label>Ring method bulk density notes
+              <input name="db_ring_note" type="text">
+            </label>
+          </div>
+      </div>
+  <!--subsection: Compliant Cavity Method-->
+      <div class="collapsible-section">
+          <div class="collapsible-header" onclick="toggleSection(this)">
+              <span>Compliant Cavity Method</span>
+              <span class="collapsible-arrow">▼</span>
+          </div>
+          <div class="collapsible-content">
+            <label>Compliant cavity bulk density (g/cm3)
+              <input name="db_compcav" type="number">
+            </label>
+
+            <label>Compliant cavity bulk density notes
+              <input name="db_compcav_note" type="text">
+            </label>
+          </div>
+      </div>
+  <!--subsection: Soil Core Method-->
+      <div class="collapsible-section">
+          <div class="collapsible-header" onclick="toggleSection(this)">
+              <span>Soil Core Method</span>
+              <span class="collapsible-arrow">▼</span>
+          </div>
+          <div class="collapsible-content">
+            <label>Soil core bulk density (g/cm3)
+              <input name="db_core" type="number">
+            </label>
+
+            <label>Soil core bulk density notes
+              <input name="db_core_note" type="text">
+            </label>
+          </div>
+      </div>
+    </div>
+</div>
+
+<!--Category: pH/EC-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>pH/EC</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+      <label>Lab pH
+        <input name="lab_ph" type="number">
+      </label>
+
+      <label>Lab pH notes
+        <input name="lab_ph_note" type="text">
+      </label>
+
+      <label>Electrical Conductivity (us, microsiemens)
+        <input name="lab_ec" type="number">
+      </label>
+
+      <label>Electrical Conductivity notes
+        <input name="lab_ec_note" type="text">
+      </label>
+    </div>
+</div>
+
+<!--Category: LOI-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Loss on Ignition</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+      <label>LOI organic matter (%)
+        <input name="loi_om_pct" type="number">
+      </label>
+
+      <label>LOI notes
+        <input name="loi_note" type="text">
+      </label>
+    </div>
+</div>
+
+
+
+
+<!--Category: MIR-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>MIR</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+      <label>MIR spectral file 1
+        <input name="mir_spectra_1" type="checkbox">
+      </label>
+
+      <label>MIR 1 notes
+        <input name="mir_note_1" type="text">
+      </label>
+
+      <label>MIR spectral file 2
+        <input name="mir_spectra_2" type="checkbox">
+      </label>
+
+      <label>MIR 2 notes
+        <input name="mir_note_2" type="text">
+      </label>
+
+      <label>MIR spectral file 3
+        <input name="mir_spectra_3" type="checkbox">
+      </label>
+
+      <label>MIR 3 notes
+        <input name="mir_note_3" type="text">
+      </label>
+
+      <label>MIR spectral file 4
+        <input name="mir_spectra_4" type="checkbox">
+      </label>
+
+      <label>MIR 4 notes
+        <input name="mir_note_4" type="text">
+      </label>
+    </div>
+</div>
+
+<!--Category: Internal Elemental Analyses (PXRF, XRF, etc.)-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Internal Elemental Analyses (PXRF, XRF, etc.)</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+  <!--subsection: PXRF-->
+      <div class="collapsible-section">
+          <div class="collapsible-header" onclick="toggleSection(this)">
+              <span>PXRF</span>
+              <span class="collapsible-arrow">▼</span>
+          </div>
+          <div class="collapsible-content">
+            <label>PXRF scan file
+              <input name="pxrf_scan" type="checkbox">
+            </label>
+
+            <label>PXRF notes
+              <input name="pxrf_note" type="text">
+            </label>
+          </div>
+      </div>
+  <!--subsection: XRF-->
+      <div class="collapsible-section">
+          <div class="collapsible-header" onclick="toggleSection(this)">
+              <span>XRF</span>
+              <span class="collapsible-arrow">▼</span>
+          </div>
+          <div class="collapsible-content">
+            <label>XRF scan file
+              <input name="xrf_scan" type="checkbox">
+            </label>
+
+            <label>XRF notes
+              <input name="xrf_note" type="text">
+            </label>
+          </div>
+      </div>
+    </div>
+</div>
+
+<!--Category: External Analyses-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>External Analyses</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+  <!--subsection: MVTL-->
+      <div class="collapsible-section">
+          <div class="collapsible-header" onclick="toggleSection(this)">
+              <span>MVTL</span>
+              <span class="collapsible-arrow">▼</span>
+          </div>
+          <div class="collapsible-content">
+            <label>MVTL measured total C (%)
+              <input name="mvtl_totc" type="number">
+            </label>
+
+            <label>MVTL measured inorganic C (%)
+              <input name="mvtl_inorgc" type="number">
+            </label>
+
+            <label>MVTL measured organic C (%)
+              <input name="mvtl_orgc" type="number">    <!--calculated-->
+            </label>
+
+            <label>MVTL measured P (Bray)
+              <input name="mvtl_pbray" type="number">
+            </label>
+
+            <label>MVTL measured P (Olsen)
+              <input name="mvtl_polsen" type="number">
+            </label>
+
+            <label>MVTL measured K
+              <input name="mvtl_k" type="number">
+            </label>
+          </div>
+      </div>
+  <!--subsection: Agvise-->
+      <div class="collapsible-section">
+          <div class="collapsible-header" onclick="toggleSection(this)">
+              <span>Agvise</span>
+              <span class="collapsible-arrow">▼</span>
+          </div>
+          <div class="collapsible-content">
+            <label>Agvise measured pH
+              <input name="agvise_ph" type="number">
+            </label>
+
+            <label>Agvise measured EC (us, microsiemens)
+              <input name="agvise_ec" type="number">
+            </label>
+
+            <label>Agvise measured total C (%)
+              <input name="agvise_totc" type="number">
+            </label>
+
+            <label>Agvise measured inorganic C (%)
+              <input name="agvise_inorgc" type="number">
+            </label>
+
+            <label>Agvise measured organic C (%)
+              <input name="agvise_orgc" type="number">  <!--calculated-->
+            </label>
+          </div>
+      </div>
+    </div>
+</div>
+
+<!--Category: Lowland Conifer Specific-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Lowland Conifer Specific</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+      <label>Fiber percent
+        <input name="fiber_pct" type="number">
+      </label>
+
+      <label>Pryophosphate extraction color     <!--controlled vocabulary-->
+        <input name="pyro_col" type="text">
+      </label>
+
+      <label>Pryophosphate extraction notes
+        <input name="pyro_col_note" type="text">
+      </label>
+    </div>
+</div>
 
 <!--This is the save button at the end of the form, needs work-->
- 
+
   <button>Save</button>
   <pre id="out"></pre>
 </form>
