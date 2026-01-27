@@ -1,3 +1,22 @@
 This folder will include every controlled vocabulary csv file.
 
-Information stored here must be in a machine-readable format.
+Information stored here must be in a machine-readable (.csv) format.
+
+contains:
+
+- tablename-fieldname.csv (many of these)
+    + every controlled vocab is structured the same way, but we need to know the overlapping column names (like human readable, sdb iid,)
+    + funky iids sdb:
+    + term_code = machine readable
+    + pref_label = human readable
+    + alt _labels = synonyms
+    + definition = human readable definition
+    + status = accepted/retired 
+    + created/modfified
+    + exact match: exact reference
+    + clost match: close to what we're using
+    + source
+
+- units.csv
+    + unit level
+        - controlled vocabulary 

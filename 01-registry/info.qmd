@@ -5,4 +5,37 @@ This folder will hold entities/csv files, and table level metadata. In further d
         - each level gets its own .csv file
     + overall information to be included will be sent by Nic
 
-Information stored here must be in a machine-readable format.
+Information stored here must be in a machine-readable (.csv) format.
+
+Contains these documents from Nic:
+- tables.csv **table level**
+    + data dictionary for tables- indicates names/purposes of different tables
+    + different columns here:
+        - each row = 1 table
+        - release id = version
+        - path to where it exists
+    + weak/vauge at the moment
+
+- data-dictionary.csv **field level**
+    + field level
+        - each table is one field
+        - first column = entity id/mother table field is from
+        - second column = field name
+        - third = column label/human readable
+        - storagetype = general types
+            + also, storagetypesql, and storagetypehtml
+        - value_domain_type = type of domain (ex: float)
+        - allowed_values = thing in domain (ex: enum, {0|14})
+            + only list values for non-csv vocabs
+        - description
+            + boolean = describe values of 0 and 1 in here (enumerated in allowed_values)
+        - curator
+        - status (active/depricated)
+
+
+
+- methods.csv
+    + 
+
+- registry-dd.csv
+    + 

@@ -107,112 +107,31 @@ FIELDS
         <span>Pedon Identifiers</span>
     </div>
     <div class="static-content">
-        <label>SDB project ID
+        <label>SDB project ID*
             <input name="sdb_projiid_ref" required>
         </label>
 
-        <label>Lab pedon ID
+        <label>Lab pedon ID*
             <input name="lab_peiid" required>
         </label> 
 
-        <label>SDB pedon ID                 <!--autofilled-->
+        <label>Observation date
+            <input name="obs_dts" type="date">
+        </label>
+
+        <label>SDB pedon ID*                 <!--autofilled-->
             <input name="sdb_peiid" required>
         </label> 
-
-        <label>Entry date                   <!--should be autofilled/backend-->
-            <input name="proj_entry_dts" required>
-
-        <label>Observation date
-            <input name="obs_dts" type="date" required>
-        </label>
 
         <label>Describer'(s) initials
             <input name="desc_in" type="text">
         </label>
+
+        <label>Entry date*                  <!--should be autofilled/backend-->
+            <input name="proj_entry_dts" required>
         </label>
     </div>
 </div> 
-
-<!--category: pedon location-->
-<div class="static-section">
-    <div class="static-header">
-        <span>Pedon Location</span>
-    </div>
-    <div class="static-content">
-        <label>Latitude (dec deg WGS-84)
-            <input name="lat" type="number" required>
-        </label>
-
-        <label>Longitude (dec deg WGS-84)
-            <input name="lon" type="number" required>
-        </label>
-
-        <label> Geospatial data quality     <!--only 1-5-->
-        <input name="geosp_dataq" type="number">
-        </label>
-<!--subsection: us-specific location information-->
-    <div class="collapsible-section">
-        <div class="collapsible-header" onclick="toggleSection(this)">
-            <span>US-specific location information</span>
-            <span class="collapsible-arrow">▼</span>
-        </div>
-        <div class="collapsible-content">
-            <label>State                        <!--only 2 charecters-->
-                <input name="us_state" type="text">
-            </label>
-
-            <label>County name
-                <input name="county_name" type="text">
-            </label>
-
-            <label>Fips county code
-                <input name="county_fips" type="number">
-            </label>
-
-            <label>Physiographic division
-                <input name="phys_div" type="text">
-            </label>
-
-            <label>Providence
-                <input name="prov" type="text">
-            </label>
-
-            <label>Section
-                <input name="sect" type="text">
-            </label>
-
-            <label>Local
-                <input name="locl" type="text">
-            </label>
-            </label>
-        </div>
-    </div>
-<!--subsection: transect-specific information-->
-    <div class="collapsible-section">
-        <div class="collapsible-header" onclick="toggleSection(this)">
-            <span>Transect-specific information</span>
-            <span class="collapsible-arrow">▼</span>
-        </div>
-        <div class="collapsible-content">
-        <label>Transect ID
-            <input name="tran_id" type="number">
-        </label>
-
-        <label>Transect sequence
-            <input name="tran_seq" type="number">
-        </label>
-        </label>
-        </div>
-    </div>
-        <label>NPC code         <!--controlled vocab-->
-            <input name="npc_code" type="text">
-        </label>
-
-        <label>SSURGO map unit
-            <input name="ssurgo_mu" type="text">
-        </label>
-    </div>
-</div>
 
 <!--category: depth information-->
 <div class="static-section">
@@ -220,7 +139,7 @@ FIELDS
         <span>Pedon Depth</span>
     </div>
     <div class="static-content">
-        <label>Observed pedon depth (cm)
+        <label>Observed pedon depth (cm)*
             <input name="obsdepb" type="number">
         </label>
 
@@ -235,7 +154,94 @@ FIELDS
         <label>Type of restrictive layer
             <input name="restrict_type" type="text">
         </label>
+    </div>
+</div>
+
+<!--category: pedon location-->
+<div class="static-section">
+    <div class="static-header">
+        <span>Pedon Location</span>
+    </div>
+    <div class="static-content">
+        <label>Latitude (dec deg WGS-84)*
+            <input name="lat" type="number" required>
         </label>
+
+        <label>Longitude (dec deg WGS-84)*
+            <input name="lon" type="number" required>
+        </label>
+
+        <label> Geospatial data quality     <!--only 1-5-->
+            <input name="geosp_dataq" type="number">
+        </label>
+    <!--subsection: us-specific location information-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>US-specific location information</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>State                        <!--only 2 charecters-->
+                    <input name="us_state" type="text">
+                </label>
+
+                <label>County name
+                    <input name="county_name" type="text">
+                </label>
+
+                <label>Fips county code
+                    <input name="county_fips" type="number">
+                </label>
+
+                <label>Physiographic division
+                    <input name="phys_div" type="text">
+                </label>
+
+                <label>Providence
+                    <input name="prov" type="text">
+                </label>
+
+                <label>Section
+                    <input name="sect" type="text">
+                </label>
+
+                <label>Local
+                    <input name="locl" type="text">
+                </label>
+            </div>
+        </div>
+    <!--subsection: transect-specific information-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Transect-specific information</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Transect ID
+                    <input name="tran_id" type="number">
+                </label>
+
+                <label>Transect sequence
+                    <input name="tran_seq" type="number">
+                </label>
+            </div>
+        </div>
+    <!--subsection: NPC code and SSURGO map unit-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>NPC code and SSURGO map unit</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+            <label>NPC code         <!--controlled vocab-->
+                <input name="npc_code" type="text">
+            </label>
+
+            <label>SSURGO map unit
+                <input name="ssurgo_mu" type="text">
+            </label>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -419,6 +425,8 @@ FIELDS
         <span class="collapsible-arrow">▼</span>
     </div>
         <div class="collapsible-content">
+        </div>
+<!--parent material 1-->
             <label>Parent material 1 kind
                 <input name="pm_kind_1" type="text">
             </label>
@@ -434,37 +442,28 @@ FIELDS
             <label>Parent material 1 texture modifier
                 <input name="pm_mod_1" type="text">
             </label>
-        </div>
     <!--subsection: additional parent materials-->
     <div class="collapsible-section">
         <div class="collapsible-header" onclick="toggleSection(this)">
             <span>Additional Parent Materials</span>
             <span class="collapsible-arrow">▼</span>
         </div>
-    <!--secondary subsection: parent material 2-->
-        <div class="collapsible-content">
-            <div class="static-section">
-                <div class="static-header">
-                    <span>Parent Material 2</span>
-                </div>
-                <div class="static-content">
-                    <label>Parent material 2 kind
-                        <input name="pm_kind_2" type="text">
-                    </label>
+    <!--parent material 2-->
+        <label>Parent material 2 kind
+            <input name="pm_kind_2" type="text">
+        </label>
 
-                    <label>Parent material 2 top depth
-                        <input name="pm_dept_2" type="number">
-                    </label>
+        <label>Parent material 2 top depth
+            <input name="pm_dept_2" type="number">
+        </label>
 
-                    <label>Parent material 2 bottom depth
-                        <input name="pm_depb_2" type="number">
-                    </label>
+        <label>Parent material 2 bottom depth
+            <input name="pm_depb_2" type="number">
+        </label>
 
-                    <label>Parent material 2 texture modifier
-                        <input name="pm_mod_2" type="text">
-                    </label>
-                </div>
-            </div>
+        <label>Parent material 2 texture modifier
+            <input name="pm_mod_2" type="text">
+        </label>
     <!--secondary subsection: parent material 3-->
         <div class="static-section">
             <div class="static-header">
@@ -512,8 +511,6 @@ FIELDS
             </div>
         </div>
     </div>
-</div>
-
 <!--subsection: buried soils-->
     <div class="collapsible-section">
         <div class="collapsible-header" onclick="toggleSection(this)">
@@ -530,8 +527,6 @@ FIELDS
             </label>
         </div>
     </div> 
-
-
 <!--subsection: bedrock-->
     <div class="collapsible-section">
         <div class="collapsible-header" onclick="toggleSection(this)">
@@ -774,24 +769,16 @@ New page/header: soil classification
                 <span class="collapsible-arrow">▼</span>
             </div>
             <div class="collapsible-content">
-        <!-- secondary subsection: subsurface feature 2 -->
-                <div class="collapsible-section">
-                    <div class="collapsible-header" onclick="toggleSection(this)">
-                        <span>Subsurface Feature 2</span>
-                        <span class="collapsible-arrow">▼</span>
-                    </div>
-                    <div class="collapsible-content">
-                        <label>Subsurface feature 2 type
-                            <input name="sbsft_type_2" type="text">
-                        </label>
-                        <label>Subsurface feature 2 top depth (cm)
-                            <input name="sbsft_dept_2" type="number">
-                        </label>
-                        <label>Subsurface feature 2 bottom depth (cm)
-                            <input name="sbsft_depb_2" type="number">
-                        </label>
-                    </div>
-                </div>
+    <!--subsurface feature 2 -->
+                <label>Subsurface feature 2 type
+                    <input name="sbsft_type_2" type="text">
+                </label>
+                <label>Subsurface feature 2 top depth (cm)
+                    <input name="sbsft_dept_2" type="number">
+                </label>
+                <label>Subsurface feature 2 bottom depth (cm)
+                    <input name="sbsft_depb_2" type="number">
+                </label>
         <!--secondary subsection: subsurface feature 3-->   
                 <div class="collapsible-section">
                     <div class="collapsible-header" onclick="toggleSection(this)">
@@ -967,47 +954,47 @@ New page/header: soil classification
 <!--subsection: field taxonomy-->
         <div class="collapsible-section">
             <div class="collapsible-header" onclick="toggleSection(this)">
-                <span>Preliminary/Field Taxonomy</span>
+                <span>Taxonomy</span>
                 <span class="collapsible-arrow">▼</span>
             </div>
             <div class="collapsible-content">
-                <label>Preliminary/field order  <!--controlled vocab-->
+                <label>order  <!--controlled vocab-->
                     <input name="prelimtax_order" type="text">
                 </label>
 
-                <label>Preliminary/field suborder   <!--controlled vocab-->
+                <label>suborder   <!--controlled vocab-->
                     <input name="prelimtax_suborder" type="text">
                 </label>
 
-                <label>Preliminary/field great group    <!--controlled vocab-->
+                <label>great group    <!--controlled vocab-->
                     <input name="prelimtax_grtgrp" type="text">
                 </label>
 
-                <label>Preliminary/field subgroup   <!--controlled vocab-->
+                <label>subgroup   <!--controlled vocab-->
                     <input name="prelimtax_sbgrp" type="text">
                 </label>
 
-                <label>Preliminary/field taxon family
+                <label>taxon family
                     <input name="prelimtax_fam" type="text">
                 </label>
 
-                <label>Preliminary/field particle size control section top
+                <label>particle size control section top
                     <input name="prelimtax_pscst" type="number">
                 </label>
 
-                <label>Preliminary/field particle size control section bottom
+                <label>particle size control section bottom
                     <input name="prelimtax_pscsb" type="number">
                 </label>
 
-                <label>Preliminary/field family particle size class <!--controlled vocab-->
+                <label>family particle size class <!--controlled vocab-->
                     <input name="prelimtax_fpsc" type="text">
                 </label>
 
-                <label>Preliminary/field full taxonomic name
+                <label>full taxonomic name
                     <input name="prelimtax_fullname" type="text">
                 </label>
 
-                <label>Preliminary/field series name
+                <label>series name
                     <input name="prelimtax_srs" type="text">
                 </label>
             </div>  
@@ -1058,12 +1045,16 @@ New page/header: soil classification
                 <label>Final series name
                     <input name="finaltax_srs" type="text">
                 </label>
+
+                <label>Edition of "Keys to Soil Taxonomy" used
+                    <input name="finaltax_keyeditn" type="number">
+                </label>
             </div>
         </div>
     </div>
 </div>
 
-<!--Category: misc.-->
+<!--Category: RUSI/Misc.-->
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
         <span>RUSI/Misc.</span>
@@ -1086,7 +1077,7 @@ New page/header: soil classification
         <span>Pedon Notes</span>
     </div>
     <div class="static-content">
-        <label>Pedon notes
+        <label>Notes
             <input name="ped_notes" type="text">
         </label>
     </div>

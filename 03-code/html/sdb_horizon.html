@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Horizon Entry</title>
+<title>Horizon Entry</title> <!--form title-->
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -138,7 +138,7 @@ body {
         </label>
 
         <label>Horizon name
-            <input name="hzname" required>
+            <input name="hzname">
         </label>
 
         <label>SDB Horizon ID
@@ -179,6 +179,7 @@ body {
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
+<!--matrix color 1-->     
         <label>Horizon matrix color 1
             <input name="hz_col_1"> <!--controlled vocab for all colors-->
         </label>
@@ -186,7 +187,7 @@ body {
         <label>Horizon matrix color 1 (%)
             <input name="hz_col_pct_1" type="number">
         </label>
-
+<!--matrix color 2-->
         <label>Horizon matrix color 2
             <input name="hz_col_2"> <!--controlled vocab for all colors-->
         </label>
@@ -281,7 +282,6 @@ body {
 </div>
 
 <!--Category: Coarse Fragments-->
-
 <div class="collapsible-section">
     <div class="collapsible-header" onclick="toggleSection(this)">
         <span>Coarse Fragments</span>
@@ -453,27 +453,27 @@ body {
                         <span class="collapsible-arrow">▼</span>
                     </div>
                     <div class="collapsible-content">
-                        <label>Redox kind        <!--controlled vocab-->
+                        <label>Redox 2 kind        <!--controlled vocab-->
                             <input name="redox_kind_2" type="text">
                         </label>
 
-                        <label>Redox estimate (%)  <!--restricted range-->
+                        <label>Redox 2 estimate (%)  <!--restricted range-->
                             <input name="redox_pct_2" type="number">
                         </label>
 
-                        <label>Redox size       <!--restricted range-->
+                        <label>Redox 2 size       <!--restricted range-->
                             <input name="redox_sz_2" type="number">
                         </label>
 
-                        <label>Redox contrast        <!--controlled vocab-->
+                        <label>Redox 2 contrast        <!--controlled vocab-->
                             <input name="redox_contr_2" type="text">
                         </label>
 
-                        <label>Redox color  <!--controlled vocabulary-->
+                        <label>Redox 2 color  <!--controlled vocabulary-->
                             <input name="redox_col_2" type="text">
                         </label>
 
-                        <label>Redox location       <!--controleld vocabulary-->
+                        <label>Redox 2 location       <!--controleld vocabulary-->
                             <input name="redox_loc_2" type="text">
                         </label>
                     </div>

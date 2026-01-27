@@ -1,1 +1,3 @@
 This is where much of the information for the ebook will be stored, with manual documentation and materials rendered from .csv files. Standards, policies, governance, etc. will also live here.
+
+will be written in .qmd format, and used to create ebook

@@ -1,4 +1,2 @@
 This folder will store code used to create SDB, including .html for web entry forms, code for the lamda, and .sql code for the aws tables. Skeleton codes for each of these will also be included, with notes outlining what information needs to go where to make the project as repeatable as possible.
-
-
-Information stored here must be in a machine-readable format.
+Format varies depending on code stored.
