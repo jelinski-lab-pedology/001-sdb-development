@@ -115,17 +115,17 @@ body {
         <span>Vegetation Entry Identifiers</span>
     </div>
     <div class="static-content">
-        <label>SDB project ID
+        <label>SDB project ID*
           <input name="sdb_projiid_ref" required>
+        </label>
+
+        <label>SDB pedon ID*
+          <input name="sdb_peiid_ref" required>
         </label>
 
         <label>Lab pedon ID
           <input name="lab_peiid">
         </label> 
-
-        <label>SDB pedon ID
-          <input name="sdb_peiid_ref" required>
-        </label>
 
         <label>Vegetation common name   <!--this or scientific name required-->
          <input name="veg_comname">
@@ -135,11 +135,11 @@ body {
           <input name="veg_sciname">
         </label>
 
-        <label>SDB Vegeation Entry ID
+        <label>SDB Vegetation ID*
           <input name="sdb_vegiid" required>
         </label>
 
-        <label>Entry date -to be collected on backend- automatic hidden field
+        <label>Entry date* -to be collected on backend- automatic hidden field
           <input name="veg_entry_dts" required>
         </label>
     </div>

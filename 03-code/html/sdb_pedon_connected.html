@@ -99,6 +99,14 @@ FIELDS
     </div>
 </div>
 -->
+<!--
+<label>
+    <input name="" list="-opt" placeholder="type to search...">
+	<datalist id="-opt">
+		<option value=""></option>
+	</datalist>
+</label>
+-->
 
 
 <!--category: pedon identifiers-->
@@ -286,16 +294,46 @@ FIELDS
             <input name="lndfrm" type="text">
         </label>
 
-        <label>Slope shape (up & down)   <!--controlled vocab-->
-            <input name="slpshp_ud" type="text">
+        <label>Slope shape (up & down)
+            <input name="slpshp_ud" list="slpshp_ud-opt" placeholder="type to search...">
+            <datalist id="slpshp_ud-opt">
+                <option value=""></option>
+                <option value="L">linear</option>
+                <option value="V">convex</option>
+                <option value="C">concave</option>
+            </datalist>
         </label>
 
-        <label>Slope shape (across)      <!--controlled vocab-->
-            <input name="slpshp_acr" type="text">
+        <label>Slope shape (across)
+            <input name="slpshp_acr" list="slpshp_acr-opt" placeholder="type to search...">
+            <datalist id="slpshp_acr-opt">
+                <option value=""></option>
+                <option value="L">linear</option>
+                <option value="V">convex</option>
+                <option value="C">concave</option>
+            </datalist>
         </label>
 
-        <label>Hillslope position        <!--controlled vocab-->
-            <input name="2d_hill_pos" type="text">
+        <label>2D Hillslope position 
+            <input name="2d_hill_pos" list="2d_hill_pos-opt" placeholder="type to search...">
+            <datalist id="2d_hill_pos-opt">
+                <option value=""></option>
+                <option value="SU">summit</option>
+                <option value="SH">shoulder</option>
+                <option value="BS">backslope</option>
+                <option value="FS">footslope</option>
+                <option value="TS">toeslope</option>
+            </datalist>
+        </label>
+
+        <label>Slope position
+            <input name="slppos" list="slppos-opt" placeholder="type to search...">
+            <datalist id="slppos-opt">
+                <option value=""></option>
+                <option value="LT">lower third</option>
+                <option value="MT">middle third</option>
+                <option value="UT">upper third</option>
+            </datalist>
         </label>
 
         <label>Slope position            <!--controlled vocab-->
@@ -310,8 +348,13 @@ FIELDS
             <input name="surfmic" type="number">
         </label>
 
-        <label>Slope complexity          <!--controlled vocab-->
-            <input name="slpcomplx" type="text">
+        <label>Slope complexity
+            <input name="slpcomplx" list="slpcomplx-opt" placeholder="type to search...">
+            <datalist id="slpcomplx-opt">
+                <option value=""></option>
+                <option value="S">simple</option>
+                <option value="C">complex</option>
+            </datalist>
         </label>
 
         <label>Slope (%)
@@ -340,8 +383,19 @@ FIELDS
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
-        <label>Drainage class           <!--controlled vocab-->
-            <input name="drain_class" type="text">
+        <label>Drainage class
+            <input name="drain_class" list="drain_class-opt" placeholder="type to search...">
+            <datalist id="drain_class-opt">
+                <option value=""></option>
+                <option value="SA">subaqueous</option>
+                <option value="VP">very poorly drained</option>
+                <option value="PD">poorly drained</option>
+                <option value="SP">somewhat poorly drained</option>               
+                <option value="MW">moderately well drained</option>
+                <option value="WD">well drained</option>
+                <option value="SE">somewhat excessively drained</option>
+                <option value="ED">excessively drained</option>
+            </datalist>
         </label>
 
         <label>Depth to subsurface water table (cm)
