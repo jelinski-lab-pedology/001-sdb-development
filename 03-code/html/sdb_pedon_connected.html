@@ -99,7 +99,8 @@ FIELDS
     </div>
 </div>
 -->
-<!--
+
+<!-- TYPE TO SEARCH 
 <label>
     <input name="" list="-opt" placeholder="type to search...">
 	<datalist id="-opt">
@@ -419,8 +420,16 @@ FIELDS
                     <div class="static-content">
                 </div>
                     <div class="collapsible-content">
-                        <label>Moisture status 1         <!--controlled vocab-->
-                            <input name="mst_kind_1" type="text">
+                        <label>Moisture status 1
+                            <input name="mst_kind_1" list="mst_kind_1-opt" placeholder="type to search...">
+                            <datalist id="mst_kind_1-opt">
+                                <option value=""></option>
+                                <option value="D">dry</option>
+                                <option value="M">moist</option>
+                                <option value="W">wet</option>
+                                <option value="WN">wet, non-satiated</option>
+                                <option value="WS">wet, satiated</option>
+                            </datalist>
                         </label>
 
                         <label>Mositure status 1 top depth (cm)
@@ -439,8 +448,16 @@ FIELDS
                     <span class="collapsible-arrow">▼</span>
                 </div>
                 <div class="collapsible-content">
-                    <label>Moisture status 2         <!--controlled vocab-->
-                        <input name="mst_kind_2" type="text">
+                    <label>Moisture status 2
+                        <input name="mst_kind_2" list="mst_kind_2-opt" placeholder="type to search...">
+                        <datalist id="mst_kind_2-opt">
+                            <option value=""></option>
+                            <option value="D">dry</option>
+                            <option value="M">moist</option>
+                            <option value="W">wet</option>
+                            <option value="WN">wet, non-satiated</option>
+                            <option value="WS">wet, satiated</option>
+                        </datalist>
                     </label>
 
                     <label>Mositure status 2 top depth (cm)
@@ -453,7 +470,6 @@ FIELDS
                 </div>
             </div>
         </div>
-    </div>
 <!--subsection: surface water-->
     <div class="collapsible-section">
         <div class="collapsible-header" onclick="toggleSection(this)">
@@ -651,9 +667,20 @@ New page/header: soil classification
         <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-content">
-    <label>Epipedon 1 type      <!--controlled vocab-->
-            <input name="epi_type_1" type="text">
-        </label>
+<label>Epipedon 1 type
+    <input name="epi_type_1" list="epi_type_1-opt" placeholder="type to search...">
+	<datalist id="epi_type_1-opt">
+		<option value=""></option>
+        <option value="AN">anthropic</option>
+        <option value="FO">folistic</option>
+        <option value="HI">histic</option>
+        <option value="ME">melanic</option>
+        <option value="MO">mollic</option>
+        <option value="OC">ochric</option>
+        <option value="PL">plaggen</option>
+        <option value="UM">umbric</option>
+	</datalist>
+</label>
 
         <label>Epipedon 1 top depth
             <input name="epi_dept_1" type="number">
@@ -670,8 +697,19 @@ New page/header: soil classification
             <span class="collapsible-arrow">▼</span>
         </div>
         <div class="collapsible-content">
-            <label>Epipedon 2 type      <!--controlled vocab-->
-                <input name="epi_type_2" type="text">
+            <label>Epipedon 2 type
+                <input name="epi_type_2" list="epi_type_2-opt" placeholder="type to search...">
+                <datalist id="epi_type_2-opt">
+                    <option value=""></option>
+                    <option value="AN">anthropic</option>
+                    <option value="FO">folistic</option>
+                    <option value="HI">histic</option>
+                    <option value="ME">melanic</option>
+                    <option value="MO">mollic</option>
+                    <option value="OC">ochric</option>
+                    <option value="PL">plaggen</option>
+                    <option value="UM">umbric</option>
+                </datalist>
             </label>
 
             <label>Epipedon 2 top depth
@@ -681,9 +719,20 @@ New page/header: soil classification
             <label>Epipedon 2 bottom depth
                 <input name="epi_depb_2" type="number">
             </label>
-        
-            <label>Epipedon 3 type      <!--controlled vocab-->
-                <input name="epi_type_3" type="text">
+        <!--epipedon 3-->
+            <label>Epipedon 3 type
+                <input name="epi_type_3" list="epi_type_3-opt" placeholder="type to search...">
+                <datalist id="epi_type_3-opt">
+                    <option value=""></option>
+                    <option value="AN">anthropic</option>
+                    <option value="FO">folistic</option>
+                    <option value="HI">histic</option>
+                    <option value="ME">melanic</option>
+                    <option value="MO">mollic</option>
+                    <option value="OC">ochric</option>
+                    <option value="PL">plaggen</option>
+                    <option value="UM">umbric</option>
+                </datalist>
             </label>
 
             <label>Epipedon 3 top depth
@@ -1012,27 +1061,42 @@ New page/header: soil classification
                 <span class="collapsible-arrow">▼</span>
             </div>
             <div class="collapsible-content">
-                <label>order  <!--controlled vocab-->
-                    <input name="prelimtax_order" type="text">
+                <label>Order
+                    <input name="prelimtax_order" list="prelimtax_order-opt" placeholder="type to search...">
+                    <datalist id="prelimtax_order-opt">
+                        <option value=""></option>
+                        <option value="ALF">alfisol</option>
+                        <option value="AND">andisol</option>
+                        <option value="ARI">aridisol</option>
+                        <option value="ENT">entisol</option>
+                        <option value="GEL">gelisol</option>
+                        <option value="HIS">histosol</option>
+                        <option value="INC">inceptisol</option>
+                        <option value="MOL">mollisol</option>
+                        <option value="OXI">oxisol</option>
+                        <option value="SPO">spodosol</option>
+                        <option value="ULT">ultisol</option>
+                        <option value="VER">vertisol</option>
+                    </datalist>
                 </label>
 
-                <label>suborder   <!--controlled vocab-->
+                <label>Suborder   <!--controlled vocab-->
                     <input name="prelimtax_suborder" type="text">
                 </label>
 
-                <label>great group    <!--controlled vocab-->
+                <label>Great group    <!--controlled vocab-->
                     <input name="prelimtax_grtgrp" type="text">
                 </label>
 
-                <label>subgroup   <!--controlled vocab-->
+                <label>Subgroup   <!--controlled vocab-->
                     <input name="prelimtax_sbgrp" type="text">
                 </label>
 
-                <label>taxon family
+                <label>Taxon family
                     <input name="prelimtax_fam" type="text">
                 </label>
 
-                <label>particle size control section top
+                <label>Particle size control section top
                     <input name="prelimtax_pscst" type="number">
                 </label>
 
@@ -1060,8 +1124,23 @@ New page/header: soil classification
                 <span class="collapsible-arrow">▼</span>
             </div>
             <div class="collapsible-content">
-                <label>Final order  <!--controlled vocab-->
-                    <input name="finaltax_order" type="text">
+                <label>Final order
+                    <input name="finaltax_order" list="finaltax_order-opt" placeholder="type to search...">
+                    <datalist id="finaltax_order-opt">
+                        <option value=""></option>
+                        <option value="ALF">alfisol</option>
+                        <option value="AND">andisol</option>
+                        <option value="ARI">aridisol</option>
+                        <option value="ENT">entisol</option>
+                        <option value="GEL">gelisol</option>
+                        <option value="HIS">histosol</option>
+                        <option value="INC">inceptisol</option>
+                        <option value="MOL">mollisol</option>
+                        <option value="OXI">oxisol</option>
+                        <option value="SPO">spodosol</option>
+                        <option value="ULT">ultisol</option>
+                        <option value="VER">vertisol</option>
+                    </datalist>
                 </label>
 
                 <label>Final suborder   <!--controlled vocab-->
