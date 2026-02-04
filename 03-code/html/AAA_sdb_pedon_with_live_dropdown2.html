@@ -1,0 +1,1477 @@
+<!--Current as of 12-DEC-2025-->
+    
+<!--This section is for webpage styling-->
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pedon Entry Form</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F7F2EE;
+  color: #312417;
+}
+
+/*collapsible section styling*/
+.collapsible-section {
+  border: 2px solid #d8cbb5;
+  border-radius: 6px;
+  margin: 15px 0;
+  padding: 0;
+  background-color: #fff;
+}
+.collapsible-header {
+  background-color: #f0e3cc;
+  padding: 12px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  border-radius: 4px 4px 0 0;
+}
+.collapsible-header:hover {
+  background-color: #d8cbb5;
+}
+.collapsible-arrow {
+  font-size: 14px;
+  transition: transform 0.3s;
+}
+.collapsible-arrow.collapsed {
+  transform: rotate(-90deg);
+}
+.collapsible-content {
+  padding: 15px;
+  display: grid;
+  gap: 10px;
+}
+.collapsible-content.hidden {
+  display: none;
+}
+
+/*static/box section styling*/
+.static-section {
+  border: 2px solid #d8cbb5;
+  border-radius: 6px;
+  margin: 15px 0;
+  padding: 0;
+  background-color: #fff;
+}
+.static-header {
+  background-color: #f0e3cc;
+  padding: 12px 15px;
+  font-weight: bold;
+  border-radius: 4px 4px 0 0;
+}
+.static-content {
+  padding: 15px;
+  display: grid;
+  gap: 10px;
+}
+
+/* New styles for project selector */
+.project-selector-wrapper {
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #d8cbb5;
+}
+
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.refresh-button {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.refresh-button:hover {
+  background-color: #007399;
+}
+
+.create-project-link {
+  color: #2c5f2d;
+  font-size: 12px;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.create-project-link:hover {
+  text-decoration: underline;
+}
+
+.loading-message {
+  color: #666;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.error-message {
+  color: #721c24;
+  background: #f8d7da;
+  padding: 8px;
+  border-radius: 3px;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d8cbb5;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+select:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+</style>
+</head>
+
+<body>
+<form id="f" style="max-width:650px;margin:24px auto;display:grid;gap:10px">
+  <h1 style="text-align: center; font-size: 32px; margin-bottom: 15px;">Pedon Entry Form</h1>
+
+<!--STATIC- use for required sections
+<div class="static-section">
+    <div class="static-header">
+        <span>NAME</span>
+    </div>
+    <div class="static-content">
+FIELDS
+    </div>
+</div>
+-->
+
+<!-- COLLAPSABLE
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>NAME</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        FIELDS
+    </div>
+</div>
+-->
+
+<!-- TYPE TO SEARCH 
+<label>
+    <input name="" list="-opt" placeholder="type to search...">
+	<datalist id="-opt">
+		<option value=""></option>
+	</datalist>
+</label>
+-->
+
+
+<!--category: pedon identifiers-->
+<div class="static-section"> 
+    <div class="static-header">
+        <span>Pedon Identifiers</span>
+    </div>
+    <div class="static-content">
+        <div class="project-selector-wrapper">
+            <label>SDB project ID*
+                <div class="project-info">
+                    <select name="sdb_projiid_ref" id="projectSelect" required disabled>
+                        <option value="">Loading projects...</option>
+                    </select>
+                    <button type="button" class="refresh-button" onclick="loadProjects()" id="refreshBtn">↻ Refresh</button>
+                </div>
+                <div id="projectLoadStatus" class="loading-message">Loading available projects...</div>
+                <div style="margin-top: 5px;">
+                    <a href="project_entry_form.html" target="_blank" class="create-project-link">+ Create new project</a>
+                </div>
+            </label>
+        </div>
+
+        <label>Lab pedon ID*
+            <input name="lab_peiid" required>
+        </label> 
+
+        <label>Observation date
+            <input name="obs_dts" type="date">
+        </label>
+
+        <label>SDB pedon ID*                 <!--autofilled-->
+            <input name="sdb_peiid" required>
+        </label> 
+
+        <label>Describer'(s) initials
+            <input name="desc_in" type="text">
+        </label>
+
+        <label>Entry date*                  <!--should be autofilled/backend-->
+            <input name="proj_entry_dts" required>
+        </label>
+    </div>
+</div> 
+
+<!--category: depth information-->
+<div class="static-section">
+    <div class="static-header">
+        <span>Pedon Depth</span>
+    </div>
+    <div class="static-content">
+        <label>Observed pedon depth (cm)*
+            <input name="obsdepb" type="number">
+        </label>
+
+        <label>Observed cumulative thickness of O horizon(s) (cm)
+            <input name="obs_othick" type="number">
+        </label>
+
+        <label>Depth to restrictive layer (cm)
+            <input name="restrict_dep" type="number">
+        </label>
+
+        <label>Type of restrictive layer
+            <input name="restrict_type" type="text">
+        </label>
+    </div>
+</div>
+
+<!--category: pedon location-->
+<div class="static-section">
+    <div class="static-header">
+        <span>Pedon Location</span>
+    </div>
+    <div class="static-content">
+        <label>Latitude (dec deg WGS-84)*
+            <input name="lat" type="number" required>
+        </label>
+
+        <label>Longitude (dec deg WGS-84)*
+            <input name="lon" type="number" required>
+        </label>
+
+        <label> Geospatial data quality     <!--only 1-5-->
+            <input name="geosp_dataq" type="number">
+        </label>
+    <!--subsection: us-specific location information-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>US-specific location information</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>State                        <!--only 2 charecters-->
+                    <input name="us_state" type="text">
+                </label>
+
+                <label>County name
+                    <input name="county_name" type="text">
+                </label>
+
+                <label>Fips county code
+                    <input name="county_fips" type="number">
+                </label>
+
+                <label>Physiographic division
+                    <input name="phys_div" type="text">
+                </label>
+
+                <label>Providence
+                    <input name="prov" type="text">
+                </label>
+
+                <label>Section
+                    <input name="sect" type="text">
+                </label>
+
+                <label>Local
+                    <input name="locl" type="text">
+                </label>
+            </div>
+        </div>
+    <!--subsection: transect-specific information-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Transect-specific information</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Transect ID
+                    <input name="tran_id" type="number">
+                </label>
+
+                <label>Transect sequence
+                    <input name="tran_seq" type="number">
+                </label>
+            </div>
+        </div>
+    <!--subsection: NPC code and SSURGO map unit-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>NPC code and SSURGO map unit</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+            <label>NPC code         <!--controlled vocab-->
+                <input name="npc_code" type="text">
+            </label>
+
+            <label>SSURGO map unit
+                <input name="ssurgo_mu" type="text">
+            </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--category: photos/videos-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Photos and Videos</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>Description sheet photo(s) taken?
+            <input name="descr_photo" type="checkbox" value="true">
+        </label>
+
+        <label>Site photo(s) taken?
+            <input name="site_photo" type="checkbox" value="true">
+        </label>
+
+        <label>Site video(s) taken?
+            <input name="site_video" type="checkbox" value="true">
+        </label>
+
+        <label>Pedon photo(s) taken?
+            <input name="pedon_photo" type="checkbox" value="true">
+        </label>        
+        </label>
+    </div>
+</div>
+
+<!--category: landscape/landform-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Landscape and Landform</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>Landscape
+            <input name="lndscp" type="text">
+        </label>
+
+        <label>Landform
+            <input name="lndfrm" type="text">
+        </label>
+
+        <label>Slope shape (up & down)
+            <input name="slpshp_ud" list="slpshp_ud-opt" placeholder="type to search...">
+            <datalist id="slpshp_ud-opt">
+                <option value=""></option>
+                <option value="L">linear</option>
+                <option value="V">convex</option>
+                <option value="C">concave</option>
+            </datalist>
+        </label>
+
+        <label>Slope shape (across)
+            <input name="slpshp_acr" list="slpshp_acr-opt" placeholder="type to search...">
+            <datalist id="slpshp_acr-opt">
+                <option value=""></option>
+                <option value="L">linear</option>
+                <option value="V">convex</option>
+                <option value="C">concave</option>
+            </datalist>
+        </label>
+
+        <label>2D Hillslope position 
+            <input name="2d_hill_pos" list="2d_hill_pos-opt" placeholder="type to search...">
+            <datalist id="2d_hill_pos-opt">
+                <option value=""></option>
+                <option value="SU">summit</option>
+                <option value="SH">shoulder</option>
+                <option value="BS">backslope</option>
+                <option value="FS">footslope</option>
+                <option value="TS">toeslope</option>
+            </datalist>
+        </label>
+
+        <label>Slope position
+            <input name="slppos" list="slppos-opt" placeholder="type to search...">
+            <datalist id="slppos-opt">
+                <option value=""></option>
+                <option value="LT">lower third</option>
+                <option value="MT">middle third</option>
+                <option value="UT">upper third</option>
+            </datalist>
+        </label>
+
+        <label>Slope position            <!--controlled vocab-->
+            <input name="slppos" type="text">
+        </label>
+
+        <label>Geomorphic composition
+            <input name="3d_geo_comp" type="text">
+        </label>
+
+        <label>Surface microrelief (cm)
+            <input name="surfmic" type="number">
+        </label>
+
+        <label>Slope complexity
+            <input name="slpcomplx" list="slpcomplx-opt" placeholder="type to search...">
+            <datalist id="slpcomplx-opt">
+                <option value=""></option>
+                <option value="S">simple</option>
+                <option value="C">complex</option>
+            </datalist>
+        </label>
+
+        <label>Slope (%)
+            <input name="slp" type="number">
+        </label>
+
+        <label>Aspect                   <!--restricted values-->
+            <input name="asp" type="number">
+        </label>
+
+        <label>Break in landscape (m)
+            <input name="lndscp_break" type="number">
+        </label>
+
+        <label>Plot radius (m)
+            <input name="pl_rad" type="number">
+        </label>
+        </label>
+    </div>
+</div>
+
+<!--category: soil water-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Soil Water</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>Drainage class
+            <input name="drain_class" list="drain_class-opt" placeholder="type to search...">
+            <datalist id="drain_class-opt">
+                <option value=""></option>
+                <option value="SA">subaqueous</option>
+                <option value="VP">very poorly drained</option>
+                <option value="PD">poorly drained</option>
+                <option value="SP">somewhat poorly drained</option>               
+                <option value="MW">moderately well drained</option>
+                <option value="WD">well drained</option>
+                <option value="SE">somewhat excessively drained</option>
+                <option value="ED">excessively drained</option>
+            </datalist>
+        </label>
+
+        <label>Depth to subsurface water table (cm)
+            <input name="wt_dep" type="number">
+        </label>
+
+        <label>Hydric soil?
+            <input name="hydstat" type="checkbox" value="true">
+        </label>
+    </div>
+<!--subsection: moisture status-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Moisture status</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+                <div class="static-section">
+                    <div class="static-header">
+                        <span>Moisture status 1</span>
+                    </div>
+                    <div class="static-content">
+                </div>
+                    <div class="collapsible-content">
+                        <label>Moisture status 1
+                            <input name="mst_kind_1" list="mst_kind_1-opt" placeholder="type to search...">
+                            <datalist id="mst_kind_1-opt">
+                                <option value=""></option>
+                                <option value="D">dry</option>
+                                <option value="M">moist</option>
+                                <option value="W">wet</option>
+                                <option value="WN">wet, non-satiated</option>
+                                <option value="WS">wet, satiated</option>
+                            </datalist>
+                        </label>
+
+                        <label>Mositure status 1 top depth (cm)
+                            <input name="mst_dept_1" type="number">
+                        </label>
+
+                        <label>Mositure status 1 bottom depth (cm)
+                            <input name="mst_depb_1" type="number">
+                        </label>
+                    </div>
+                </div>
+    <!--secondary subsection: moisture status 2-->
+            <div class="collapsible-section">
+                <div class="collapsible-header" onclick="toggleSection(this)">
+                    <span>Moisture status 2</span>
+                    <span class="collapsible-arrow">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <label>Moisture status 2
+                        <input name="mst_kind_2" list="mst_kind_2-opt" placeholder="type to search...">
+                        <datalist id="mst_kind_2-opt">
+                            <option value=""></option>
+                            <option value="D">dry</option>
+                            <option value="M">moist</option>
+                            <option value="W">wet</option>
+                            <option value="WN">wet, non-satiated</option>
+                            <option value="WS">wet, satiated</option>
+                        </datalist>
+                    </label>
+
+                    <label>Mositure status 2 top depth (cm)
+                        <input name="mst_dept_2" type="number">
+                    </label>
+
+                    <label>Mositure status 2 bottom depth (cm)
+                        <input name="mst_depb_2" type="number">
+                    </label>
+                </div>
+            </div>
+        </div>
+<!--subsection: surface water-->
+    <div class="collapsible-section">
+        <div class="collapsible-header" onclick="toggleSection(this)">
+            <span>Surface water</span>
+            <span class="collapsible-arrow">▼</span>
+        </div>
+        <div class="collapsible-content">
+            <label>Surface water present?
+                <input name="surfh2o_stat" type="checkbox" value="true">
+            </label>
+
+            <label>Surface water depth (cm)
+                <input name="surfh2o_dep" type="number">
+            </label>
+        </div>
+    </div>
+</div>
+
+<!--category: parent material-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Parent Material(s)</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+        <div class="collapsible-content">
+        </div>
+<!--parent material 1-->
+            <label>Parent material 1 kind
+                <input name="pm_kind_1" type="text">
+            </label>
+
+            <label>Parent material 1 top depth
+                <input name="pm_dept_1" type="number">
+            </label>
+
+            <label>Parent material 1 bottom depth
+                <input name="pm_depb_1" type="number">
+            </label>
+
+            <label>Parent material 1 texture modifier
+                <input name="pm_mod_1" type="text">
+            </label>
+    <!--subsection: additional parent materials-->
+    <div class="collapsible-section">
+        <div class="collapsible-header" onclick="toggleSection(this)">
+            <span>Additional Parent Materials</span>
+            <span class="collapsible-arrow">▼</span>
+        </div>
+    <!--parent material 2-->
+        <label>Parent material 2 kind
+            <input name="pm_kind_2" type="text">
+        </label>
+
+        <label>Parent material 2 top depth
+            <input name="pm_dept_2" type="number">
+        </label>
+
+        <label>Parent material 2 bottom depth
+            <input name="pm_depb_2" type="number">
+        </label>
+
+        <label>Parent material 2 texture modifier
+            <input name="pm_mod_2" type="text">
+        </label>
+    <!--secondary subsection: parent material 3-->
+        <div class="static-section">
+            <div class="static-header">
+                <span>Parent Material 3</span>
+            </div>
+            <div class="static-content">
+                <label>Parent material 3 kind
+                    <input name="pm_kind_3" type="text">
+                </label>
+
+                <label>Parent material 3 top depth
+                    <input name="pm_dept_3" type="number">
+                </label>
+
+                <label>Parent material 3 bottom depth
+                    <input name="pm_depb_3" type="number">
+                </label>
+
+                <label>Parent material 3 texture modifier
+                    <input name="pm_mod_3" type="text">
+                </label>
+            </div>
+        </div>
+        <!--secondary subsection: parent material 4-->
+        <div class="static-section">
+            <div class="static-header">
+                <span>Parent material 4</span>
+            </div>
+            <div class="static-content">
+                <label>Parent material 4 kind
+                    <input name="pm_kind_4" type="text">
+                </label>
+
+                <label>Parent material 4 top depth
+                    <input name="pm_dept_4" type="number">
+                </label>
+
+                <label>Parent material 4 bottom depth
+                    <input name="pm_depb_4" type="number">
+                </label>
+
+                <label>Parent material 4 texture modifier
+                    <input name="pm_mod_4" type="text">
+                </label>
+            </div>
+        </div>
+    </div>
+<!--subsection: buried soils-->
+    <div class="collapsible-section">
+        <div class="collapsible-header" onclick="toggleSection(this)">
+            <span>Buried soils</span>
+            <span class="collapsible-arrow">▼</span>
+        </div>
+        <div class="collapsible-content">
+            <label>Buried soil?
+                <input name="buried_soil" type="checkbox" value="true">
+            </label>
+
+            <label>Surface mantal material
+                <input name="surf_mantle" type="text">
+            </label>
+        </div>
+    </div> 
+<!--subsection: bedrock-->
+    <div class="collapsible-section">
+        <div class="collapsible-header" onclick="toggleSection(this)">
+            <span>Bedrock</span>
+            <span class="collapsible-arrow">▼</span>
+        </div>
+        <div class="collapsible-content">
+            <label>Bedrock kind
+                <input name="bdrock_kind" type="text">
+            </label>
+
+            <label>Bedrock top depth (cm)
+                <input name="bdrock_dept" type="number">
+            </label>
+
+            <label>Bedrock bottom depth (cm)
+                <input name="bdrock_depb" type="number">
+            </label>
+
+            <label>Bedrock hardness
+                <input name="bdrock_hard" type="text">
+            </label>
+        </div>
+    </div>
+</div>
+
+<!--category: surface cover-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Surface Cover</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>Surface stoniness (%)        <!--restricted values (0-100)-->
+            <input name="surfston_pct" type="number">
+        </label>
+
+        <label>Surface stoniness spacing (cm)
+            <input name="surfston_spc" type="number">
+        </label>
+
+        <label>Surface stoniness size
+            <input name="surfston_sz" type="number">
+        </label>
+
+        <label>Surface crust and cracks?
+            <input name="crust_crack" type="checkbox" value="true">
+        </label>
+
+        <label>Landcover kind 1              <!--controlled vocab-->
+            <input name="landcov_1" type="text">
+        </label>
+
+        <label>Landcover kind 2              <!--controlled vocab-->
+            <input name="landcov_2" type="text">
+        </label>
+    </div>
+</div>
+
+<!--
+New page/header: soil classification
+-->
+
+<!--Category: epipedon-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Epipedon</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+<label>Epipedon 1 type
+    <input name="epi_type_1" list="epi_type_1-opt" placeholder="type to search...">
+	<datalist id="epi_type_1-opt">
+		<option value=""></option>
+        <option value="AN">anthropic</option>
+        <option value="FO">folistic</option>
+        <option value="HI">histic</option>
+        <option value="ME">melanic</option>
+        <option value="MO">mollic</option>
+        <option value="OC">ochric</option>
+        <option value="PL">plaggen</option>
+        <option value="UM">umbric</option>
+	</datalist>
+</label>
+
+        <label>Epipedon 1 top depth
+            <input name="epi_dept_1" type="number">
+        </label>
+
+        <label>Epipedon 1 bottom depth
+            <input name="epi_depb_1" type="number">
+        </label>
+    </div>
+<!--subsection: additional epipedons-->
+    <div class="collapsible-section">
+        <div class="collapsible-header" onclick="toggleSection(this)">
+            <span>Additional Epipedons</span>
+            <span class="collapsible-arrow">▼</span>
+        </div>
+        <div class="collapsible-content">
+            <label>Epipedon 2 type
+                <input name="epi_type_2" list="epi_type_2-opt" placeholder="type to search...">
+                <datalist id="epi_type_2-opt">
+                    <option value=""></option>
+                    <option value="AN">anthropic</option>
+                    <option value="FO">folistic</option>
+                    <option value="HI">histic</option>
+                    <option value="ME">melanic</option>
+                    <option value="MO">mollic</option>
+                    <option value="OC">ochric</option>
+                    <option value="PL">plaggen</option>
+                    <option value="UM">umbric</option>
+                </datalist>
+            </label>
+
+            <label>Epipedon 2 top depth
+                <input name="epi_dept_2" type="number">
+            </label>
+
+            <label>Epipedon 2 bottom depth
+                <input name="epi_depb_2" type="number">
+            </label>
+        <!--epipedon 3-->
+            <label>Epipedon 3 type
+                <input name="epi_type_3" list="epi_type_3-opt" placeholder="type to search...">
+                <datalist id="epi_type_3-opt">
+                    <option value=""></option>
+                    <option value="AN">anthropic</option>
+                    <option value="FO">folistic</option>
+                    <option value="HI">histic</option>
+                    <option value="ME">melanic</option>
+                    <option value="MO">mollic</option>
+                    <option value="OC">ochric</option>
+                    <option value="PL">plaggen</option>
+                    <option value="UM">umbric</option>
+                </datalist>
+            </label>
+
+            <label>Epipedon 3 top depth
+                <input name="epi_dept_3" type="number">
+            </label>
+
+            <label>Epipedon 3 bottom depth
+                <input name="epi_depb_3" type="number">
+            </label>
+        </div>
+    </div>
+</div>
+    
+<!--Category: diagnostic horizon(s)-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Diagnostic Horizon(s)</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+     <label>Diagnostic horizon 1 type    <!--controlled vocab-->
+            <input name="diaghz_type_1" type="text">
+        </label>                
+
+        <label>Diagnostic horizon 1 top depth (cm)
+            <input name="diaghz_dept_1" type="number">
+        </label>
+
+        <label>Diagnostic horizon 1 bottom depth (cm)
+            <input name="diaghz_depb_1" type="number">
+        </label>
+    </div>
+<!--subsection: additional diagnostic horizons-->    
+    <div class="collapsible-section">
+        <div class="collapsible-header" onclick="toggleSection(this)">
+            <span>Additional Diagnostic Horizons</span>
+            <span class="collapsible-arrow">▼</span>
+        </div>
+        <div class="collapsible-content">
+        <label>Diagnostic horizon 2 type     <!--controlled vocab-->
+                <input name="diaghz_type_2" type="text">
+            </label>                
+
+            <label>Diagnostic horizon 2 top depth (cm)
+                <input name="diaghz_dept_2" type="number">
+            </label>
+
+            <label>Diagnostic horizon 2 bottom depth (cm)
+                <input name="diaghz_depb_2" type="number">
+            </label>
+        </div>
+    <!--secondary subsection: diagnostic horizon 3-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Diagnostic Horizon 3</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+            <label>Diagnostic horizon 3 type     <!--controlled vocab-->
+                    <input name="diaghz_type_3" type="text">
+                </label>                
+
+                <label>Diagnostic horizon 3 top depth (cm)
+                    <input name="diaghz_dept_3" type="number">
+                </label>
+
+                <label>Diagnostic horizon 3 bottom depth (cm)
+                    <input name="diaghz_depb_3" type="number">
+                </label>
+            </div>
+        </div>       
+    <!--secondary subsection: diagnostic horizon 4-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Diagnostic Horizon 4</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+            <label>Diagnostic horizon 4 type     <!--controlled vocab-->
+                    <input name="diaghz_type_4" type="text">
+                </label>                
+
+                <label>Diagnostic horizon 4 top depth (cm)
+                    <input name="diaghz_dept_4" type="number">
+                </label>
+
+                <label>Diagnostic horizon 4 bottom depth (cm)
+                    <input name="diaghz_depb_4" type="number">
+                </label>
+            </div>
+        </div>
+    <!--secondary subsection: diagnostic horizon 5-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Diagnostic Horizon 5</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Diagnostic horizon 5 type     <!--controlled vocab-->
+                    <input name="diaghz_type_5" type="text">
+                </label>                
+
+                <label>Diagnostic horizon 5 top depth (cm)
+                    <input name="diaghz_dept_5" type="number">
+                </label>
+
+                <label>Diagnostic horizon 5 bottom depth (cm)
+                    <input name="diaghz_depb_5" type="number">
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Category: subsurface features-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Subsurface Features</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <!-- subsurface feature 1-->
+        <label>Subsurface feature 1 type    <!--controlled vocab-->
+            <input name="sbsft_type_1" type="text">
+        </label>                
+        <label>Subsurface feature 1 top depth (cm)
+            <input name="sbsft_dept_1" type="number">
+        </label>
+        <label>Subsurface feature 1 bottom depth (cm)
+            <input name="sbsft_depb_1" type="number">
+        </label>
+    <!--subsection: additional subsurface features;
+    2-10 are all at the same 'level'/in same box in the form-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Additional Subsurface Features</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+    <!--subsurface feature 2 -->
+                <label>Subsurface feature 2 type
+                    <input name="sbsft_type_2" type="text">
+                </label>
+                <label>Subsurface feature 2 top depth (cm)
+                    <input name="sbsft_dept_2" type="number">
+                </label>
+                <label>Subsurface feature 2 bottom depth (cm)
+                    <input name="sbsft_depb_2" type="number">
+                </label>
+        <!--secondary subsection: subsurface feature 3-->   
+                <div class="collapsible-section">
+                    <div class="collapsible-header" onclick="toggleSection(this)">
+                        <span>Subsurface Feature 3</span>
+                        <span class="collapsible-arrow">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <label>Subsurface feature 3 type    <!--controlled vocab-->
+                            <input name="sbsft_type_3" type="text">
+                        </label>                
+
+                        <label>Subsurface feature 3 top depth (cm)
+                            <input name="sbsft_dept_3" type="number">
+                        </label>
+
+                        <label>Subsurface feature 3 bottom depth (cm)
+                            <input name="sbsft_depb_3" type="number">
+                        </label>
+                    </div>
+                </div>
+        <!--secondary subsection: subsurface feature 4-->   
+                <div class="collapsible-section">
+                    <div class="collapsible-header" onclick="toggleSection(this)">
+                        <span>Subsurface Feature 4</span>
+                        <span class="collapsible-arrow">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <label>Subsurface feature 4 type    <!--controlled vocab-->
+                            <input name="sbsft_type_4" type="text">
+                        </label>                
+
+                        <label>Subsurface feature 4 top depth (cm)
+                            <input name="sbsft_dept_4" type="number">
+                        </label>
+
+                        <label>Subsurface feature 4 bottom depth (cm)
+                            <input name="sbsft_depb_4" type="number">
+                        </label>
+                    </div>
+                </div>
+        <!--secondary subsection: subsurface feature 5-->
+                <div class="collapsible-section">
+                    <div class="collapsible-header" onclick="toggleSection(this)">
+                        <span>Subsurface Feature 5</span>
+                        <span class="collapsible-arrow">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <label>Subsurface feature 5 type    <!--controlled vocab-->
+                            <input name="sbsft_type_5" type="text">
+                        </label>                
+
+                        <label>Subsurface feature 5 top depth (cm)
+                            <input name="sbsft_dept_5" type="number">
+                        </label>
+
+                        <label>Subsurface feature 5 bottom depth (cm)
+                            <input name="sbsft_depb_5" type="number">
+                        </label>
+                    </div>
+                </div>
+        <!--secondary subsection: subsurface feature 6-->
+                <div class="collapsible-section">
+                    <div class="collapsible-header" onclick="toggleSection(this)">
+                        <span>Subsurface Feature 6</span>
+                        <span class="collapsible-arrow">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <label>Subsurface feature 6 type    <!--controlled vocab-->
+                            <input name="sbsft_type_6" type="text">
+                        </label>                
+
+                        <label>Subsurface feature 6 top depth (cm)
+                            <input name="sbsft_dept_6" type="number">
+                        </label>
+
+                        <label>Subsurface feature 6 bottom depth (cm)
+                            <input name="sbsft_depb_6" type="number">
+                        </label>
+                    </div>
+                </div>
+        <!--secondary subsection: subsurface feature 7-->
+                <div class="collapsible-section">
+                    <div class="collapsible-header" onclick="toggleSection(this)">
+                        <span>Subsurface Feature 7</span>
+                        <span class="collapsible-arrow">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <label>Subsurface feature 7 type    <!--controlled vocab-->
+                            <input name="sbsft_type_7" type="text">
+                        </label>                
+
+                        <label>Subsurface feature 7 top depth (cm)
+                            <input name="sbsft_dept_7" type="number">
+                        </label>
+
+                        <label>Subsurface feature 7 bottom depth (cm)
+                            <input name="sbsft_depb_7" type="number">
+                        </label>
+                    </div>
+                </div>
+        <!--secondary subsection: subsurface feature 8-->
+                <div class="collapsible-section">
+                    <div class="collapsible-header" onclick="toggleSection(this)">
+                        <span>Subsurface Feature 8</span>
+                        <span class="collapsible-arrow">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <label>Subsurface feature 8 type    <!--controlled vocab-->
+                            <input name="sbsft_type_8" type="text">
+                        </label>                
+
+                        <label>Subsurface feature 8 top depth (cm)
+                            <input name="sbsft_dept_8" type="number">
+                        </label>
+
+                        <label>Subsurface feature 8 bottom depth (cm)
+                            <input name="sbsft_depb_8" type="number">
+                        </label>
+                    </div>
+                </div>
+        <!--secondary subsection: subsurface feature 9-->
+                <div class="collapsible-section">
+                    <div class="collapsible-header" onclick="toggleSection(this)">
+                        <span>Subsurface Feature 9</span>
+                        <span class="collapsible-arrow">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <label>Subsurface feature 9 type    <!--controlled vocab-->
+                            <input name="sbsft_type_9" type="text">
+                        </label>                
+
+                        <label>Subsurface feature 9 top depth (cm)
+                            <input name="sbsft_dept_9" type="number">
+                        </label>
+
+                        <label>Subsurface feature 9 bottom depth (cm)
+                            <input name="sbsft_depb_9" type="number">
+                        </label>
+                    </div>
+                </div>
+        <!--secondary subsection: subsurface feature 10-->
+                <div class="collapsible-section">
+                    <div class="collapsible-header" onclick="toggleSection(this)">
+                        <span>Subsurface Feature 10</span>
+                        <span class="collapsible-arrow">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <label>Subsurface feature 10 type   <!--controlled vocab-->
+                            <input name="sbsft_type_10" type="text">
+                        </label>                
+
+                        <label>Subsurface feature 10 top depth (cm)
+                            <input name="sbsft_dept_10" type="number">
+                        </label>
+
+                        <label>Subsurface feature 10 bottom depth (cm)
+                            <input name="sbsft_depb_10" type="number">
+                        </label>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Category: taxonomy-->
+<div class="static-section">
+    <div class="static-header">
+        <span>Taxonomy</span>
+    </div>
+    <div class="static-content">
+<!--subsection: field taxonomy-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Taxonomy</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Order
+                    <input name="prelimtax_order" list="prelimtax_order-opt" placeholder="type to search...">
+                    <datalist id="prelimtax_order-opt">
+                        <option value=""></option>
+                        <option value="ALF">alfisol</option>
+                        <option value="AND">andisol</option>
+                        <option value="ARI">aridisol</option>
+                        <option value="ENT">entisol</option>
+                        <option value="GEL">gelisol</option>
+                        <option value="HIS">histosol</option>
+                        <option value="INC">inceptisol</option>
+                        <option value="MOL">mollisol</option>
+                        <option value="OXI">oxisol</option>
+                        <option value="SPO">spodosol</option>
+                        <option value="ULT">ultisol</option>
+                        <option value="VER">vertisol</option>
+                    </datalist>
+                </label>
+
+                <label>Suborder   <!--controlled vocab-->
+                    <input name="prelimtax_suborder" type="text">
+                </label>
+
+                <label>Great group    <!--controlled vocab-->
+                    <input name="prelimtax_grtgrp" type="text">
+                </label>
+
+                <label>Subgroup   <!--controlled vocab-->
+                    <input name="prelimtax_sbgrp" type="text">
+                </label>
+
+                <label>Taxon family
+                    <input name="prelimtax_fam" type="text">
+                </label>
+
+                <label>Particle size control section top
+                    <input name="prelimtax_pscst" type="number">
+                </label>
+
+                <label>particle size control section bottom
+                    <input name="prelimtax_pscsb" type="number">
+                </label>
+
+                <label>family particle size class <!--controlled vocab-->
+                    <input name="prelimtax_fpsc" type="text">
+                </label>
+
+                <label>full taxonomic name
+                    <input name="prelimtax_fullname" type="text">
+                </label>
+
+                <label>series name
+                    <input name="prelimtax_srs" type="text">
+                </label>
+            </div>  
+        </div>
+    <!--subsection: final taxonomy--> 
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Finalized Taxonomy</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Final order
+                    <input name="finaltax_order" list="finaltax_order-opt" placeholder="type to search...">
+                    <datalist id="finaltax_order-opt">
+                        <option value=""></option>
+                        <option value="ALF">alfisol</option>
+                        <option value="AND">andisol</option>
+                        <option value="ARI">aridisol</option>
+                        <option value="ENT">entisol</option>
+                        <option value="GEL">gelisol</option>
+                        <option value="HIS">histosol</option>
+                        <option value="INC">inceptisol</option>
+                        <option value="MOL">mollisol</option>
+                        <option value="OXI">oxisol</option>
+                        <option value="SPO">spodosol</option>
+                        <option value="ULT">ultisol</option>
+                        <option value="VER">vertisol</option>
+                    </datalist>
+                </label>
+
+                <label>Final suborder   <!--controlled vocab-->
+                    <input name="finaltax_suborder" type="text">
+                </label>
+
+                <label>Final great group    <!--controlled vocab-->
+                    <input name="finaltax_grtgrp" type="text">
+                </label>
+
+                <label>Final subgroup   <!--controlled vocab-->
+                    <input name="finaltax_sbgrp" type="text">
+                </label>
+
+                <label>Final taxon family
+                    <input name="finaltax_fam" type="text">
+                </label>
+
+                <label>Final particle size control section top
+                    <input name="finaltax_pscst" type="number">
+                </label>
+
+                <label>Final particle size control section bottom
+                    <input name="finaltax_pscsb" type="number">
+                </label>
+
+                <label>Final family particle size class <!--controlled vocab-->
+                    <input name="finaltax_fpsc" type="text">
+                </label>
+
+                <label>Final full taxonomic name
+                    <input name="finaltax_fullname" type="text">
+                </label>
+
+                <label>Final series name
+                    <input name="finaltax_srs" type="text">
+                </label>
+
+                <label>Edition of "Keys to Soil Taxonomy" used
+                    <input name="finaltax_keyeditn" type="number">
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Category: RUSI/Misc.-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>RUSI/Misc.</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>RUSI performed?
+            <input name="rusi_boolean" type="checkbox" value="true">
+        </label>
+
+        <label>RUSI value
+            <input name="rusi_val_ref" type="number">
+        </label>
+    </div>
+</div>
+
+<!--Pedon notes-->
+<div class="static-section">
+    <div class="static-header">
+        <span>Pedon Notes</span>
+    </div>
+    <div class="static-content">
+        <label>Notes
+            <input name="ped_notes" type="text">
+        </label>
+    </div>
+</div>
+
+<!--This is the save button at the end of the form, needs work-->
+ 
+  <button type="submit" id="submitBtn">Save Pedon</button>
+  <pre id="out"></pre>
+</form>
+<script>
+const API = "https://hge8cotws2.execute-api.us-east-2.amazonaws.com/prod";
+
+console.log("Script loaded, API endpoint:", API);
+
+// Global variable to store projects
+let availableProjects = [];
+
+// Function to load projects from database
+async function loadProjects() {
+  const selectEl = document.getElementById('projectSelect');
+  const statusEl = document.getElementById('projectLoadStatus');
+  const refreshBtn = document.getElementById('refreshBtn');
+  
+  console.log("Loading projects...");
+  
+  // Disable controls while loading
+  selectEl.disabled = true;
+  refreshBtn.disabled = true;
+  statusEl.className = 'loading-message';
+  statusEl.textContent = 'Loading projects...';
+  selectEl.innerHTML = '<option value="">Loading...</option>';
+  
+  try {
+    const response = await fetch(API + "/projects", {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    
+    console.log("Projects response status:", response.status);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+    
+    const data = await response.json();
+    console.log("Projects data:", data);
+    
+    if (data.ok && data.projects) {
+      availableProjects = data.projects;
+      populateProjectDropdown(data.projects);
+      statusEl.className = 'loading-message';
+      statusEl.style.color = 'green';
+      statusEl.textContent = `✓ Loaded ${data.count} project(s)`;
+    } else {
+      throw new Error(data.error || 'Failed to load projects');
+    }
+    
+  } catch (error) {
+    console.error("Error loading projects:", error);
+    statusEl.className = 'error-message';
+    statusEl.textContent = `Error: ${error.message}. Click refresh to try again.`;
+    selectEl.innerHTML = '<option value="">Error loading projects</option>';
+  } finally {
+    refreshBtn.disabled = false;
+  }
+}
+
+// Populate the dropdown with project data
+function populateProjectDropdown(projects) {
+  const selectEl = document.getElementById('projectSelect');
+  
+  if (!projects || projects.length === 0) {
+    selectEl.innerHTML = '<option value="">No projects available - Create one first</option>';
+    selectEl.disabled = true;
+    return;
+  }
+  
+  // Clear existing options
+  selectEl.innerHTML = '<option value="">-- Select a project --</option>';
+  
+  // Add project options
+  projects.forEach(project => {
+    const option = document.createElement('option');
+    option.value = project.sdb_projiid;
+    
+    // Show both ID and name for clarity
+    const displayText = project.proj_name 
+      ? `${project.sdb_projiid} - ${project.proj_name}`
+      : project.sdb_projiid;
+    
+    option.textContent = displayText;
+    
+    // Add additional info as data attribute for potential future use
+    option.dataset.projectName = project.proj_name || '';
+    option.dataset.projectPi = project.proj_pi || '';
+    
+    selectEl.appendChild(option);
+  });
+  
+  // Enable the dropdown
+  selectEl.disabled = false;
+  
+  console.log(`Populated dropdown with ${projects.length} projects`);
+}
+
+document.getElementById('f').addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const outEl = document.getElementById('out');
+  outEl.textContent = "Submitting pedon...";
+  outEl.style.color = "blue";
+  
+  const fd = new FormData(e.target), body={}; 
+  fd.forEach((v,k)=> body[k]=v||null);
+  
+  // Validate project is selected
+  if (!body.sdb_projiid_ref) {
+    outEl.textContent = "✗ ERROR: Please select a project";
+    outEl.style.color = "red";
+    return;
+  }
+  
+  console.log("Form data:", body);
+  console.log("Posting to:", API + "/pedons");
+  
+  try {
+    const r = await fetch(API + "/pedons", { 
+      method:'POST', 
+      headers:{'content-type':'application/json'}, 
+      body: JSON.stringify(body) 
+    });
+    
+    const responseText = await r.text();
+    outEl.textContent = responseText;
+    
+    // Try to parse and show more communactive messages
+    try {
+      const json = JSON.parse(responseText);
+      if (json.ok) {
+        outEl.textContent = "✓ SUCCESS: Pedon saved! ID: " + json.sdb_peiid;
+        outEl.style.color = "green";
+      } else {
+        outEl.textContent = "✗ ERROR: " + json.error;
+        outEl.style.color = "red";
+      }
+    } catch (e) {
+      // If not JSON, just show the text
+      outEl.style.color = "black";
+    }
+  } catch (err) {
+    outEl.textContent = "✗ NETWORK ERROR: " + err.message;
+    outEl.style.color = "red";
+  }
+});
+
+// Function to toggle collapsible sections
+function toggleSection(header) {
+  const content = header.nextElementSibling;
+  const arrow = header.querySelector('.collapsible-arrow');
+  
+  content.classList.toggle('hidden');
+  arrow.classList.toggle('collapsed');
+}
+
+// Start all collapsible sections closed
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("DOM loaded");
+  
+  // Load projects first
+  loadProjects();
+  
+  // Start all collapsible sections closed
+  document.querySelectorAll('.collapsible-content').forEach(content => {
+    content.classList.add('hidden');
+    content.previousElementSibling.querySelector('.collapsible-arrow').classList.add('collapsed');
+  });
+});
+
+</script>
+</body>
+</html>
