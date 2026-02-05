@@ -127,7 +127,7 @@ body {
       </label>
 
       <label>Horizon component percent
-        <input name="hzcomp_pct" type="number" required>
+        <input name="hzcomp_pct" type="number" placeholder="0.00" step="0.01" min="0" required>
       </label>
 
       <label>SBD horizon component ID
@@ -166,13 +166,26 @@ body {
               <span class="collapsible-arrow">▼</span>
           </div>
           <div class="collapsible-content">
-      <label>Von Post estimate  <!--controlled vocab-->
-        <input name="hzcomp_field_vpost" type="text">
-      </label>
+            <label>Von post estimate
+                <input name="hzcomp_field_vpost" list="hzcomp_field_vpost-opt" placeholder="type to search...">
+                <datalist id="hzcomp_field_vpost-opt">
+                    <option value=""></option>
+                    <option value="H1">H1, completely undecomposed</option>
+                    <option value="H2">H2, almost undecomposed</option>
+                    <option value="H3">H3, very slightly decomposed</option>
+                    <option value="H4">H4, slightly decomposed</option>
+                    <option value="H5">H5, moderately decomposed</option>
+                    <option value="H6">H6, moderately well decomposed</option>
+                    <option value="H7">H7, well decomposed</option>
+                    <option value="H8">H8, very well decomposed</option>
+                    <option value="H9">H9, almost completely decomposed</option>
+                    <option value="H10">H10, completely decomposed</option>
+                </datalist>
+            </label>            
 
-      <label>fiber estimate (%)
-        <input name="hzcomp_field_fibrpct" type="number">
-      </label>
+            <label>fiber estimate (%)
+              <input name="hzcomp_field_fibrpct" type="number" placeholder="0.00" step="0.01" min="0">
+            </label>
           </div>
       </div>
   <!--subsection: mineral texture-->
@@ -191,15 +204,15 @@ body {
             </label>
 
             <label>clay estimate (%)
-              <input name="hzcomp_fieldtx_c" type="number">
+              <input name="hzcomp_fieldtx_c" type="number" placeholder="0.00" step="0.01" min="0">
             </label>
 
             <label>silt estimate (%)
-              <input name="hzcomp_fieldtx_s" type="number">
+              <input name="hzcomp_fieldtx_s" type="number" placeholder="0.00" step="0.01" min="0">
             </label>
 
             <label>sand estimate (%)
-              <input name="hzcomp_fieldtx_si" type="number">
+              <input name="hzcomp_fieldtx_si" type="number" placeholder="0.00" step="0.01" min="0">
             </label>
           </div>
       </div>
@@ -215,24 +228,45 @@ body {
     <div class="collapsible-content">
 <!--Coarse Fragment 1-->
       <label>coarse fragment 1 estimate (%)
-        <input name="hzcomp_frag_pct_1" type="number">
+        <input name="hzcomp_frag_pct_1" type="number" placeholder="0.00" step="0.01" min="0">
       </label>
 
       <label>coarse fragment 1 minimum size (cm)
-        <input name="hzcomp_frag_szrmin_1" type="number">
+        <input name="hzcomp_frag_szrmin_1" type="number" placeholder="0.00" step="0.01" min="0">
       </label>
 
       <label>coarse fragment 1 maximum size (cm)
-        <input name="hzcomp_frag_szrmax_1" type="number">
+        <input name="hzcomp_frag_szrmax_1" type="number" placeholder="0.00" step="0.01" min="0">
       </label>
 
-      <label>coarse fragment 1 type
-        <input name="hzcomp_frag_type_1" type="text">
+      <label>Coarse fragment 1 type
+          <input name="hzcomp_frag_type_1" list="hzcomp_frag_type_1-opt" placeholder="type to search...">
+          <datalist id="hzcomp_frag_type_1-opt">
+              <option value=""></option>
+              <option value="GR">gravels</option>
+              <option value="FGR">fine gravels</option>
+              <option value="MGR">medium gravels</option>
+              <option value="CGR">coarse gravels</option>
+              <option value="CB">cobbles</option>
+              <option value="ST">stones</option>
+              <option value="BO">boulders</option>
+              <option value="CH">channers</option>
+              <option value="FL">flagstones</option>
+          </datalist>
       </label>
 
-      <label>coarse fragment 1 roundness
-        <input name="hzcomp_frag_rnd_1" type="text">
-      </label>
+      <label>Coarse fragment 1 roundness
+          <input name="hzcomp_frag_rnd_1" list="hzcomp_frag_rnd_1-opt" placeholder="type to search...">
+          <datalist id="hzcomp_frag_rnd_1-opt">
+              <option value=""></option>
+              <option value="VA">very angular</option>
+              <option value="AB">angular</option>
+              <option value="SA">subangular</option>
+              <option value="SR">subrounded</option>
+              <option value="RO">rounded</option>
+              <option value="WR">well rounded</option>
+          </datalist>
+      </label>        
 
       <label>coarse fragment 1 rock material
         <input name="hzcomp_frag_kind_1" type="text">
@@ -245,24 +279,45 @@ body {
           </div>
           <div class="collapsible-content">
             <label>coarse fragment 2 estimate (%)
-              <input name="hzcomp_frag_pct_2" type="number">
+              <input name="hzcomp_frag_pct_2" type="number" placeholder="0.00" step="0.01" min="0">
             </label>
 
             <label>coarse fragment 2 minimum size (cm)
-              <input name="hzcomp_frag_szrmin_2" type="number">
+              <input name="hzcomp_frag_szrmin_2" type="number" placeholder="0.00" step="0.01" min="0">
             </label>
 
             <label>coarse fragment 2 maximum size (cm)
-              <input name="hzcomp_frag_szrmax_2" type="number">
+              <input name="hzcomp_frag_szrmax_2" type="number" placeholder="0.00" step="0.01" min="0">
             </label>
 
-            <label>coarse fragment 2 type
-              <input name="hzcomp_frag_type_2" type="text">
+            <label>Coarse fragment 2 type
+                <input name="hzcomp_frag_type_2" list="hzcomp_frag_type_2-opt" placeholder="type to search...">
+                <datalist id="hzcomp_frag_type_2-opt">
+                    <option value=""></option>
+                    <option value="GR">gravels</option>
+                    <option value="FGR">fine gravels</option>
+                    <option value="MGR">medium gravels</option>
+                    <option value="CGR">coarse gravels</option>
+                    <option value="CB">cobbles</option>
+                    <option value="ST">stones</option>
+                    <option value="BO">boulders</option>
+                    <option value="CH">channers</option>
+                    <option value="FL">flagstones</option>
+                </datalist>
             </label>
 
-            <label>coarse fragment 2 roundness
-              <input name="hzcomp_frag_rnd_2" type="text">
-            </label>
+            <label>Coarse fragment 2 roundness
+                <input name="hzcomp_frag_rnd_2" list="hzcomp_frag_rnd_2-opt" placeholder="type to search...">
+                <datalist id="hzcomp_frag_rnd_2-opt">
+                    <option value=""></option>
+                    <option value="VA">very angular</option>
+                    <option value="AB">angular</option>
+                    <option value="SA">subangular</option>
+                    <option value="SR">subrounded</option>
+                    <option value="RO">rounded</option>
+                    <option value="WR">well rounded</option>
+                </datalist>
+            </label>  
 
             <label>coarse fragment 2 rock material
               <input name="hzcomp_frag_kind_2" type="text">
@@ -274,44 +329,104 @@ body {
 
 <!--Category: Structure-->
 <div class="collapsible-section">
-    <div class="collapsible-header" onclick="toggleSection(this)">
-        <span>Structure</span>
-        <span class="collapsible-arrow">▼</span>
-    </div>
-    <div class="collapsible-content">
+  <div class="collapsible-header" onclick="toggleSection(this)">
+      <span>Structure</span>
+      <span class="collapsible-arrow">▼</span>
+  </div>
+  <div class="collapsible-content">
 <!--primary structure-->
-      <label>primary structure type
-        <input name="hzcomp_strut_kind_1" type="text">
-      </label>
+    <label>Primary strucutre type
+        <input name="hzcomp_strut_kind_1" list="hzcomp_strut_kind_1-opt" placeholder="type to search...">
+        <datalist id="hzcomp_strut_kind_1-opt">
+            <option value=""></option>
+            <option value="GR">granular</option>
+            <option value="ABK">angular blocky</option>
+            <option value="SBK">subangular blocky</option>
+            <option value="LP">lenticular</option>
+            <option value="PL">platy</option>
+            <option value="WEG">wedge</option>
+            <option value="PR">prismatic</option>
+            <option value="COL">columnar</option>
+            <option value="SGR">single grain (structureless)</option>
+            <option value="MA">massive (structureless) </option>
+            <option value="CDY">cloddy</option>
+        </datalist>
+    </label>
 
-      <label>primary structure grade
-        <input name="hzcomp_srut_grad_1" type="number">
-      </label>
+    <label>Primary strucutre grade
+        <input name="strut_grad_1" list="strut_grad_1-opt" placeholder="type to search...">
+        <datalist id="strut_grad_1-opt">
+            <option value=""></option>
+            <option value="0">0, structureless</option>
+            <option value="1">1, weak</option>
+            <option value="2">2, moderate</option>
+            <option value="3">3, strong</option>
+        </datalist>
+    </label>       
 
-      <label>primary structure size
-        <input name="hzcomp_strut_sz_1" type="text">
-      </label>
-  <!--subsection: parting structure-->
-      <div class="collapsible-section">
-          <div class="collapsible-header" onclick="toggleSection(this)">
-              <span>Parting Structure</span>
-              <span class="collapsible-arrow">▼</span>
-          </div>
-          <div class="collapsible-content">
-            <label>parting structure type
-              <input name="hzcomp_strut_kind_2" type="text">
-            </label>
-
-            <label>parting structure grade
-              <input name="hzcomp_srut_grad_2" type="number">
-            </label>
-
-            <label>parting structure size
-              <input name="hzcomp_strut_sz_2" type="text">
-            </label>
-          </div>
+    <label>Primary strucutre size
+        <input name="strut_sz_1" list="strut_sz_1-opt" placeholder="type to search...">
+        <datalist id="strut_sz_1-opt">
+            <option value=""></option>
+            <option value="VF">very fine</option>
+            <option value="F">fine</option>
+            <option value="M">medium</option>
+            <option value="CO">coarse</option>
+            <option value="VC">very coarse</option>
+            <option value="EC">extremely coarse</option>
+        </datalist>
+    </label>   
+<!--subsection: parting structure-->
+    <div class="collapsible-section">
+      <div class="collapsible-header" onclick="toggleSection(this)">
+          <span>Parting Structure</span>
+          <span class="collapsible-arrow">▼</span>
       </div>
-    </div>
+      <div class="collapsible-content">
+          <label>Parting strucutre type
+              <input name="hzcomp_strut_kind_2" list="hzcomp_strut_kind_2-opt" placeholder="type to search...">
+              <datalist id="hzcomp_strut_kind_2-opt">
+                  <option value=""></option>
+                  <option value="GR">granular</option>
+                  <option value="ABK">angular blocky</option>
+                  <option value="SBK">subangular blocky</option>
+                  <option value="LP">lenticular</option>
+                  <option value="PL">platy</option>
+                  <option value="WEG">wedge</option>
+                  <option value="PR">prismatic</option>
+                  <option value="COL">columnar</option>
+                  <option value="SGR">single grain (structureless)</option>
+                  <option value="MA">massive (structureless) </option>
+                  <option value="CDY">cloddy</option>
+              </datalist>
+          </label>
+
+          <label>Parting strucutre grade
+              <input name="strut_grad_2" list="strut_grad_2-opt" placeholder="type to search...">
+              <datalist id="strut_grad_2-opt">
+                  <option value=""></option>
+                  <option value="0">0, structureless</option>
+                  <option value="1">1, weak</option>
+                  <option value="2">2, moderate</option>
+                  <option value="3">3, strong</option>
+              </datalist>
+          </label>       
+
+          <label>Parting strucutre size
+              <input name="strut_sz_2" list="strut_sz_2-opt" placeholder="type to search...">
+              <datalist id="strut_sz_2-opt">
+                  <option value=""></option>
+                  <option value="VF">very fine</option>
+                  <option value="F">fine</option>
+                  <option value="M">medium</option>
+                  <option value="CO">coarse</option>
+                  <option value="VC">very coarse</option>
+                  <option value="EC">extremely coarse</option>
+              </datalist>
+          </label>   
+        </div>
+      </div>
+  </div>
 </div>
 
 <!--Category: Misc.-->
@@ -330,7 +445,7 @@ body {
       </label>
 
       <label>field pH
-        <input name="hzcomp_field_ph" type="number">
+        <input name="hzcomp_field_ph" type="number" placeholder="0.00" step="0.01" min="0" max="14">
       </label>
     </div>
 </div>

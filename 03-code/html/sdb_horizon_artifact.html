@@ -104,6 +104,15 @@ body {
 </div>
 -->
 
+<!-- TYPE TO SEARCH 
+<label>
+    <input name="" list="-opt" placeholder="type to search...">
+	<datalist id="-opt">
+		<option value=""></option>
+	</datalist>
+</label>
+-->
+
 <!--this is where the form actually begins-->
 
 <!--Category: Artifact Identifying Information-->
@@ -139,40 +148,76 @@ body {
     </div>
     <div class="static-content">
         <label>Artifact estimate (%)
-          <input name="artif_pct" type="number">
+          <input name="artif_pct" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
 
         <label>Artifact size (mm)
-          <input name="arif_sz" type="number">
-        </label>
+          <input name="arif_sz" type="number" placeholder="0.00" step="0.01" min="0">
+        </label>     
 
-        <label>Artifact         <!--controlled vocabulary-->
+        <label>Artifact kind
           <input name="artif_kind" type="text">
         </label>
 
-        <label>Artifact roundness <!--controlled vocabulary-->
-          <input name="artif_rnd" type="text">
+        <label>Artifact roundness
+            <input name="artif_rnd" list="artif_rnd-opt" placeholder="type to search...">
+          <datalist id="artif_rnd-opt">
+            <option value=""></option>
+            <option value="AN">angular</option>
+            <option value="RO">rounded</option>
+            <option value="SA">subangular</option>
+            <option value="SR">subrounded</option>
+            <option value="VA">very angular</option>
+            <option value="VR">very rounded</option>
+          </datalist>
         </label>
 
-        <label>Artifact shape     <!--controlled vocabulary-->
-          <input name="artif_shp" type="text">
+        <label>Artifact shape
+            <input name="artif_shp" list="artif_shp-opt" placeholder="type to search...">
+          <datalist id="artif_shp-opt">
+            <option value=""></option>
+            <option value="E">elongated</option>
+            <option value="Q">equidimensional</option>
+            <option value="F">flat</option>
+            <option value="I">irregular</option>
+          </datalist>
         </label>
 
-        <label>Artifact cohesion  <!--controlled vocabulary-->
-          <input name="artif_coh" type="text">
+        <label>Artifact cohesion
+            <input name="artif_coh" list="artif_coh-opt" placeholder="type to search...">
+          <datalist id="artif_coh-opt">
+            <option value=""></option>
+            <option value="C">cohesive</option>
+            <option value="N">noncohesive</option>
+          </datalist>
         </label>
 
-        <label>Artifact penetrability <!--controlled vocabulary-->
-          <input name="artif_pen" type="text">
+        <label>Artifact penetrability
+            <input name="artif_pen" list="artif_pen-opt" placeholder="type to search...">
+          <datalist id="artif_pen-opt">
+            <option value=""></option>
+            <option value="N">nonpenetrable</option>
+            <option value="P">penetrable</option>
+          </datalist>
         </label>
         
-        <label>Artifact persistance <!--controlled vocabulary-->
-          <input name="artif_per" type="text">
+        <label>Artifact persistance
+            <input name="artif_per" list="artif_per-opt" placeholder="type to search...">
+          <datalist id="artif_per-opt">
+            <option value=""></option>
+            <option value="N">nonpersistent</option>
+            <option value="P">persistent</option>
+          </datalist>
         </label>
 
-        <label>Artifact safety  <!--controlled vocabulary-->
-          <input name="artif_safe" type="text">
-        </label>        
+        <label>Artifact safety
+            <input name="artif_safe" list="artif_safe-opt" placeholder="type to search...">
+          <datalist id="artif_safe-opt">
+            <option value=""></option>
+            <option value="IA">innocuous</option>
+            <option value="NA">noxious</option>
+          </datalist>
+        </label>       
     </div>
 </div>
 

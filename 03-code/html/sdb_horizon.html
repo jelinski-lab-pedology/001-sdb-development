@@ -135,11 +135,11 @@ body {
         </label>
 
         <label>Horizon top depth
-            <input name="hzdept" type="number">
+            <input name="hzdept" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
 
         <label>Horizon bottom depth
-            <input name="hzdepb" type="number">
+            <input name="hzdepb" type="number" placeholder="0.00" step="0.01" min="0"> 
         </label>
 
         <label>Horizon bottom depth is incomplete, or ends in +
@@ -168,7 +168,7 @@ body {
     </div>
     <div class="collapsible-content">
         <label>Horizon sequence
-            <input name="hzseq" type="number">
+            <input name="hzseq" type="number" placeholder="0.00" step="1" min="0">
         </label>
 
         <label>Horizon boundary distinctness
@@ -209,7 +209,7 @@ body {
         </label>
 
         <label>Horizon matrix color 1 (%)
-            <input name="hz_col_pct_1" type="number">
+            <input name="hz_col_pct_1" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
 <!--matrix color 2-->
         <label>Horizon matrix color 2
@@ -217,7 +217,7 @@ body {
         </label>
 
         <label>Horizon matrix color 2 (%)
-            <input name="hz_col_pct_2" type="number">
+            <input name="hz_col_pct_2" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
     </div>
 </div>
@@ -254,7 +254,7 @@ body {
                 </label>
 
                 <label>Fiber estimate (%)
-                    <input name="field_fibr_pct" type="number">
+                    <input name="field_fibr_pct" type="number" placeholder="0.00" step="0.01" min="0">
                 </label>
             </div>
         </div>
@@ -275,15 +275,15 @@ body {
                 </label>
 
                 <label>Texture 1 clay estimate (%)
-                    <input name="fieldtx_c_1" type="number"> <!--controlled vocabulary-->
+                    <input name="fieldtx_c_1" type="number" placeholder="0.00" step="0.01" min="0"> <!--controlled vocabulary-->
                 </label>
 
                 <label>Texture 1 sand estimate (%)
-                    <input name="fieldtx_s_1" type="text"> <!--controlled vocabulary-->
+                    <input name="fieldtx_s_1" type="number" placeholder="0.00" step="0.01" min="0"> <!--controlled vocabulary-->
                 </label>            
 
                 <label>Texture 1 silt estimate (%)
-                    <input name="fieldtx_si_1" type="number"> <!--calculated value (100-(s%+c%)-->
+                    <input name="fieldtx_si_1" type="number" placeholder="0.00" step="0.01" min="0"> <!--calculated value (100-(s%+c%)-->
                 </label> 
 <!--secondary subsection: texture 2-->
                 <div class="collapsible-section">
@@ -301,15 +301,15 @@ body {
                         </label>
 
                         <label>Texture 2 clay estimate (%)
-                            <input name="fieldtx_c_2" type="number"> <!--controlled vocabulary-->
+                            <input name="fieldtx_c_2" type="number" placeholder="0.00" step="0.01" min="0"> <!--controlled vocabulary-->
                         </label>
 
                         <label>Texture 2 sand estimate (%)
-                            <input name="fieldtx_s_2" type="text"> <!--controlled vocabulary-->
+                            <input name="fieldtx_s_2" type="number" placeholder="0.00" step="0.01" min="0"> <!--controlled vocabulary-->
                         </label>            
 
                         <label>Texture 2 silt estimate (%)
-                            <input name="fieldtx_si_2" type="number"> <!--calculated value (100-(s%+c%)-->
+                            <input name="fieldtx_si_2" type="number" placeholder="0.00" step="0.01" min="0"> <!--calculated value (100-(s%+c%)-->
                         </label> 
                     </div>
                 </div>
@@ -327,14 +327,14 @@ body {
     <div class="collapsible-content">
 <!--coarse fragment 1-->
         <label>Coarse fragment 1 estimate (%)
-            <input name="frag_pct_1" type="number">
+            <input name="frag_pct_1" type="number" placeholder="0.00" step="0.01" min="0">
 
         <label>Coarse fragment 1 minimum size (cm)
-            <input name="frag_szrmin_1" type="number">
+            <input name="frag_szrmin_1" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
 
         <label>Coarse fragment 1 maximum size (cm)
-            <input name="frag_szrmax_1" type="number">
+            <input name="frag_szrmax_1" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
 
         <label>Coarse fragment 1 type
@@ -377,14 +377,14 @@ body {
             </div>
             <div class="collapsible-content">
                 <label>Coarse fragment 2 estimate (%)
-                    <input name="frag_pct_2" type="number">
+                    <input name="frag_pct_2" type="number" placeholder="0.00" step="0.01" min="0">
 
                 <label>Coarse fragment 2 minimum size (cm)
-                    <input name="frag_szrmin_2" type="number">
+                    <input name="frag_szrmin_2" type="number" placeholder="0.00" step="0.01" min="0">
                 </label>
 
                 <label>Coarse fragment 2 maximum size (cm)
-                    <input name="frag_szrmax_2" type="number">
+                    <input name="frag_szrmax_2" type="number" placeholder="0.00" step="0.01" min="0">
                 </label>
 
                 <label>Coarse fragment 2 type
@@ -562,7 +562,7 @@ body {
         </label>         
 
         <label>Field pH
-            <input name="field_ph" type="number"> <!--controlled values-->
+            <input name="field_ph" type="number" placeholder="0.00" step="0.01" min="0" max="14"> <!--controlled values-->
         </label>
     </div>
 </div>
@@ -587,7 +587,7 @@ body {
                 </label>
 
                 <label>Redox 1 estimate (%)  <!--restricted range-->
-                    <input name="redox_pct_1" type="number">
+                    <input name="redox_pct_1" type="number" placeholder="0.00" step="0.01" min="0">
                 </label>
 
                 <label>Redox 1 size
@@ -631,7 +631,7 @@ body {
                         </label>
 
                         <label>Redox 2 estimate (%)  <!--restricted range-->
-                            <input name="redox_pct_2" type="number">
+                            <input name="redox_pct_2" type="number" placeholder="0.00" step="0.01" min="0">
                         </label>
 
                         <label>Redox 2 size
@@ -680,7 +680,7 @@ body {
                 </label>
 
                 <label> PVSF 1 estimate (%)  <!--restricted range-->
-                    <input name="pvsf_pct_1" type="number">
+                    <input name="pvsf_pct_1" type="number" placeholder="0.00" step="0.01" min="0">
                 </label>
 
                 <label>PVSF 1 color  <!--controlled vocabulary-->
@@ -712,7 +712,7 @@ body {
                         </label>
 
                         <label> PVSF 2 estimate (%)  <!--restricted range-->
-                            <input name="pvsf_pct_2" type="number">
+                            <input name="pvsf_pct_2" type="number" placeholder="0.00" step="0.01" min="0">
                         </label>
 
                         <label>PVSF 2 color  <!--controlled vocabulary-->
@@ -749,7 +749,7 @@ body {
                 </label>
 
                 <label>Concentration 1 estimate (%)  <!--restricted range-->
-                    <input name="conc_pct_1" type="number">
+                    <input name="conc_pct_1" type="number" placeholder="0.00" step="0.01" min="0">
                 </label>
 
                 <label>Concentration 2 size
@@ -793,7 +793,7 @@ body {
                         </label>
 
                         <label>Concentration 2 estimate (%)  <!--restricted range-->
-                            <input name="conc_pct_2" type="number">
+                            <input name="conc_pct_2" type="number" placeholder="0.00" step="0.01" min="0">
                         </label>
 
                         <label>Concentration 2 size

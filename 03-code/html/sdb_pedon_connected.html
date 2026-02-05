@@ -109,7 +109,6 @@ FIELDS
 </label>
 -->
 
-
 <!--category: pedon identifiers-->
 <div class="static-section"> 
     <div class="static-header">
@@ -149,15 +148,15 @@ FIELDS
     </div>
     <div class="static-content">
         <label>Observed pedon depth (cm)*
-            <input name="obsdepb" type="number">
+            <input name="obsdepb" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
 
         <label>Observed cumulative thickness of O horizon(s) (cm)
-            <input name="obs_othick" type="number">
+            <input name="obs_othick" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
 
         <label>Depth to restrictive layer (cm)
-            <input name="restrict_dep" type="number">
+            <input name="restrict_dep" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
 
         <label>Type of restrictive layer
@@ -173,11 +172,11 @@ FIELDS
     </div>
     <div class="static-content">
         <label>Latitude (dec deg WGS-84)*
-            <input name="lat" type="number" required>
+            <input name="lat" type="number" placeholder="0.00" step="0.000001" min="0" required>
         </label>
 
         <label>Longitude (dec deg WGS-84)*
-            <input name="lon" type="number" required>
+            <input name="lon" type="number" placeholder="0.00" step="0.000001" min="0" required>
         </label>
 
         <label> Geospatial data quality     <!--only 1-5-->
@@ -227,11 +226,11 @@ FIELDS
             </div>
             <div class="collapsible-content">
                 <label>Transect ID
-                    <input name="tran_id" type="number">
+                    <input name="tran_id" type="text">
                 </label>
 
                 <label>Transect sequence
-                    <input name="tran_seq" type="number">
+                    <input name="tran_seq" type="number" placeholder="0.00" step="0.01" min="0">
                 </label>
             </div>
         </div>
@@ -296,7 +295,7 @@ FIELDS
         </label>
 
         <label>Slope shape (up & down)
-            <input name="slpshp_ud" list="slpshp_ud-opt" placeholder="type to search...">
+        <input name="slpshp_ud" list="slpshp_ud-opt" placeholder="type to search...">
             <datalist id="slpshp_ud-opt">
                 <option value=""></option>
                 <option value="L">linear</option>
@@ -346,7 +345,7 @@ FIELDS
         </label>
 
         <label>Surface microrelief (cm)
-            <input name="surfmic" type="number">
+            <input name="surfmic" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
 
         <label>Slope complexity
@@ -359,19 +358,19 @@ FIELDS
         </label>
 
         <label>Slope (%)
-            <input name="slp" type="number">
+            <input name="slp" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
 
         <label>Aspect                   <!--restricted values-->
-            <input name="asp" type="number">
+            <input name="asp" type="number" placeholder="0.00" step="0.001" min="0">
         </label>
 
         <label>Break in landscape (m)
-            <input name="lndscp_break" type="number">
+            <input name="lndscp_break" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
 
         <label>Plot radius (m)
-            <input name="pl_rad" type="number">
+            <input name="pl_rad" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
         </label>
     </div>
@@ -400,7 +399,7 @@ FIELDS
         </label>
 
         <label>Depth to subsurface water table (cm)
-            <input name="wt_dep" type="number">
+            <input name="wt_dep" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
 
         <label>Hydric soil?
@@ -433,11 +432,11 @@ FIELDS
                         </label>
 
                         <label>Mositure status 1 top depth (cm)
-                            <input name="mst_dept_1" type="number">
+                            <input name="mst_dept_1" type="number" placeholder="0.00" step="0.01" min="0">
                         </label>
 
                         <label>Mositure status 1 bottom depth (cm)
-                            <input name="mst_depb_1" type="number">
+                            <input name="mst_depb_1" type="number" placeholder="0.00" step="0.01" min="0">
                         </label>
                     </div>
                 </div>
@@ -461,11 +460,11 @@ FIELDS
                     </label>
 
                     <label>Mositure status 2 top depth (cm)
-                        <input name="mst_dept_2" type="number">
+                        <input name="mst_dept_2" type="number" placeholder="0.00" step="0.01" min="0">
                     </label>
 
                     <label>Mositure status 2 bottom depth (cm)
-                        <input name="mst_depb_2" type="number">
+                        <input name="mst_depb_2" type="number" placeholder="0.00" step="0.01" min="0">
                     </label>
                 </div>
             </div>
@@ -482,7 +481,7 @@ FIELDS
             </label>
 
             <label>Surface water depth (cm)
-                <input name="surfh2o_dep" type="number">
+                <input name="surfh2o_dep" type="number" placeholder="0.00" step="0.01" min="0">
             </label>
         </div>
     </div>
@@ -502,11 +501,11 @@ FIELDS
             </label>
 
             <label>Parent material 1 top depth
-                <input name="pm_dept_1" type="number">
+                <input name="pm_dept_1" type="number" placeholder="0.00" step="0.01" min="0">
             </label>
 
             <label>Parent material 1 bottom depth
-                <input name="pm_depb_1" type="number">
+                <input name="pm_depb_1" type="number" placeholder="0.00" step="0.01" min="0">
             </label>
 
             <label>Parent material 1 texture modifier
@@ -524,11 +523,11 @@ FIELDS
         </label>
 
         <label>Parent material 2 top depth
-            <input name="pm_dept_2" type="number">
+            <input name="pm_dept_2" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
 
         <label>Parent material 2 bottom depth
-            <input name="pm_depb_2" type="number">
+            <input name="pm_depb_2" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
 
         <label>Parent material 2 texture modifier
@@ -545,11 +544,11 @@ FIELDS
                 </label>
 
                 <label>Parent material 3 top depth
-                    <input name="pm_dept_3" type="number">
+                    <input name="pm_dept_3" type="number" placeholder="0.00" step="0.01" min="0">
                 </label>
 
                 <label>Parent material 3 bottom depth
-                    <input name="pm_depb_3" type="number">
+                    <input name="pm_depb_3" type="number" placeholder="0.00" step="0.01" min="0">
                 </label>
 
                 <label>Parent material 3 texture modifier
@@ -568,11 +567,11 @@ FIELDS
                 </label>
 
                 <label>Parent material 4 top depth
-                    <input name="pm_dept_4" type="number">
+                    <input name="pm_dept_4" type="number" placeholder="0.00" step="0.01" min="0">
                 </label>
 
                 <label>Parent material 4 bottom depth
-                    <input name="pm_depb_4" type="number">
+                    <input name="pm_depb_4" type="number" placeholder="0.00" step="0.01" min="0">
                 </label>
 
                 <label>Parent material 4 texture modifier
@@ -609,11 +608,11 @@ FIELDS
             </label>
 
             <label>Bedrock top depth (cm)
-                <input name="bdrock_dept" type="number">
+                <input name="bdrock_dept" type="number" placeholder="0.00" step="0.01" min="0">
             </label>
 
             <label>Bedrock bottom depth (cm)
-                <input name="bdrock_depb" type="number">
+                <input name="bdrock_depb" type="number" placeholder="0.00" step="0.01" min="0">
             </label>
 
             <label>Bedrock hardness
@@ -631,15 +630,15 @@ FIELDS
     </div>
     <div class="collapsible-content">
         <label>Surface stoniness (%)        <!--restricted values (0-100)-->
-            <input name="surfston_pct" type="number">
+            <input name="surfston_pct" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
 
         <label>Surface stoniness spacing (cm)
-            <input name="surfston_spc" type="number">
+            <input name="surfston_spc" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
 
         <label>Surface stoniness size
-            <input name="surfston_sz" type="number">
+            <input name="surfston_sz" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
 
         <label>Surface crust and cracks?
@@ -683,11 +682,11 @@ New page/header: soil classification
 </label>
 
         <label>Epipedon 1 top depth
-            <input name="epi_dept_1" type="number">
+            <input name="epi_dept_1" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
 
         <label>Epipedon 1 bottom depth
-            <input name="epi_depb_1" type="number">
+            <input name="epi_depb_1" type="number" placeholder="0.00" step="0.01" min="0">
         </label>
     </div>
 <!--subsection: additional epipedons-->
@@ -713,11 +712,11 @@ New page/header: soil classification
             </label>
 
             <label>Epipedon 2 top depth
-                <input name="epi_dept_2" type="number">
+                <input name="epi_dept_2" type="number" placeholder="0.00" step="0.01" min="0">
             </label>
 
             <label>Epipedon 2 bottom depth
-                <input name="epi_depb_2" type="number">
+                <input name="epi_depb_2" type="number" placeholder="0.00" step="0.01" min="0">
             </label>
         <!--epipedon 3-->
             <label>Epipedon 3 type
@@ -736,11 +735,11 @@ New page/header: soil classification
             </label>
 
             <label>Epipedon 3 top depth
-                <input name="epi_dept_3" type="number">
+                <input name="epi_dept_3" type="number" placeholder="0.00" step="0.01" min="0">
             </label>
 
             <label>Epipedon 3 bottom depth
-                <input name="epi_depb_3" type="number">
+                <input name="epi_depb_3" type="number" placeholder="0.00" step="0.01" min="0">
             </label>
         </div>
     </div>
@@ -1097,11 +1096,11 @@ New page/header: soil classification
                 </label>
 
                 <label>Particle size control section top
-                    <input name="prelimtax_pscst" type="number">
+                    <input name="prelimtax_pscst" type="number" placeholder="0.00" step="0.01" min="0">
                 </label>
 
                 <label>particle size control section bottom
-                    <input name="prelimtax_pscsb" type="number">
+                    <input name="prelimtax_pscsb" type="number" placeholder="0.00" step="0.01" min="0">
                 </label>
 
                 <label>family particle size class <!--controlled vocab-->
@@ -1160,11 +1159,11 @@ New page/header: soil classification
                 </label>
 
                 <label>Final particle size control section top
-                    <input name="finaltax_pscst" type="number">
+                    <input name="finaltax_pscst" type="number" placeholder="0.00" step="0.01" min="0">
                 </label>
 
                 <label>Final particle size control section bottom
-                    <input name="finaltax_pscsb" type="number">
+                    <input name="finaltax_pscsb" type="number" placeholder="0.00" step="0.01" min="0">
                 </label>
 
                 <label>Final family particle size class <!--controlled vocab-->
@@ -1180,7 +1179,7 @@ New page/header: soil classification
                 </label>
 
                 <label>Edition of "Keys to Soil Taxonomy" used
-                    <input name="finaltax_keyeditn" type="number">
+                    <input name="finaltax_keyeditn" type="number" placeholder="0.00" step="0.01" min="0">
                 </label>
             </div>
         </div>

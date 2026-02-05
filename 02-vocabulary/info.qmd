@@ -20,3 +20,8 @@ contains:
 - units.csv
     + unit level
         - controlled vocabulary 
+
+Note: cutoff for controlled vocabularies included in html was 15 values
+ex:
+- sample texture has >15 values, so the controlled vocabulary pulls from a table in sdb
+- moist consistence has <15 values, so the controlled vocabulary is created through code within the html
