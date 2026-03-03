@@ -1,0 +1,236 @@
+<!--Current as of 03-MAR-2026-->
+    
+<!--This section is for webpage styling-->
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Project Entry Form</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F7F2EE;
+  color: #312417;
+}
+
+/*collapsible section styling*/
+.collapsible-section {
+  border: 2px solid #d8cbb5;
+  border-radius: 6px;
+  margin: 15px 0;
+  padding: 0;
+  background-color: #fff;
+}
+.collapsible-header {
+  background-color: #f0e3cc;
+  padding: 12px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  border-radius: 4px 4px 0 0;
+}
+.collapsible-header:hover {
+  background-color: #d8cbb5;
+}
+.collapsible-arrow {
+  font-size: 14px;
+  transition: transform 0.3s;
+}
+.collapsible-arrow.collapsed {
+  transform: rotate(-90deg);
+}
+.collapsible-content {
+  padding: 15px;
+  display: grid;
+  gap: 10px;
+}
+.collapsible-content.hidden {
+  display: none;
+}
+
+/*static/box section styling*/
+.static-section {
+  border: 2px solid #d8cbb5;
+  border-radius: 6px;
+  margin: 15px 0;
+  padding: 0;
+  background-color: #fff;
+}
+.static-header {
+  background-color: #f0e3cc;
+  padding: 12px 15px;
+  font-weight: bold;
+  border-radius: 4px 4px 0 0;
+}
+.static-content {
+  padding: 15px;
+  display: grid;
+  gap: 10px;
+}
+</style>
+</head>
+<body>
+
+<form id="f" style="max-width:650px;margin:24px auto;display:grid;gap:10px">
+  <h1 style="text-align: center; font-size: 32px; margin-bottom: 15px;">Project Entry Form</h1>
+
+  <div id="statusMessage"></div>
+
+
+<!--this is where the form actually begins-->
+
+<!--category: project identifiers-->
+<div class="static-section">
+    <div class="static-header">
+        <span>Project Identifiers</span>
+    </div>
+    <div class="static-content">
+      <label>Lab project ID*
+        <input name="lab_projiid" required>
+      </label>
+
+      <label>Official SDB Project ID*
+        <input name="sdb_projiid" required>
+      </label> 
+
+      <label>Entry date -to be collected on backend- automatic hidden field*
+        <input name="proj_entry_dts" required>
+      </label>
+    </div>
+</div>
+
+<!--category: basic project information-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+            <span>Basic Project Information</span>
+            <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+      <label>Start date
+        <input name="proj_start" type="date">
+      </label>
+
+      <label>Project end date
+        <input name="proj_end" type="date">
+      </label>
+
+      <label>Legacy data?
+        <input name="legacy" type="checkbox">
+      </label>
+      
+      <label>Project description*
+        <input name="proj_description" type="text" required>
+      </label>
+    </div>
+</div>
+
+<!--category: grant information-->
+<div class="collapsible-section">
+  <div class="collapsible-header" onclick="toggleSection(this)">
+      <span>Grant Information</span>
+      <span class="collapsible-arrow">▼</span>
+  </div>
+  <div class="collapsible-content">
+    <label>Grant agency
+      <input name="grant_agent" type="text">
+    </label>
+
+    <label>Agency grant number
+      <input name="grant_agent_num" type="number">
+    </label>
+
+    <label>Grant agent number internal
+      <input name="grant_internal_num" type="number">
+    </label>
+  </div>
+</div>
+
+<!--category: personnel-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Personnel</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>PI personnel
+          <input name="personnel_pi" type="text">
+        </label>
+
+        <label>Grad student personnel
+          <input name="personnel_grad" type="text">
+        </label>
+
+        <label>Other personnel
+          <input name="personnel_other" type="text">
+        </label>
+    </div>
+</div>
+
+<!--This is the save button at the end of the form, needs work-->
+ 
+  <button>Save</button>
+  <pre id="out"></pre>
+</form>
+<script>
+const API = "https://hge8cotws2.execute-api.us-east-2.amazonaws.com/prod";
+document.getElementById('f').addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const outEl = document.getElementById('out');
+  outEl.textContent = "Submitting...";
+  
+  const fd = new FormData(e.target), body={}; 
+  fd.forEach((v,k)=> body[k]=v||null);
+  
+  try {
+    const r = await fetch(API + "/project_gateway", { 
+      method:'POST', 
+      headers:{'content-type':'application/json'}, 
+      body: JSON.stringify(body) 
+    });
+    
+    const responseText = await r.text();
+    outEl.textContent = responseText;
+    
+    // Try to parse and show more communactive messages
+    try {
+      const json = JSON.parse(responseText);
+      if (json.ok) {
+        outEl.textContent = "✓ SUCCESS: Project saved! ID: " + json.sdb_projiid;
+        outEl.style.color = "green";
+      } else {
+        outEl.textContent = "✗ ERROR: " + json.error;
+        outEl.style.color = "red";
+      }
+    } catch (e) {
+      // If not JSON, just show the text
+      outEl.style.color = "black";
+    }
+  } catch (err) {
+    outEl.textContent = "✗ NETWORK ERROR: " + err.message;
+    outEl.style.color = "red";
+  }
+});
+
+// Function to toggle collapsible sections
+function toggleSection(header) {
+  const content = header.nextElementSibling;
+  const arrow = header.querySelector('.collapsible-arrow');
+  
+  content.classList.toggle('hidden');
+  arrow.classList.toggle('collapsed');
+}
+
+// Start all collapsible sections closed
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.collapsible-content').forEach(content => {
+    content.classList.add('hidden');
+    content.previousElementSibling.querySelector('.collapsible-arrow').classList.add('collapsed');
+  });
+});
+
+</script>
+</body>
+</html>
