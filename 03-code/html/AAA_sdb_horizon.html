@@ -1,0 +1,942 @@
+<!--Current as of 03-MAR-2026-->
+    
+<!--This section is for webpage styling-->
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Horizon Entry</title> <!--form title-->
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F7F2EE;
+  color: #312417;
+}
+
+/*collapsible section styling*/
+.collapsible-section {
+  border: 2px solid #d8cbb5;
+  border-radius: 6px;
+  margin: 15px 0;
+  padding: 0;
+  background-color: #fff;
+}
+.collapsible-header {
+  background-color: #f0e3cc;
+  padding: 12px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  border-radius: 4px 4px 0 0;
+}
+.collapsible-header:hover {
+  background-color: #d8cbb5;
+}
+.collapsible-arrow {
+  font-size: 14px;
+  transition: transform 0.3s;
+}
+.collapsible-arrow.collapsed {
+  transform: rotate(-90deg);
+}
+.collapsible-content {
+  padding: 15px;
+  display: grid;
+  gap: 10px;
+}
+.collapsible-content.hidden {
+  display: none;
+}
+
+/*static/box section styling*/
+.static-section {
+  border: 2px solid #d8cbb5;
+  border-radius: 6px;
+  margin: 15px 0;
+  padding: 0;
+  background-color: #fff;
+}
+.static-header {
+  background-color: #f0e3cc;
+  padding: 12px 15px;
+  font-weight: bold;
+  border-radius: 4px 4px 0 0;
+}
+.static-content {
+  padding: 15px;
+  display: grid;
+  gap: 10px;
+}
+</style>
+</head>
+<body>
+
+<form id="f" style="max-width:650px;margin:24px auto;display:grid;gap:10px">
+  <h1 style="text-align: center; font-size: 32px; margin-bottom: 15px;">SDB Horizon Entry Form</h1>
+
+  <div id="statusMessage"></div>
+
+<!--references for creating boxes- good to copy/paste-->
+
+<!--STATIC BOX
+<div class="static-section">
+    <div class="static-header">
+        <span>NAME</span>
+    </div>
+    <div class="static-content">
+        FIELDS
+    </div>
+</div>
+-->
+
+<!-- COLLAPSABLE BOX
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>NAME</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        FIELDS
+    </div>
+</div>
+-->
+
+<!-- TYPE TO SEARCH 
+<label>
+    <input name="" list="-opt" placeholder="type to search...">
+	<datalist id="-opt">
+		<option value=""></option>
+	</datalist>
+</label>
+-->
+
+<!--this is where the form actually begins-->
+
+
+<!--category: horizon entry identifiers-->
+<div class="static-section">
+    <div class="static-header">
+        <span>Horizon Entry Identifiers</span>
+    </div>
+    <div class="static-content">
+        <label>SDB pedon ID
+            <input name="sdb_peiid_ref" required>
+        </label>
+
+        <label>Lab horizon ID
+            <input name="lab_hziid" required>
+        </label>
+
+        <label>SDB horizon ID
+            <input name="sdb_hziid_ref" required>
+        </label>
+
+        <label>Horizon top depth
+            <input name="hzdept" type="number">
+        </label>
+
+        <label>Horizon bottom depth
+            <input name="hzdepb" type="number">
+        </label>
+
+        <label>Horizon bottom depth is incomplete, or ends in +
+            <input name="hz_plus_depb" type="checkbox">
+        </label>
+
+        <label>Horizon name
+            <input name="hzname">
+        </label>
+
+        <label>SDB Horizon ID
+            <input name="sdb_hziid" required>
+        </label>
+
+        <label>Entry date <!--to be collected on backend- automatic hidden field-->
+            <input name="rusi_entry_dts" required>
+        </label>
+    </div>
+</div>
+
+<!--category: horizon description-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Horizon Description</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>Horizon sequence
+            <input name="hzseq" type="number">
+        </label>
+
+        <label>Horizon boundary distinctness
+            <input name="hzbound_dist" list="hzbound_dist-opt" placeholder="type to search...">
+            <datalist id="hzbound_dist-opt">
+                <option value=""></option>
+                <option value="V">very abrupt</option>
+                <option value="A">abrupt</option>
+                <option value="C">clear</option>
+                <option value="G">gradual</option>
+                <option value="D">diffuse</option>
+            </datalist>
+        </label>
+
+        <label>Horizon boundary topography
+            <input name="hzbound_topo" list="hzbound_topo-opt" placeholder="type to search...">
+            <datalist id="hzbound_topo-opt">
+                <option value=""></option>
+                <option value="S">smooth</option>
+                <option value="W">wavy</option>
+                <option value="I">irregular</option>
+                <option value="B">broken</option>
+            </datalist>
+        </label>
+    </div>
+</div>
+
+<!--category: matrix color-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Matrix Color</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+<!--matrix color 1-->     
+        <label>Horizon matrix color 1
+            <input name="hz_col_1"> <!--controlled vocab for all colors-->
+        </label>
+
+        <label>Horizon matrix color 1 (%)
+            <input name="hz_col_pct_1" type="number">
+        </label>
+<!--matrix color 2-->
+        <label>Horizon matrix color 2
+            <input name="hz_col_2"> <!--controlled vocab for all colors-->
+        </label>
+
+        <label>Horizon matrix color 2 (%)
+            <input name="hz_col_pct_2" type="number">
+        </label>
+    </div>
+</div>
+
+<!--category: texture and von post-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Texture and Von Post</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+    <!--subsection: von post-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Von Post</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Von post estimate
+                    <input name="field_vpost" list="field_vpost-opt" placeholder="type to search...">
+                    <datalist id="field_vpost-opt">
+                        <option value=""></option>
+                        <option value="H1">H1, completely undecomposed</option>
+                        <option value="H2">H2, almost undecomposed</option>
+                        <option value="H3">H3, very slightly decomposed</option>
+                        <option value="H4">H4, slightly decomposed</option>
+                        <option value="H5">H5, moderately decomposed</option>
+                        <option value="H6">H6, moderately well decomposed</option>
+                        <option value="H7">H7, well decomposed</option>
+                        <option value="H8">H8, very well decomposed</option>
+                        <option value="H9">H9, almost completely decomposed</option>
+                        <option value="H10">H10, completely decomposed</option>
+                    </datalist>
+                </label>
+
+                <label>Fiber estimate (%)
+                    <input name="field_fibr_pct" type="number">
+                </label>
+            </div>
+        </div>
+<!--subsection: texture-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Texture</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+<!--texture 1-->
+                <label>Texture 1 class
+                    <input name="fieldtx_type_1" type="text"> <!--controlled vocabulary-->
+                </label>
+
+                <label>Texture 1 modifier
+                    <input name="fieldtx_mod_1" type="text"> <!--controlled vocabulary-->
+                </label>
+
+                <label>Texture 1 clay estimate (%)
+                    <input name="fieldtx_c_1" type="number"> <!--controlled vocabulary-->
+                </label>
+
+                <label>Texture 1 sand estimate (%)
+                    <input name="fieldtx_s_1" type="text"> <!--controlled vocabulary-->
+                </label>            
+
+                <label>Texture 1 silt estimate (%)
+                    <input name="fieldtx_si_1" type="number"> <!--calculated value (100-(s%+c%)-->
+                </label> 
+<!--secondary subsection: texture 2-->
+                <div class="collapsible-section">
+                    <div class="collapsible-header" onclick="toggleSection(this)">
+                        <span>Texture 2</span>
+                        <span class="collapsible-arrow">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <label>Texture 2 class
+                            <input name="fieldtx_type_2" type="text"> <!--controlled vocabulary-->
+                        </label>
+
+                        <label>Texture 2 modifier
+                            <input name="fieldtx_mod_2" type="text"> <!--controlled vocabulary-->
+                        </label>
+
+                        <label>Texture 2 clay estimate (%)
+                            <input name="fieldtx_c_2" type="number"> <!--controlled vocabulary-->
+                        </label>
+
+                        <label>Texture 2 sand estimate (%)
+                            <input name="fieldtx_s_2" type="text"> <!--controlled vocabulary-->
+                        </label>            
+
+                        <label>Texture 2 silt estimate (%)
+                            <input name="fieldtx_si_2" type="number"> <!--calculated value (100-(s%+c%)-->
+                        </label> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Category: Coarse Fragments-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Coarse Fragments</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+<!--coarse fragment 1-->
+        <label>Coarse fragment 1 estimate (%)
+            <input name="frag_pct_1" type="number">
+
+        <label>Coarse fragment 1 minimum size (cm)
+            <input name="frag_szrmin_1" type="number">
+        </label>
+
+        <label>Coarse fragment 1 maximum size (cm)
+            <input name="frag_szrmax_1" type="number">
+        </label>
+
+        <label>Coarse fragment 1 type
+            <input name="frag_type_1" list="frag_type_1-opt" placeholder="type to search...">
+            <datalist id="frag_type_1-opt">
+                <option value=""></option>
+                <option value="GR">gravels</option>
+                <option value="FGR">fine gravels</option>
+                <option value="MGR">medium gravels</option>
+                <option value="CGR">coarse gravels</option>
+                <option value="CB">cobbles</option>
+                <option value="ST">stones</option>
+                <option value="BO">boulders</option>
+                <option value="CH">channers</option>
+                <option value="FL">flagstones</option>
+            </datalist>
+        </label>
+
+        <label>Coarse fragment 1 roundness
+            <input name="frag_rnd_1" list="frag_rnd_1-opt" placeholder="type to search...">
+            <datalist id="frag_rnd_1-opt">
+                <option value=""></option>
+                <option value="VA">very angular</option>
+                <option value="AB">angular</option>
+                <option value="SA">subangular</option>
+                <option value="SR">subrounded</option>
+                <option value="RO">rounded</option>
+                <option value="WR">well rounded</option>
+            </datalist>
+        </label>        
+
+        <label>Coarse fragment 1 rock material <!--controlled vocabulary-->
+            <input name="frag_kind_1" type="text">
+        </label>
+<!--subsection: coarse fragment 2-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Coarse Fragment 2</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Coarse fragment 2 estimate (%)
+                    <input name="frag_pct_2" type="number">
+
+                <label>Coarse fragment 2 minimum size (cm)
+                    <input name="frag_szrmin_2" type="number">
+                </label>
+
+                <label>Coarse fragment 2 maximum size (cm)
+                    <input name="frag_szrmax_2" type="number">
+                </label>
+
+                <label>Coarse fragment 2 type
+                    <input name="frag_type_2" list="frag_type_2-opt" placeholder="type to search...">
+                    <datalist id="frag_type_2-opt">
+                        <option value=""></option>
+                        <option value="GR">gravels</option>
+                        <option value="FGR">fine gravels</option>
+                        <option value="MGR">medium gravels</option>
+                        <option value="CGR">coarse gravels</option>
+                        <option value="CB">cobbles</option>
+                        <option value="ST">stones</option>
+                        <option value="BO">boulders</option>
+                        <option value="CH">channers</option>
+                        <option value="FL">flagstones</option>
+                    </datalist>
+                </label>                
+
+                <label>Coarse fragment 2 roundness
+                    <input name="frag_rnd_2" list="frag_rnd_2-opt" placeholder="type to search...">
+                    <datalist id="frag_rnd_2-opt">
+                        <option value=""></option>
+                        <option value="VA">very angular</option>
+                        <option value="AB">angular</option>
+                        <option value="SA">subangular</option>
+                        <option value="SR">subrounded</option>
+                        <option value="RO">rounded</option>
+                        <option value="WR">well rounded</option>
+                    </datalist>
+                </label>    
+
+                <label>Coarse fragment 2 rock material <!--controlled vocabulary-->
+                    <input name="frag_kind_2" type="text">
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--category: Structure-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Structure</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+<!--primary structure-->
+        <label>Primary strucutre type
+            <input name="strut_kind_1" list="strut_kind_1-opt" placeholder="type to search...">
+            <datalist id="strut_kind_1-opt">
+                <option value=""></option>
+                <option value="GR">granular</option>
+                <option value="ABK">angular blocky</option>
+                <option value="SBK">subangular blocky</option>
+                <option value="LP">lenticular</option>
+                <option value="PL">platy</option>
+                <option value="WEG">wedge</option>
+                <option value="PR">prismatic</option>
+                <option value="COL">columnar</option>
+                <option value="SGR">single grain (structureless)</option>
+                <option value="MA">massive (structureless) </option>
+                <option value="CDY">cloddy</option>
+            </datalist>
+        </label>
+
+        <label>Primary strucutre grade
+            <input name="strut_grad_1" list="strut_grad_1-opt" placeholder="type to search...">
+            <datalist id="strut_grad_1-opt">
+                <option value=""></option>
+                <option value="0">0, structureless</option>
+                <option value="1">1, weak</option>
+                <option value="2">2, moderate</option>
+                <option value="3">3, strong</option>
+            </datalist>
+        </label>       
+
+        <label>Primary strucutre size
+            <input name="strut_sz_1" list="strut_sz_1-opt" placeholder="type to search...">
+            <datalist id="strut_sz_1-opt">
+                <option value=""></option>
+                <option value="VF">very fine</option>
+                <option value="F">fine</option>
+                <option value="M">medium</option>
+                <option value="CO">coarse</option>
+                <option value="VC">very coarse</option>
+                <option value="EC">extremely coarse</option>
+            </datalist>
+        </label>        
+<!--subsection: parting structure-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Parting Structure</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Parting strucutre type
+                    <input name="strut_kind_2" list="strut_kind_2-opt" placeholder="type to search...">
+                    <datalist id="strut_kind_2-opt">
+                        <option value=""></option>
+                        <option value="GR">granular</option>
+                        <option value="ABK">angular blocky</option>
+                        <option value="SBK">subangular blocky</option>
+                        <option value="LP">lenticular</option>
+                        <option value="PL">platy</option>
+                        <option value="WEG">wedge</option>
+                        <option value="PR">prismatic</option>
+                        <option value="COL">columnar</option>
+                        <option value="SGR">single grain (structureless)</option>
+                        <option value="MA">massive (structureless) </option>
+                        <option value="CDY">cloddy</option>
+                    </datalist>
+                </label>
+
+                <label>Parting strucutre grade
+                    <input name="strut_grad_2" list="strut_grad_2-opt" placeholder="type to search...">
+                    <datalist id="strut_grad_2-opt">
+                        <option value=""></option>
+                        <option value="0">0, structureless</option>
+                        <option value="1">1, weak</option>
+                        <option value="2">2, moderate</option>
+                        <option value="3">3, strong</option>
+                    </datalist>
+                </label>       
+
+                <label>Parting strucutre size
+                    <input name="strut_sz_2" list="strut_sz_2-opt" placeholder="type to search...">
+                    <datalist id="strut_sz_2-opt">
+                        <option value=""></option>
+                        <option value="VF">very fine</option>
+                        <option value="F">fine</option>
+                        <option value="M">medium</option>
+                        <option value="CO">coarse</option>
+                        <option value="VC">very coarse</option>
+                        <option value="EC">extremely coarse</option>
+                    </datalist>
+                </label>      
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--category: Misc.-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Misc.</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+        <label>Moist consistence
+            <input name="moistcon" list="moistcon-opt" placeholder="type to search...">
+            <datalist id="moistcon-opt">
+                <option value=""></option>
+                <option value="L">loose</option>
+                <option value="VFR">very friable</option>
+                <option value="FR">friable</option>
+                <option value="FI">firm</option>
+                <option value="VFI">very firm</option>
+                <option value="EF">extremely firm</option>
+                <option value="SR">slightly rigid</option>
+                <option value="R">rigid</option>
+                <option value="VR">very rigid</option>
+            </datalist>
+        </label>       
+
+        <label>Effervescence
+            <input name="eff" list="eff-opt" placeholder="type to search...">
+            <datalist id="eff-opt">
+                <option value=""></option>
+                <option value="NE">non-effervescent</option>
+                <option value="VS">very slight</option>
+                <option value="SL">slight</option>
+                <option value="ST">strong</option>
+                <option value="VE">violent</option>
+            </datalist>
+        </label>         
+
+        <label>Field pH
+            <input name="field_ph" type="number"> <!--controlled values-->
+        </label>
+    </div>
+</div>
+
+<!--category: Features-->
+<div class="collapsible-section">
+    <div class="collapsible-header" onclick="toggleSection(this)">
+        <span>Features</span>
+        <span class="collapsible-arrow">▼</span>
+    </div>
+    <div class="collapsible-content">
+    <!--subsection: redox features (Fe, Mn)-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Redox Features (Fe, Mn)</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+    <!--redox feature 1 (Fe, Mn)-->
+                <label>Redox 1 kind        <!--controlled vocab-->
+                    <input name="redox_kind_1" type="text">
+                </label>
+
+                <label>Redox 1 estimate (%)  <!--restricted range-->
+                    <input name="redox_pct_1" type="number">
+                </label>
+
+                <label>Redox 1 size
+                    <input name="redox_sz_1" list="redox_sz_1-opt" placeholder="type to search...">
+                    <datalist id="redox_sz_1-opt">
+                        <option value=""></option>
+                        <option value="1">1, fine</option>
+                        <option value="2">2, fine</option>
+                        <option value="3">3, fine</option>
+                        <option value="4">4, fine</option>
+                        <option value="5">5, fine</option>
+                    </datalist>
+                </label>
+
+                <label>Redox 1 contrast
+                    <input name="redox_contr_1" list="redox_contr_1-opt" placeholder="type to search...">
+                    <datalist id="redox_contr_1-opt">
+                        <option value=""></option>
+                        <option value="F">fine</option>
+                        <option value="D">distinct</option>
+                        <option value="P">prominent</option>
+                    </datalist>
+                </label>
+
+                <label>Redox 1 color  <!--controlled vocabulary-->
+                    <input name="redox_col_1" type="text">
+                </label>
+
+                <label>Redox 1 location       <!--controleld vocabulary-->
+                    <input name="redox_loc_1" type="text">
+                </label>
+        <!--secondary subsection: redox feature 2 (Fe, Mn)-->
+                <div class="collapsible-section">
+                    <div class="collapsible-header" onclick="toggleSection(this)">
+                        <span>Redox Feature 2 (Fe, Mn)</span>
+                        <span class="collapsible-arrow">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <label>Redox 2 kind        <!--controlled vocab-->
+                            <input name="redox_kind_2" type="text">
+                        </label>
+
+                        <label>Redox 2 estimate (%)  <!--restricted range-->
+                            <input name="redox_pct_2" type="number">
+                        </label>
+
+                        <label>Redox 2 size
+                            <input name="redox_sz_2" list="redox_sz_2-opt" placeholder="type to search...">
+                            <datalist id="redox_sz_2-opt">
+                                <option value=""></option>
+                                <option value="1">1, fine</option>
+                                <option value="2">2, fine</option>
+                                <option value="3">3, fine</option>
+                                <option value="4">4, fine</option>
+                                <option value="5">5, fine</option>
+                            </datalist>
+                        </label>                        
+
+                        <label>Redox 2 contrast
+                            <input name="redox_contr_2" list="redox_contr_2-opt" placeholder="type to search...">
+                            <datalist id="redox_contr_2-opt">
+                                <option value=""></option>
+                                <option value="F">fine</option>
+                                <option value="D">distinct</option>
+                                <option value="P">prominent</option>
+                            </datalist>
+                        </label>                        
+
+                        <label>Redox 2 color  <!--controlled vocabulary-->
+                            <input name="redox_col_2" type="text">
+                        </label>
+
+                        <label>Redox 2 location       <!--controleld vocabulary-->
+                            <input name="redox_loc_2" type="text">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--subsection: ped and void surface features (PVSF)-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Ped and Void Surface Features (PVSF)</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+    <!--pvsf 1-->
+                <label>PVSF 1 kind        <!--controlled vocab-->
+                    <input name="pvsf_kind_1" type="text">
+                </label>
+
+                <label> PVSF 1 estimate (%)  <!--restricted range-->
+                    <input name="pvsf_pct_1" type="number">
+                </label>
+
+                <label>PVSF 1 color  <!--controlled vocabulary-->
+                    <input name="pvsf_col_1" type="text">
+                </label>
+
+                <label>PVSF 1 contrast
+                    <input name="pvsf_contr_1" list="pvsf_contr_1-opt" placeholder="type to search...">
+                    <datalist id="pvsf_contr_1-opt">
+                        <option value=""></option>
+                        <option value="F">faint</option>
+                        <option value="D">distinct</option>
+                        <option value="P">prominent</option>
+                    </datalist>
+                </label>
+
+                <label>PVSF 1 location       <!--controleld vocabulary-->
+                    <input name="pvsf_loc_1" type="text">
+                </label>
+        <!--secondary subsection: pvsf 2-->
+                <div class="collapsible-section">
+                    <div class="collapsible-header" onclick="toggleSection(this)">
+                        <span>PVSF 2</span>
+                        <span class="collapsible-arrow">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <label>PVSF 2 kind        <!--controlled vocab-->
+                            <input name="pvsf_kind_2" type="text">
+                        </label>
+
+                        <label> PVSF 2 estimate (%)  <!--restricted range-->
+                            <input name="pvsf_pct_2" type="number">
+                        </label>
+
+                        <label>PVSF 2 color  <!--controlled vocabulary-->
+                            <input name="pvsf_col_1" type="text">
+                        </label>
+
+                        <label>PVSF 2 contrast
+                            <input name="pvsf_contr_2" list="pvsf_contr_2-opt" placeholder="type to search...">
+                            <datalist id="pvsf_contr_2-opt">
+                                <option value=""></option>
+                                <option value="F">faint</option>
+                                <option value="D">distinct</option>
+                                <option value="P">prominent</option>
+                            </datalist>
+                        </label>
+
+                        <label>PVSF 2 location       <!--controleld vocabulary-->
+                            <input name="pvsf_loc_2" type="text">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--subsection: concentration features-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Concentration Features</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+    <!--concentration 1-->
+                <label>Concentration 1 kind        <!--controlled vocab-->
+                    <input name="conc_kind_1" type="text">
+                </label>
+
+                <label>Concentration 1 estimate (%)  <!--restricted range-->
+                    <input name="conc_pct_1" type="number">
+                </label>
+
+                <label>Concentration 2 size
+                    <input name="conc_sz_2" list="conc_sz_2-opt" placeholder="type to search...">
+                    <datalist id="conc_sz_2-opt">
+                        <option value=""></option>
+                        <option value="1">1, fine</option>
+                        <option value="2">2, moderate</option>
+                        <option value="3">3, coarse</option>
+                        <option value="4">4, very coarse</option>
+                        <option value="5">5, extremely coarse</option>
+                    </datalist>
+                </label>
+
+                <label>Concentration 1 color  <!--controlled vocabulary-->
+                    <input name="conc_col_1" type="text">
+                </label>
+
+                <label>Concentration 1 contrast
+                    <input name="conc_contr_1" list="conc_contr_1-opt" placeholder="type to search...">
+                    <datalist id="conc_contr_1-opt">
+                        <option value=""></option>
+                        <option value="F">faint</option>
+                        <option value="D">distinct</option>
+                        <option value="P">prominent</option>
+                    </datalist>
+                </label>
+
+                <label>Concentration 1 location       <!--controleld vocabulary-->
+                    <input name="conc_loc_1" type="text">
+                </label>
+        <!--secondary subsection: concentration 2-->
+                <div class="collapsible-section">
+                    <div class="collapsible-header" onclick="toggleSection(this)">
+                        <span>Concentration 2</span>
+                        <span class="collapsible-arrow">▼</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <label>Concentration 2 kind        <!--controlled vocab-->
+                            <input name="conc_kind_2" type="text">
+                        </label>
+
+                        <label>Concentration 2 estimate (%)  <!--restricted range-->
+                            <input name="conc_pct_2" type="number">
+                        </label>
+
+                        <label>Concentration 2 size
+                            <input name="conc_sz_2" list="conc_sz_2-opt" placeholder="type to search...">
+                            <datalist id="conc_sz_2-opt">
+                                <option value=""></option>
+                                <option value="1">1, fine</option>
+                                <option value="2">2, moderate</option>
+                                <option value="3">3, coarse</option>
+                                <option value="4">4, very coarse</option>
+                                <option value="5">5, extremely coarse</option>
+                            </datalist>
+                        </label>
+
+                        <label>Concentration 2 color  <!--controlled vocabulary-->
+                            <input name="conc_col_2" type="text">
+                        </label>
+
+                        <label>Concentration 2 contrast
+                            <input name="conc_contr_2" list="conc_contr_2-opt" placeholder="type to search...">
+                            <datalist id="conc_contr_2-opt">
+                                <option value=""></option>
+                                <option value="F">faint</option>
+                                <option value="D">distinct</option>
+                                <option value="P">prominent</option>
+                            </datalist>
+                        </label>
+
+                        <label>Concentration 2 location       <!--controleld vocabulary-->
+                            <input name="conc_loc_2" type="text">
+                        </label>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    <!--subsection: roots-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Roots</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Root quantity, size, and location 1 (QTY-SZ-LOC format)
+                    <input name="root_qsl_1" type="text">
+                </label>
+
+                <label>Root quantity, size, and location 2 (QTY-SZ-LOC format)
+                    <input name="root_qsl_2" type="text">
+                </label>
+            </div>
+        </div>
+    <!--subsection: pores-->
+        <div class="collapsible-section">
+            <div class="collapsible-header" onclick="toggleSection(this)">
+                <span>Pores</span>
+                <span class="collapsible-arrow">▼</span>
+            </div>
+            <div class="collapsible-content">
+                <label>Pore quantity, size, and location 1 (QTY-SZ-LOC format)
+                    <input name="pore_qsl_1" type="text">
+                </label>
+
+                <label>Pore quantity, size, and location 2 (QTY-SZ-LOC format)
+                    <input name="pore_qsl_2" type="text">
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--category: Horizon-Specific Notes-->
+<div class="static-section">
+    <div class="static-header">
+        <span>Horizon-Specific Notes</span>
+    </div>
+    <div class="static-content">
+        <label>Horizon-Specific Notes
+            <input name="hz_note" type="text">
+        </label>
+    </div>
+</div>
+
+<!--This is the save button at the end of the form, needs work-->
+ 
+<button>Save</button>
+  <pre id="out"></pre>
+</form>
+<script>
+
+const API = "https://hge8cotws2.execute-api.us-east-2.amazonaws.com/prod";
+document.getElementById('f').addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const outEl = document.getElementById('out');
+  outEl.textContent = "Submitting...";
+  
+  const fd = new FormData(e.target), body={}; 
+  fd.forEach((v,k)=> body[k]=v||null);
+  
+  try {
+    const r = await fetch(API + "/horizon_gateway", { 
+      method:'POST', 
+      headers:{'content-type':'application/json'}, 
+      body: JSON.stringify(body) 
+    });
+    
+    const responseText = await r.text();
+    outEl.textContent = responseText;
+    
+    try {
+      const json = JSON.parse(responseText);
+      if (json.ok) {
+        outEl.textContent = "✓ SUCCESS: Horizon saved! ID: " + json.sdb_hziid;
+        outEl.style.color = "green";
+      } else {
+        outEl.textContent = "✗ ERROR: " + json.error;
+        outEl.style.color = "red";
+      }
+    } catch (e) {
+      outEl.style.color = "black";
+    }
+  } catch (err) {
+    outEl.textContent = "✗ NETWORK ERROR: " + err.message;
+    outEl.style.color = "red";
+  }
+});
+
+// Function to toggle collapsible sections
+function toggleSection(header) {
+  const content = header.nextElementSibling;
+  const arrow = header.querySelector('.collapsible-arrow');
+  
+  content.classList.toggle('hidden');
+  arrow.classList.toggle('collapsed');
+}
+
+// Start all collapsible sections closed
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.collapsible-content').forEach(content => {
+    content.classList.add('hidden');
+    content.previousElementSibling.querySelector('.collapsible-arrow').classList.add('collapsed');
+  });
+});
+
+</script>
+</body>
+</html>
